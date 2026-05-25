@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MWAH — Week of May 18–24, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --hero-rose:   #FBBAD4;
+      --hero-lav:    #C5B8EF;
+      --soft-rose:   #F8A0C9;
+      --lavender:    #BDB0EA;
+      --rose-dark:   #C2497A;
+      --lav-dark:    #7055B8;
+      --tag-portal-bg:  #FDDDE9;
+      --tag-portal-tx:  #A83060;
+      --tag-mgmt-bg:    #EDE5F7;
+      --tag-mgmt-tx:    #6E3A9C;
+      --tag-feature-bg: #D1FAE5;
+      --tag-feature-tx: #065F46;
+      --tag-fix-bg:     #FEF3C7;
+      --tag-fix-tx:     #92400E;
+      --tag-infra-bg:   #DBEAFE;
+      --tag-infra-tx:   #1D4ED8;
+      --tag-web-bg:     #FFE4D6;
+      --tag-web-tx:     #B24A1B;
+      --page-bg:     #FAFAFA;
+      --card-bg:     #FFFFFF;
+      --card-radius: 16px;
+      --section-gap: 48px;
+      --card-gap:    20px;
+      --text-primary: #18181B;
+      --text-secondary: #52525B;
+      --text-muted:  #A1A1AA;
+      --border:      #E4E4E7;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--page-bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HERO ─────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(140deg, #FBBAD4 0%, #EDD8F5 45%, #C5B8EF 100%);
+      padding: 64px 32px 56px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 20% 80%, rgba(255,255,255,0.35) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.25) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; max-width: 760px; margin: 0 auto; }
+    .hero-brand {
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rose-dark);
+      margin-bottom: 20px;
+      opacity: 0.85;
+    }
+    .hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(28px, 5vw, 46px);
+      font-weight: 800;
+      color: #1A0A24;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .hero-date {
+      font-family: 'Poppins', sans-serif;
+      font-size: 17px;
+      font-weight: 500;
+      color: #3D1A54;
+      opacity: 0.75;
+      margin-bottom: 40px;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .hero-stat {
+      background: rgba(255,255,255,0.65);
+      backdrop-filter: blur(8px);
+      border-radius: 14px;
+      padding: 18px 28px;
+      min-width: 140px;
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+    .hero-stat-num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--rose-dark);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .hero-stat-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #4A2070;
+      opacity: 0.8;
+    }
+
+    /* ─── LAYOUT ────────────────────────────────────────────── */
+    .content { max-width: 1080px; margin: 0 auto; padding: 56px 24px 80px; }
+
+    .section { margin-bottom: var(--section-gap); }
+    .section-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ─── CARDS ─────────────────────────────────────────────── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--card-gap);
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .card-icon { font-size: 28px; line-height: 1; }
+    .card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+    .card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .card-tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 99px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-top: 4px;
+      align-self: flex-start;
+    }
+
+    /* Highlight — full width, gradient bg */
+    .card.highlight {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, #FFF0F7 0%, #F5EEFF 100%);
+      border: 1.5px solid #EDD8F5;
+      padding: 32px 36px;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 24px;
+    }
+    .card.highlight .card-icon { font-size: 40px; padding-top: 4px; flex-shrink: 0; }
+    .card.highlight .card-body { flex: 1; }
+    .card.highlight h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #1A0A24;
+    }
+    .card.highlight p { font-size: 15px; }
+    .card.highlight .card-tag { margin-top: 12px; }
+
+    /* Tag colors */
+    .tag-portal  { background: var(--tag-portal-bg);  color: var(--tag-portal-tx); }
+    .tag-mgmt    { background: var(--tag-mgmt-bg);    color: var(--tag-mgmt-tx); }
+    .tag-feature { background: var(--tag-feature-bg); color: var(--tag-feature-tx); }
+    .tag-fix     { background: var(--tag-fix-bg);     color: var(--tag-fix-tx); }
+    .tag-infra   { background: var(--tag-infra-bg);   color: var(--tag-infra-tx); }
+    .tag-web     { background: var(--tag-web-bg);     color: var(--tag-web-tx); }
+
+    /* ─── BEHIND THE SCENES ─────────────────────────────────── */
+    .bts {
+      background: #1E1B2E;
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: var(--section-gap);
+    }
+    .bts-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #E2D9F3;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .bts ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 10px 32px;
+    }
+    .bts li {
+      font-size: 13px;
+      color: #A89CC8;
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.55;
+    }
+    .bts li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--soft-rose);
+      font-weight: 700;
+      opacity: 0.6;
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding-top: 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-prod {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .footer-prod a {
+      color: var(--rose-dark);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .footer-prod a:hover { text-decoration: underline; }
+    .footer-right { text-align: right; }
+    .footer-version {
+      font-family: 'Poppins', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .footer-version span {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      display: block;
+      margin-top: 2px;
+      letter-spacing: 0.04em;
+    }
+    .footer-slack {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .hero { padding: 48px 20px 44px; }
+      .hero-stats { gap: 16px; }
+      .hero-stat { min-width: 110px; padding: 14px 18px; }
+      .content { padding: 40px 16px 60px; }
+      .card.highlight { flex-direction: column; gap: 16px; }
+      .bts { padding: 28px 24px; }
+      .footer { flex-direction: column; }
+      .footer-right { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── HERO ──────────────────────────────────────────────────── -->
+<header class="hero">
+  <div class="hero-inner">
+    <p class="hero-brand">MWAH CRM · Weekly Deploy Report</p>
+    <h1>This week at MWAH</h1>
+    <p class="hero-date">May 18 – May 24, 2026</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">25+</div>
+        <div class="hero-stat-label">improvements</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">22</div>
+        <div class="hero-stat-label">versions shipped</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">✉️</div>
+        <div class="hero-stat-label">biggest area: portal emails</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ─── MAIN CONTENT ──────────────────────────────────────────── -->
+<main class="content">
+
+  <!-- HIGHLIGHTS -->
+  <section class="section">
+    <div class="section-title">⭐ Highlights of the week</div>
+    <div class="card-grid">
+
+      <article class="card highlight">
+        <div class="card-icon">✉️</div>
+        <div class="card-body">
+          <h3>Portal emails — fully rebuilt, reliable, and visible</h3>
+          <p>The biggest portal infrastructure story of the year. Portal emails migrated off Gmail OAuth — which had broken twice in two weeks when the refresh token expired — onto Resend, a dedicated transactional mail service with no expiry risk. At the same time, every portal email that sends now writes an audit log entry: delivery time, success or failure, which template, which buyer. A new <strong>Email Health</strong> tab (the 8th in Portal Mgmt) shows sent/failed counts, a 7-day chart, per-template success rates, and a one-click Retry button when something goes wrong. On the buyer side, the emails themselves got a full formatting pass so Gmail, Outlook, and mobile all render them cleanly. New lifecycle emails went live too: buyers now hear from us when their order is cancelled (with reason + any credit note), when a license correction gets resolved, and when a rep grants them access to an additional store.</p>
+          <span class="card-tag tag-portal">Buyer portal</span>
+        </div>
+      </article>
+
+      <article class="card highlight">
+        <div class="card-icon">🔑</div>
+        <div class="card-body">
+          <h3>Managers can now fix PO mistakes on any order — even locked ones</h3>
+          <p>If a rep confirmed an order with the wrong store, a bad delivery date, or an incorrect line-item price, fixing it used to require manual database surgery. Managers and admins can now click a pencil icon on any PO — regardless of status — to reassign the store, change the delivery date, or correct a line-item quantity, price, or sample flag. A required reason field feeds an edit-history banner on the PO so the full diff is always visible. This came directly out of a real case where a rep accidentally placed an order for the wrong Bakeree location.</p>
+          <span class="card-tag tag-feature">Orders</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- BUYER PORTAL -->
+  <section class="section">
+    <div class="section-title">🛍️ Buyer portal</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">👤</div>
+        <h3>Buyers can edit their own profile</h3>
+        <p>Buyers can now update their name, phone number, and per-store role from the Account menu. Changes go to the team for a quick review before they apply — a "pending review" banner stays on the page until the rep approves.</p>
+        <span class="card-tag tag-portal">Buyer portal</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔐</div>
+        <h3>Sign-in experience cleaned up</h3>
+        <p>New and deactivated buyers now see a clear, helpful message at sign-in instead of a confusing "invalid credentials" wall. The Google sign-in popup had stopped working on recent Chrome builds — that's fixed. New users get a proper welcome email with a password setup link instead of the generic Firebase reset copy.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">⚡</div>
+        <h3>Product images on the portal load faster</h3>
+        <p>Shop page, Review step, and Order Detail line items now lazy-load product images. Pages with large catalogs snap in faster, especially on slower connections.</p>
+        <span class="card-tag tag-fix">Performance</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📱</div>
+        <h3>Portal mobile nav got a real menu</h3>
+        <p>A new hamburger menu in the header opens every nav destination in one tap. Product cards on mobile drop the long descriptive subtext so name and price fit cleanly at any screen size.</p>
+        <span class="card-tag tag-portal">Buyer portal</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">⚠️</div>
+        <h3>Phantom "pending order" banner fixed</h3>
+        <p>A ghost banner was appearing on the Shop page pointing at an order that had already been deleted. It's gone — View Order now always opens the correct, live order.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- PORTAL MANAGEMENT -->
+  <section class="section">
+    <div class="section-title">👥 Portal management</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">📊</div>
+        <h3>Email Health tab — new visibility into what's sending and what's failing</h3>
+        <p>The new 8th tab under Portal Mgmt shows a 7-day breakdown of every transactional email the portal sends: total sent vs. failed, per-template success rates, average delivery time, and a recent-failures list. Manager+ users can retry a failed send with one click, right from the tab.</p>
+        <span class="card-tag tag-mgmt">Portal mgmt</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🏪</div>
+        <h3>Store profile shows a "Portal" pill and reps can now approve portal orders</h3>
+        <p>A blue Portal badge now appears next to Pre-Sale / First Order / Tier on any store that has at least one buyer signed up. Reps can also approve and confirm portal-submitted orders directly — no longer need to wait for a manager to step in.</p>
+        <span class="card-tag tag-mgmt">Portal mgmt</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🐞</div>
+        <h3>Approving claims on multi-store portal registrations no longer crashes</h3>
+        <p>Approving or rejecting an individual store claim within a multi-store registration request was throwing a Firestore error and failing silently. Fixed — the per-claim audit timestamp now uses an approach Firestore accepts inside array elements.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ORDERS + FULFILLMENT -->
+  <section class="section">
+    <div class="section-title">📦 Orders + fulfillment</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">📝</div>
+        <h3>Activity Log: simplified to a clean paginated feed</h3>
+        <p>The six time-frame pills (Today / Yesterday / This Week / etc.) and the auto-rotating daily/weekly/monthly view are gone. Set a From and To date, pick one or more reps, filter by type, and page through a day-grouped feed at whatever page size you want.</p>
+        <span class="card-tag tag-feature">Activity log</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔗</div>
+        <h3>Link a GrowFlow record to a CRM order right from the recon queue</h3>
+        <p>NO MATCH and MULTIPLE MATCH cards in the GrowFlow recon queue now have a "Link to CRM PO" action. Opens a picker, floats the best candidates up top, and shows the before/after invoice diff on confirm. Fix a mistyped invoice number without leaving the recon screen.</p>
+        <span class="card-tag tag-feature">Reconciliation</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🧮</div>
+        <h3>Amount mismatch review: true side-by-side editor</h3>
+        <p>The Amount Review modal now shows GrowFlow and CRM as two clearly distinct tables next to each other, with per-row "Match GF" buttons and a live banner showing the running difference. No more guessing which side is which.</p>
+        <span class="card-tag tag-feature">Reconciliation</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🗃️</div>
+        <h3>Per-product GrowFlow IDs visible on PO Detail</h3>
+        <p>Each line item on a PO now tracks its own GrowFlow ID. A match-status chip (e.g. "6/6") in the PO sidebar shows how many are linked, with a Show button to reveal them inline for review or backfill.</p>
+        <span class="card-tag tag-feature">Orders</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- DASHBOARD + MOBILE -->
+  <section class="section">
+    <div class="section-title">📱 Dashboard + mobile</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">📡</div>
+        <h3>Live ticker shows exactly what just happened — not a rollup count</h3>
+        <p>The LIVE column's ticker now shows individual events: a rep's store visit, a portal order coming in, a sample drop. Up to 8 recent events, capped at 2 per teammate so one busy day doesn't swallow the strip. It actually feels live now.</p>
+        <span class="card-tag tag-feature">Dashboard</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🧭</div>
+        <h3>Visit Prep now draws from the same recommendations as Sales Coach</h3>
+        <p>The Visit Prep screen before a store visit uses the same chain-aware, snooze-aware recommendations as your dashboard's Sales Coach — same intelligence, same context, right before you walk in the door.</p>
+        <span class="card-tag tag-feature">Dashboard</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">👤</div>
+        <h3>Contacts now have a Title field</h3>
+        <p>You can save each contact's specific store title (like "Head Buyer" or "Inventory Manager") alongside their role. The contact card shows it as "Role (Title)" and an info icon explains what each role category means.</p>
+        <span class="card-tag tag-feature">Contacts</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🗺️</div>
+        <h3>Map page filters now match the Stores directory</h3>
+        <p>The Map page filter bar now offers all 8 chips from the Stores page — Health, Stage, Tier, City, Type, Chain, Tags, Last Delivery. Filter selections carry over between the two pages, and a "Clear all" button appears whenever any filter is active.</p>
+        <span class="card-tag tag-feature">Map</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- BEHIND THE SCENES -->
+  <section class="section bts">
+    <div class="bts-title">⚙️ Behind the scenes</div>
+    <ul>
+      <li>Portal emails migrated from Gmail OAuth to Resend — eliminates the refresh-token expiry that broke buyer emails twice in two weeks.</li>
+      <li>Every transactional portal email now writes a structured audit log entry; failures surface in Sentry within seconds; a weekly canary send catches a dead configuration before any buyer notices.</li>
+      <li>Intercom Identity Verification enabled on the buyer portal — buyers can no longer spoof another buyer's chat history via browser devtools.</li>
+      <li>GrowFlow API fixed: an unused field in the orders query was triggering a server error on GrowFlow's end, silently breaking the daily 6am sync and the manual Live Sync button.</li>
+      <li>Reconciliation hardened: license mismatches now block PO transfer (was silently passing through); non-blocking flags get their own bulk-action section; unresolved decision counts dedupe correctly across multiple sync runs.</li>
+      <li>CHANGELOG array extracted to its own file — trimmed dashboard.js by ~27% and stopped the lint-ceiling ratchet that had bumped the file-size cap eight times.</li>
+      <li>Self-review CI workflow added: every non-draft PR now requires a structured attestation line, enforced by GitHub Actions at merge time.</li>
+      <li>Fulfillment page infinite-load bug fixed — the table now finishes rendering after an app update without needing a hard refresh.</li>
+    </ul>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-prod">
+      Production: <a href="https://app.gimmemwah.com">app.gimmemwah.com</a> ·
+      Buyer portal: <a href="https://buy.gimmemwah.com">buy.gimmemwah.com</a><br>
+      Questions? Drop them in <strong>#all-mwah</strong> on Slack.
+    </div>
+    <div class="footer-right">
+      <div class="footer-version">v93.24<span>latest deployed version</span></div>
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>

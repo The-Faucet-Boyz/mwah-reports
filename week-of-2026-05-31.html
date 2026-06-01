@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MWAH — Week of May 18–24, 2026</title>
+  <title>MWAH — Week of May 25–31, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -312,19 +312,19 @@
   <div class="hero-inner">
     <p class="hero-brand">MWAH CRM · Weekly Deploy Report</p>
     <h1>This week at MWAH</h1>
-    <p class="hero-date">May 18 – May 24, 2026</p>
+    <p class="hero-date">May 25 – May 31, 2026</p>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-num">25+</div>
+        <div class="hero-stat-num">20+</div>
         <div class="hero-stat-label">improvements</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">22</div>
+        <div class="hero-stat-num">10</div>
         <div class="hero-stat-label">versions shipped</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">✉️</div>
-        <div class="hero-stat-label">biggest area: portal emails</div>
+        <div class="hero-stat-num">🛍️</div>
+        <div class="hero-stat-label">biggest area: buyer portal</div>
       </div>
     </div>
   </div>
@@ -339,20 +339,20 @@
     <div class="card-grid">
 
       <article class="card highlight">
-        <div class="card-icon">✉️</div>
+        <div class="card-icon">🔀</div>
         <div class="card-body">
-          <h3>Portal emails — fully rebuilt, reliable, and visible</h3>
-          <p>The biggest portal infrastructure story of the year. Portal emails migrated off Gmail OAuth — which had broken twice in two weeks when the refresh token expired — onto Resend, a dedicated transactional mail service with no expiry risk. At the same time, every portal email that sends now writes an audit log entry: delivery time, success or failure, which template, which buyer. A new <strong>Email Health</strong> tab (the 8th in Portal Mgmt) shows sent/failed counts, a 7-day chart, per-template success rates, and a one-click Retry button when something goes wrong. On the buyer side, the emails themselves got a full formatting pass so Gmail, Outlook, and mobile all render them cleanly. New lifecycle emails went live too: buyers now hear from us when their order is cancelled (with reason + any credit note), when a license correction gets resolved, and when a rep grants them access to an additional store.</p>
-          <span class="card-tag tag-portal">Buyer portal</span>
+          <h3>Store records can now be merged and licenses corrected — no manual workarounds</h3>
+          <p>Two long-standing admin pain points land this week. Managers can now change a store's license number directly on the store record — pick "renewal" to keep the old number in history, or "correction" if it was wrong from day one. Available from the store's Licenses tab, the recon mismatch queue, and buyer correction approvals. Separately, a new Merge Stores tool lets admins fold a duplicate store into the right one: orders, contacts, activities, credits, and chain links all transfer to the surviving record, and the merged store's license stays on as an alias. No more manual database cleanup for duplicate stores or license mistakes.</p>
+          <span class="card-tag tag-mgmt">Admin</span>
         </div>
       </article>
 
       <article class="card highlight">
-        <div class="card-icon">🔑</div>
+        <div class="card-icon">🗝️</div>
         <div class="card-body">
-          <h3>Managers can now fix PO mistakes on any order — even locked ones</h3>
-          <p>If a rep confirmed an order with the wrong store, a bad delivery date, or an incorrect line-item price, fixing it used to require manual database surgery. Managers and admins can now click a pencil icon on any PO — regardless of status — to reassign the store, change the delivery date, or correct a line-item quantity, price, or sample flag. A required reason field feeds an edit-history banner on the PO so the full diff is always visible. This came directly out of a real case where a rep accidentally placed an order for the wrong Bakeree location.</p>
-          <span class="card-tag tag-feature">Orders</span>
+          <h3>Full team can now manage the buyer portal queue — no manager required</h3>
+          <p>Field and inside reps can now approve or reject portal registration requests, grant or remove a buyer's store access, and enable or disable accounts. The entire queue that used to be manager-only is now open to the full team — Hannah, Maddie, and everyone on inside sales can work it end-to-end without waiting for a manager to step in. View-as (buyer impersonation for troubleshooting) stays manager-only.</p>
+          <span class="card-tag tag-mgmt">Portal mgmt</span>
         </div>
       </article>
 
@@ -365,38 +365,52 @@
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">👤</div>
-        <h3>Buyers can edit their own profile</h3>
-        <p>Buyers can now update their name, phone number, and per-store role from the Account menu. Changes go to the team for a quick review before they apply — a "pending review" banner stays on the page until the rep approves.</p>
+        <div class="card-icon">📝</div>
+        <h3>Order change options now match where the order actually is</h3>
+        <p>The order page shows the right options based on status. Before a delivery date is locked in, buyers can chat with the team, write out a change in their own words, or request a cancellation. Once scheduled, the order shows a SCHEDULED badge and delivery date. Orders already on their way out show chat only.</p>
         <span class="card-tag tag-portal">Buyer portal</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">➕</div>
+        <h3>Buyers can add a product to a pending change request</h3>
+        <p>While editing an order, buyers can tap "Add product," pick from the catalog, set the case count, and it joins the change request — with an undo if they change their mind. Products already on the order are filtered out automatically.</p>
+        <span class="card-tag tag-portal">Buyer portal</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📋</div>
+        <h3>Cancelled orders now appear in Order History</h3>
+        <p>Buyers can filter by "Cancelled" in their Order History and see the cancellation reason on each order's detail page. Deleted orders stay hidden — only genuine cancellations show up.</p>
+        <span class="card-tag tag-portal">Buyer portal</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📅</div>
+        <h3>Delivery dates from the CRM now show on the portal</h3>
+        <p>When a rep schedules a delivery date in the CRM, the buyer's portal view reflects it immediately and the order shows as SCHEDULED. Previously the date only lived on the rep's side and buyers had no way to see it.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">✉️</div>
+        <h3>Order confirmation emails got a full formatting pass</h3>
+        <p>Emails now show real per-line dollar amounts in aligned columns, a single clean Total row, the actual ship-to address with recipient name, and the buyer's real first name in the greeting. The layout renders correctly in Gmail, Outlook, and on mobile.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
       </article>
 
       <article class="card">
         <div class="card-icon">🔐</div>
-        <h3>Sign-in experience cleaned up</h3>
-        <p>New and deactivated buyers now see a clear, helpful message at sign-in instead of a confusing "invalid credentials" wall. The Google sign-in popup had stopped working on recent Chrome builds — that's fixed. New users get a proper welcome email with a password setup link instead of the generic Firebase reset copy.</p>
+        <h3>Sign-in and password reset fixed across the board</h3>
+        <p>Google sign-in on mobile Safari now completes successfully. Password reset and welcome links land on a branded MWAH page with a clear sign-in button — not a blank Firebase screen. "Wrong email or password" now points directly to the password reset link.</p>
         <span class="card-tag tag-fix">Bug fix</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">⚡</div>
-        <h3>Product images on the portal load faster</h3>
-        <p>Shop page, Review step, and Order Detail line items now lazy-load product images. Pages with large catalogs snap in faster, especially on slower connections.</p>
-        <span class="card-tag tag-fix">Performance</span>
       </article>
 
       <article class="card">
         <div class="card-icon">📱</div>
-        <h3>Portal mobile nav got a real menu</h3>
-        <p>A new hamburger menu in the header opens every nav destination in one tap. Product cards on mobile drop the long descriptive subtext so name and price fit cleanly at any screen size.</p>
+        <h3>Mobile polish — menus, labels, and product names</h3>
+        <p>The mobile menu now highlights the page you're actually on. Product names on the Shop page wrap fully instead of truncating. "Pending" is now the consistent status label for submitted orders across every portal view.</p>
         <span class="card-tag tag-portal">Buyer portal</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">⚠️</div>
-        <h3>Phantom "pending order" banner fixed</h3>
-        <p>A ghost banner was appearing on the Shop page pointing at an order that had already been deleted. It's gone — View Order now always opens the correct, live order.</p>
-        <span class="card-tag tag-fix">Bug fix</span>
       </article>
 
     </div>
@@ -408,24 +422,24 @@
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">📊</div>
-        <h3>Email Health tab — new visibility into what's sending and what's failing</h3>
-        <p>The new 8th tab under Portal Mgmt shows a 7-day breakdown of every transactional email the portal sends: total sent vs. failed, per-template success rates, average delivery time, and a recent-failures list. Manager+ users can retry a failed send with one click, right from the tab.</p>
+        <div class="card-icon">📌</div>
+        <h3>Sign-up and QR requests now live in the Needs Attention bar</h3>
+        <p>Pending portal sign-up requests and QR registrations now appear as chips inside the Needs Attention bar alongside everything else that needs your attention. They used to show as a separate banner above it — one place covers it all now.</p>
         <span class="card-tag tag-mgmt">Portal mgmt</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🏪</div>
-        <h3>Store profile shows a "Portal" pill and reps can now approve portal orders</h3>
-        <p>A blue Portal badge now appears next to Pre-Sale / First Order / Tier on any store that has at least one buyer signed up. Reps can also approve and confirm portal-submitted orders directly — no longer need to wait for a manager to step in.</p>
+        <div class="card-icon">📝</div>
+        <h3>New Note Edits tab — catch when buyers update their delivery notes</h3>
+        <p>When a buyer changes a store's delivery notes at checkout, the edit now surfaces in a new Note Edits tab and in the Needs Attention bar. Review it and choose to adopt the change as the store's new standard — or dismiss it as a one-time note.</p>
         <span class="card-tag tag-mgmt">Portal mgmt</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🐞</div>
-        <h3>Approving claims on multi-store portal registrations no longer crashes</h3>
-        <p>Approving or rejecting an individual store claim within a multi-store registration request was throwing a Firestore error and failing silently. Fixed — the per-claim audit timestamp now uses an approach Firestore accepts inside array elements.</p>
-        <span class="card-tag tag-fix">Bug fix</span>
+        <div class="card-icon">🔍</div>
+        <h3>Requests tab now has filters, search, and pagination</h3>
+        <p>A status filter, date range, and search box make it easy to find specific requests in a long queue. The Pending tab now shows a helpful empty state when there's nothing left to action.</p>
+        <span class="card-tag tag-mgmt">Portal mgmt</span>
       </article>
 
     </div>
@@ -437,67 +451,24 @@
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">📝</div>
-        <h3>Activity Log: simplified to a clean paginated feed</h3>
-        <p>The six time-frame pills (Today / Yesterday / This Week / etc.) and the auto-rotating daily/weekly/monthly view are gone. Set a From and To date, pick one or more reps, filter by type, and page through a day-grouped feed at whatever page size you want.</p>
-        <span class="card-tag tag-feature">Activity log</span>
+        <div class="card-icon">✉️</div>
+        <h3>Change-request approval emails now show the real order total</h3>
+        <p>The "Your change request was approved" email was going out with "New total: $0.00" — it now shows the actual value of the updated order every time.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🔗</div>
-        <h3>Link a GrowFlow record to a CRM order right from the recon queue</h3>
-        <p>NO MATCH and MULTIPLE MATCH cards in the GrowFlow recon queue now have a "Link to CRM PO" action. Opens a picker, floats the best candidates up top, and shows the before/after invoice diff on confirm. Fix a mistyped invoice number without leaving the recon screen.</p>
-        <span class="card-tag tag-feature">Reconciliation</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">🧮</div>
-        <h3>Amount mismatch review: true side-by-side editor</h3>
-        <p>The Amount Review modal now shows GrowFlow and CRM as two clearly distinct tables next to each other, with per-row "Match GF" buttons and a live banner showing the running difference. No more guessing which side is which.</p>
-        <span class="card-tag tag-feature">Reconciliation</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">🗃️</div>
-        <h3>Per-product GrowFlow IDs visible on PO Detail</h3>
-        <p>Each line item on a PO now tracks its own GrowFlow ID. A match-status chip (e.g. "6/6") in the PO sidebar shows how many are linked, with a Show button to reveal them inline for review or backfill.</p>
+        <div class="card-icon">✏️</div>
+        <h3>Buyer edits stay visible on the fulfillment board after approval</h3>
+        <p>Once a buyer's change request is approved and updated in GrowFlow, the fulfillment row shows exactly what changed — quantities up or down, items added or removed. Tap the EDITED badge for the full before-and-after history.</p>
         <span class="card-tag tag-feature">Orders</span>
       </article>
 
-    </div>
-  </section>
-
-  <!-- DASHBOARD + MOBILE -->
-  <section class="section">
-    <div class="section-title">📱 Dashboard + mobile</div>
-    <div class="card-grid">
-
       <article class="card">
-        <div class="card-icon">📡</div>
-        <h3>Live ticker shows exactly what just happened — not a rollup count</h3>
-        <p>The LIVE column's ticker now shows individual events: a rep's store visit, a portal order coming in, a sample drop. Up to 8 recent events, capped at 2 per teammate so one busy day doesn't swallow the strip. It actually feels live now.</p>
-        <span class="card-tag tag-feature">Dashboard</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">🧭</div>
-        <h3>Visit Prep now draws from the same recommendations as Sales Coach</h3>
-        <p>The Visit Prep screen before a store visit uses the same chain-aware, snooze-aware recommendations as your dashboard's Sales Coach — same intelligence, same context, right before you walk in the door.</p>
-        <span class="card-tag tag-feature">Dashboard</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">👤</div>
-        <h3>Contacts now have a Title field</h3>
-        <p>You can save each contact's specific store title (like "Head Buyer" or "Inventory Manager") alongside their role. The contact card shows it as "Role (Title)" and an info icon explains what each role category means.</p>
-        <span class="card-tag tag-feature">Contacts</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">🗺️</div>
-        <h3>Map page filters now match the Stores directory</h3>
-        <p>The Map page filter bar now offers all 8 chips from the Stores page — Health, Stage, Tier, City, Type, Chain, Tags, Last Delivery. Filter selections carry over between the two pages, and a "Clear all" button appears whenever any filter is active.</p>
-        <span class="card-tag tag-feature">Map</span>
+        <div class="card-icon">🗑️</div>
+        <h3>Reps can now delete their own test orders and duplicates</h3>
+        <p>No more waiting for a manager to clean up test orders or accidental duplicates — the rep who created the order (or is credited on it) now has the trash button. Portal orders still route through the Cancel flow so buyers get notified.</p>
+        <span class="card-tag tag-feature">Orders</span>
       </article>
 
     </div>
@@ -507,14 +478,14 @@
   <section class="section bts">
     <div class="bts-title">⚙️ Behind the scenes</div>
     <ul>
-      <li>Portal emails migrated from Gmail OAuth to Resend — eliminates the refresh-token expiry that broke buyer emails twice in two weeks.</li>
-      <li>Every transactional portal email now writes a structured audit log entry; failures surface in Sentry within seconds; a weekly canary send catches a dead configuration before any buyer notices.</li>
-      <li>Intercom Identity Verification enabled on the buyer portal — buyers can no longer spoof another buyer's chat history via browser devtools.</li>
-      <li>GrowFlow API fixed: an unused field in the orders query was triggering a server error on GrowFlow's end, silently breaking the daily 6am sync and the manual Live Sync button.</li>
-      <li>Reconciliation hardened: license mismatches now block PO transfer (was silently passing through); non-blocking flags get their own bulk-action section; unresolved decision counts dedupe correctly across multiple sync runs.</li>
-      <li>CHANGELOG array extracted to its own file — trimmed dashboard.js by ~27% and stopped the lint-ceiling ratchet that had bumped the file-size cap eight times.</li>
-      <li>Self-review CI workflow added: every non-draft PR now requires a structured attestation line, enforced by GitHub Actions at merge time.</li>
-      <li>Fulfillment page infinite-load bug fixed — the table now finishes rendering after an app update without needing a hard refresh.</li>
+      <li>Portal transactional emails migrated to React Email components — structurally eliminates the Gmail flex-rendering bug class (pill centering, column alignment) that kept resurfacing.</li>
+      <li>CRM Google sign-in on mobile now uses the same same-origin redirect fix that landed on the buyer portal last week — Safari and strict-cookie-mode browsers complete the handshake correctly.</li>
+      <li>Portal auth observability broadened: desktop OAuth redirect failures now trigger the same Sentry alerts as mobile failures (the old tag was missing desktop regressions for weeks).</li>
+      <li>Portal credit page read path fixed: the permissions error that blocked buyers from viewing their store credits was resolved by deriving balances from the credits subcollection directly.</li>
+      <li>Store Detail orders tab: "Delivered" status pill tooltip no longer shifts adjacent table columns on hover.</li>
+      <li>Recon license-mismatch flow hardened: in-place change is now the primary option; succession guard blocks linking to a deleted store; phantom "needs review" rows no longer persist after a decision is resolved elsewhere.</li>
+      <li>Duplicate invoice warning added to the Orders &amp; Fulfillment editors — stops the typo that was generating false "multiple match" rows in the recon queue.</li>
+      <li>Admin permanent-delete for truly empty stores now available (Admin → Deleted Stores). Any store with orders, contacts, credits, or lineage links is blocked and must be merged instead.</li>
     </ul>
   </section>
 
@@ -526,7 +497,7 @@
       Questions? Drop them in <strong>#all-mwah</strong> on Slack.
     </div>
     <div class="footer-right">
-      <div class="footer-version">v93.24<span>latest deployed version</span></div>
+      <div class="footer-version">v93.34<span>latest deployed version</span></div>
     </div>
   </footer>
 

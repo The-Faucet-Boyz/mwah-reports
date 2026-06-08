@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MWAH — Week of June 1–7, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --hero-rose:   #FBBAD4;
+      --hero-lav:    #C5B8EF;
+      --soft-rose:   #F8A0C9;
+      --lavender:    #BDB0EA;
+      --rose-dark:   #C2497A;
+      --lav-dark:    #7055B8;
+      --tag-portal-bg:  #FDDDE9;
+      --tag-portal-tx:  #A83060;
+      --tag-mgmt-bg:    #EDE5F7;
+      --tag-mgmt-tx:    #6E3A9C;
+      --tag-feature-bg: #D1FAE5;
+      --tag-feature-tx: #065F46;
+      --tag-fix-bg:     #FEF3C7;
+      --tag-fix-tx:     #92400E;
+      --tag-infra-bg:   #DBEAFE;
+      --tag-infra-tx:   #1D4ED8;
+      --tag-web-bg:     #FFE4D6;
+      --tag-web-tx:     #B24A1B;
+      --page-bg:     #FAFAFA;
+      --card-bg:     #FFFFFF;
+      --card-radius: 16px;
+      --section-gap: 48px;
+      --card-gap:    20px;
+      --text-primary: #18181B;
+      --text-secondary: #52525B;
+      --text-muted:  #A1A1AA;
+      --border:      #E4E4E7;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--page-bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HERO ─────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(140deg, #FBBAD4 0%, #EDD8F5 45%, #C5B8EF 100%);
+      padding: 64px 32px 56px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 20% 80%, rgba(255,255,255,0.35) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.25) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; max-width: 760px; margin: 0 auto; }
+    .hero-brand {
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rose-dark);
+      margin-bottom: 20px;
+      opacity: 0.85;
+    }
+    .hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(28px, 5vw, 46px);
+      font-weight: 800;
+      color: #1A0A24;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .hero-date {
+      font-family: 'Poppins', sans-serif;
+      font-size: 17px;
+      font-weight: 500;
+      color: #3D1A54;
+      opacity: 0.75;
+      margin-bottom: 40px;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .hero-stat {
+      background: rgba(255,255,255,0.65);
+      backdrop-filter: blur(8px);
+      border-radius: 14px;
+      padding: 18px 28px;
+      min-width: 140px;
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+    .hero-stat-num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--rose-dark);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .hero-stat-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #4A2070;
+      opacity: 0.8;
+    }
+
+    /* ─── LAYOUT ────────────────────────────────────────────── */
+    .content { max-width: 1080px; margin: 0 auto; padding: 56px 24px 80px; }
+
+    .section { margin-bottom: var(--section-gap); }
+    .section-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ─── CARDS ─────────────────────────────────────────────── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--card-gap);
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .card-icon { font-size: 28px; line-height: 1; }
+    .card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+    .card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .card-tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 99px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-top: 4px;
+      align-self: flex-start;
+    }
+
+    /* Highlight — full width, gradient bg */
+    .card.highlight {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, #FFF0F7 0%, #F5EEFF 100%);
+      border: 1.5px solid #EDD8F5;
+      padding: 32px 36px;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 24px;
+    }
+    .card.highlight .card-icon { font-size: 40px; padding-top: 4px; flex-shrink: 0; }
+    .card.highlight .card-body { flex: 1; }
+    .card.highlight h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #1A0A24;
+    }
+    .card.highlight p { font-size: 15px; }
+    .card.highlight .card-tag { margin-top: 12px; }
+
+    /* Tag colors */
+    .tag-portal  { background: var(--tag-portal-bg);  color: var(--tag-portal-tx); }
+    .tag-mgmt    { background: var(--tag-mgmt-bg);    color: var(--tag-mgmt-tx); }
+    .tag-feature { background: var(--tag-feature-bg); color: var(--tag-feature-tx); }
+    .tag-fix     { background: var(--tag-fix-bg);     color: var(--tag-fix-tx); }
+    .tag-infra   { background: var(--tag-infra-bg);   color: var(--tag-infra-tx); }
+    .tag-web     { background: var(--tag-web-bg);     color: var(--tag-web-tx); }
+
+    /* ─── BEHIND THE SCENES ─────────────────────────────────── */
+    .bts {
+      background: #1E1B2E;
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: var(--section-gap);
+    }
+    .bts-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #E2D9F3;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .bts ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 10px 32px;
+    }
+    .bts li {
+      font-size: 13px;
+      color: #A89CC8;
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.55;
+    }
+    .bts li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--soft-rose);
+      font-weight: 700;
+      opacity: 0.6;
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding-top: 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-prod {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .footer-prod a {
+      color: var(--rose-dark);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .footer-prod a:hover { text-decoration: underline; }
+    .footer-right { text-align: right; }
+    .footer-version {
+      font-family: 'Poppins', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .footer-version span {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      display: block;
+      margin-top: 2px;
+      letter-spacing: 0.04em;
+    }
+    .footer-slack {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .hero { padding: 48px 20px 44px; }
+      .hero-stats { gap: 16px; }
+      .hero-stat { min-width: 110px; padding: 14px 18px; }
+      .content { padding: 40px 16px 60px; }
+      .card.highlight { flex-direction: column; gap: 16px; }
+      .bts { padding: 28px 24px; }
+      .footer { flex-direction: column; }
+      .footer-right { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── HERO ──────────────────────────────────────────────────── -->
+<header class="hero">
+  <div class="hero-inner">
+    <p class="hero-brand">MWAH CRM · Weekly Deploy Report</p>
+    <h1>This week at MWAH</h1>
+    <p class="hero-date">June 1 – June 7, 2026</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">30+</div>
+        <div class="hero-stat-label">improvements</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">18</div>
+        <div class="hero-stat-label">versions shipped</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">🛍️</div>
+        <div class="hero-stat-label">biggest area: buyer portal</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ─── MAIN CONTENT ──────────────────────────────────────────── -->
+<main class="content">
+
+  <!-- HIGHLIGHTS -->
+  <section class="section">
+    <div class="section-title">⭐ Highlights of the week</div>
+    <div class="card-grid">
+
+      <article class="card highlight">
+        <div class="card-icon">⚡</div>
+        <div class="card-body">
+          <h3>The buyer portal is faster, more reliable, and the Submit Order button actually works again</h3>
+          <p>Three big portal wins this week. A bug that sent buyers back to the shop page without creating their order is fixed — Submit Order now works every time. The pages buyers hit most (catalog, order history, checkout) are now kept warm so the first load of the day is fast instead of making buyers wait for a cold start. And if the portal hits a hiccup loading the catalog right after sign-in, it quietly retries instead of bouncing the buyer back to the login screen. All three fixes went out without any action needed from the team.</p>
+          <span class="card-tag tag-portal">Buyer portal</span>
+        </div>
+      </article>
+
+      <article class="card highlight">
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <h3>Visit Prep Export — a one-sheet cheat sheet for every store visit, ready in seconds</h3>
+          <p>Pick stores from the Store Directory, Route Planner, or today's calendar visits, choose the CRM fields you want (address, last visit, recent orders, key contact, order phone, talking points), and download a clean one-row-per-store spreadsheet as CSV, Excel, or a Google Sheet. No more hand-typing a prep sheet the night before a day of visits. You can also select one or more chains from the Chains page and export every store in those chains in one shot — including per-store briefing and chain notes columns.</p>
+          <span class="card-tag tag-feature">Field reps</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- BUYER PORTAL -->
+  <section class="section">
+    <div class="section-title">🛍️ Buyer portal</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">🏪</div>
+        <h3>Store picker is now a clear pink button — easy to spot and confirm</h3>
+        <p>The store picker on the order screen is now a bold pink button showing the store's license number, so buyers can immediately see and confirm which store they're ordering for. Tap it to switch, use the new search box to find a store by name or license, and first-time buyers get a "Start here" pointer so they don't miss it.</p>
+        <span class="card-tag tag-portal">Buyer portal</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">⏳</div>
+        <h3>Important buttons now show a loading state — no accidental double-orders</h3>
+        <p>Buttons that do real work (submitting orders, applying credits, sending approvals) now show a "◜ manifesting…" spinner while they're running and can't be tapped twice by an impatient double-click. No more wondering if a slow action is working.</p>
+        <span class="card-tag tag-portal">Buyer portal</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔑</div>
+        <h3>Capital letters in email addresses no longer block sign-in</h3>
+        <p>Buyers on Google Workspace accounts whose email has capital letters were getting locked out. Sign-in now matches accounts case-insensitively. Buyers on a weak connection also get an automatic retry and a clearer "check your connection" message instead of a hard failure.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔄</div>
+        <h3>Portal Settings changes apply live — no page refresh needed</h3>
+        <p>When you toggle a product on/off or pause ordering in Portal Settings, open buyer sessions see the change on their own without a hard refresh. Un-featured products now show as greyed "Temporarily out of stock" cards so buyers know they're coming back — instead of vanishing.</p>
+        <span class="card-tag tag-portal">Buyer portal</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📦</div>
+        <h3>Per-product choice: "out of stock" or hidden when a product is off</h3>
+        <p>When you turn a product off in Portal Settings → Featured Products, you can now choose per product whether buyers see it as a greyed "Temporarily out of stock" card, or whether it disappears from the catalog entirely — whichever works better for that product's situation.</p>
+        <span class="card-tag tag-feature">Portal settings</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🧾</div>
+        <h3>Order confirmation page is easier to read</h3>
+        <p>Darker label text that no longer washes out, cleaner section headings, and a more consistent layout throughout. The order-confirmation page after checkout got a full readability pass this week.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- PORTAL MANAGEMENT -->
+  <section class="section">
+    <div class="section-title">👥 Portal management</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">⏸️</div>
+        <h3>Master switch to pause all portal ordering instantly</h3>
+        <p>Portal Mgmt → Settings now has a "Pause all portal ordering" toggle. Flip it and buyers immediately see a message at checkout and can't submit new orders — they can still browse. Flip it back to resume. The pause is enforced server-side, so a stale buyer tab can't slip an order through.</p>
+        <span class="card-tag tag-mgmt">Portal mgmt</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔴</div>
+        <h3>Portal Mgmt updates live — no page refresh needed</h3>
+        <p>Registration requests, portal users, pending contacts, QR sign-ups, and buyer note-edits all refresh the moment something changes — including the tab badges. Counts update instantly, but an open list waits until you're done before reshuffling, so it doesn't move under your cursor while you're mid-action.</p>
+        <span class="card-tag tag-mgmt">Portal mgmt</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📊</div>
+        <h3>New Performance tab in Portal Mgmt</h3>
+        <p>A new Performance tab shows buyer-portal latency, slow and error breakdowns, and alert context — so ops can see at a glance if the portal is behaving well or something is lagging. Backend alerts now fire when tracked portal operations cross their thresholds.</p>
+        <span class="card-tag tag-mgmt">Portal mgmt</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔐</div>
+        <h3>Staff can now send password resets to buyers directly</h3>
+        <p>From the portal user's Actions panel (next to View as / Email / Disable), there's now a "Send password reset" button — no more hunting through a row menu. The reset link goes to the buyer; handy when a buyer is locked out or never got their setup link.</p>
+        <span class="card-tag tag-mgmt">Portal mgmt</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🏆</div>
+        <h3>Ended contests now automatically move to "Awaiting Winners"</h3>
+        <p>Contests that reach their end date no longer stay stuck on "Active" — they move to Awaiting Winners on their own so the status always reflects where things actually are without manual intervention.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">👁️</div>
+        <h3>View-as now loads correctly</h3>
+        <p>The admin "View as buyer" impersonation tool was hitting a permissions error on load. The custom token now carries the buyer's email claim correctly, so the portal loads the right buyer account. Writes stay blocked during view-as sessions.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ORDERS + FULFILLMENT -->
+  <section class="section">
+    <div class="section-title">📦 Orders + fulfillment</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">🔢</div>
+        <h3>Fulfillment board: PO # column is now sortable</h3>
+        <p>Click the PO # column header to sort orders by number, on top of the existing Store, Rep, Total, Units, and Cases sorts. The Store and PO # headers now also hint that they're clickable, so it's easier to line orders up alphabetically or by PO before filling in delivery dates.</p>
+        <span class="card-tag tag-feature">Fulfillment</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔔</div>
+        <h3>Buyer change and cancel requests are easier to spot on the pipeline</h3>
+        <p>Orders with a pending buyer change or cancellation request now show a prominent amber badge right on the pipeline (board and table) and appear as a "needs attention" chip on the dashboard. The Slack alert for these requests also links straight to the specific order.</p>
+        <span class="card-tag tag-feature">Orders</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔗</div>
+        <h3>GrowFlow reconciliation is now reliable as volume grows</h3>
+        <p>The reconciliation engine now recognizes GrowFlow's real "closed" transfer stage (instead of a generic placeholder), and the daily fetch no longer has a hard cap at 200 transfers — so completed deliveries reconcile reliably as order volume increases. The Reconciliation tab also shows a "Last scheduled sync" line so a healthy sync that found nothing new isn't mistaken for a broken one.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">☎️</div>
+        <h3>Order Phone and Main Order Contact now live on the store</h3>
+        <p>Store Detail's Delivery &amp; Orders card now shows the store's designated order phone number and main order contact, both editable inline. These live on the store itself — so a delivery contact's personal number isn't overwritten every time a new PO comes in.</p>
+        <span class="card-tag tag-feature">Store detail</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- DASHBOARD + CRM -->
+  <section class="section">
+    <div class="section-title">📱 Dashboard + CRM</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">👋</div>
+        <h3>Dashboard greeting has more personality</h3>
+        <p>The welcome line now changes with the time of day (including late-night and early-morning), mixes up the wording each time you load it, and uses your first name. No more staring at the same "Good afternoon" every visit.</p>
+        <span class="card-tag tag-feature">Dashboard</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📈</div>
+        <h3>Store Coverage now tracks self-ordering stores (VMI)</h3>
+        <p>The Store Coverage card on the dashboard has replaced the untouched-store count with active VMI stores — stores that placed their own order through the portal this month. Better signal for how much of the book is self-sufficient vs. needing a touch.</p>
+        <span class="card-tag tag-feature">Dashboard</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔗</div>
+        <h3>Chains: "Not Ordering" column replaces the confusing "Open" count</h3>
+        <p>The Chains table now shows how many stores in each chain haven't placed an order yet — labeled "Not Ordering" instead of "Open," which was an internal count that was nearly always zero. Much clearer at a glance.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🗂️</div>
+        <h3>Admin panel is tidier — sub-tabs for Stores and Logs</h3>
+        <p>The four store-admin tabs (Audit / Enrich / Deleted / Merge) now live under a single Stores tab with an inner sub-tab strip. Same for the four log tabs (License Change Log / Chain Audit Log / Audit Log / Errors). Fewer top-level tabs, no more two-row wrap. The Team Members list also shows each person's last login at a glance and expands on click for full details.</p>
+        <span class="card-tag tag-mgmt">Admin</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🌙</div>
+        <h3>Dark mode polish across several surfaces</h3>
+        <p>The "New version available" banner now has a pink outline and glow so it stands out instead of blending into the dark background. The bulk-action bar (selecting stores) and several tooltips also now have clear outlines so they read as distinct surfaces in dark mode.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- BEHIND THE SCENES -->
+  <section class="section bts">
+    <div class="bts-title">⚙️ Behind the scenes</div>
+    <ul>
+      <li>Analytics, commissions, leaderboards, and BigQuery rollups now bucket days on Pacific time instead of UTC — a sale placed at 5 PM PT now lands on the right calendar day (and the right month at month-end boundaries).</li>
+      <li>Portal product and order data now flows through server-side callables with explicit field allowlists — raw CRM documents are no longer directly readable by buyer sessions.</li>
+      <li>Duplicate buyer detection on registration: when someone signs up with a different email than their existing record, the system flags it for review instead of silently creating a second contact.</li>
+      <li>"Match by name" mode in Find Duplicates catches same-person contacts who share no email or phone. Merging a delivery contact now also preserves its delivery tag.</li>
+      <li>BigQuery views hardened: store health and metrics views now join on the immutable doc ID (license-renewed stores no longer drop out); the pipeline view excludes samples to match the canonical metric definition.</li>
+      <li>Firestore rules tightened across notification, presence, feedback, credit-audit, and admin-snooze payloads — plus a full regression test suite over all the new rules.</li>
+      <li>Portal transactional emails now retry Resend's rate limit automatically with jittered backoff — burst sends during busy order periods no longer silently drop messages.</li>
+      <li>GrowFlow API sync now retries automatically on brief server-side hiccups, shows a clear error message if it still can't connect, and the 200-transfer daily cap was removed so reconciliation keeps up as volume grows.</li>
+      <li>Daily analytics snapshot no longer counts the internal QA test stores — the store-health prospect count, total-store count, and month-to-date activity totals now match the BigQuery views and the rest of the analytics stack.</li>
+      <li>Unused voice-memo mic button removed from Quick Log — it was never wired up and only ever showed an error when tapped.</li>
+    </ul>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-prod">
+      Production: <a href="https://app.gimmemwah.com">app.gimmemwah.com</a> ·
+      Buyer portal: <a href="https://buy.gimmemwah.com">buy.gimmemwah.com</a><br>
+      Questions? Drop them in <strong>#all-mwah</strong> on Slack.
+    </div>
+    <div class="footer-right">
+      <div class="footer-version">v93.52<span>latest deployed version</span></div>
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>

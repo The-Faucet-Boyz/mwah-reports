@@ -1,0 +1,501 @@
+<!doctype html>
+<!--
+  Ops weekly recap template — "What shipped on Ops".
+  Self-contained, no build step (it is hosted raw via raw.githack from the
+  public mwah-reports repo). Theme = the LOCKED Chronicle design system
+  (warm-paper canvas + one blue + indigo night band; Fraunces display +
+  Hanken Grotesk body). Token values are inlined ON PURPOSE — this file lives
+  OUTSIDE the app, so it cannot use the Tailwind token classes; the hex values
+  below mirror src/index.css exactly. Keep them in sync if the theme changes.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ops — Week of June 22–28, 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        /* Chronicle tokens (mirror src/index.css) */
+        --canvas-soft: #f6f5f4; /* warm page */
+        --surface: #ffffff; /* cards */
+        --hairline: #e6e6e6;
+        --ink: #0a0a0a;
+        --ink-secondary: #31302e;
+        --ink-muted: #615d59;
+        --ink-faint: #a39e98;
+        --primary: #0075de; /* the one structural accent */
+        --primary-active: #005bab;
+        --secondary: #213183; /* the single indigo night hero band */
+        /* decorative accents — illustration only, never a CTA */
+        --accent-sky: #62aef0;
+        --accent-purple: #d6b6f6;
+        --accent-teal: #2a9d99;
+        --accent-green: #1aae39;
+        --accent-orange: #dd5b00;
+        --accent-pink: #ff64c8;
+        --section-gap: 52px;
+        --card-gap: 18px;
+      }
+
+      body {
+        font-family:
+          'Hanken Grotesk',
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          sans-serif;
+        background: var(--canvas-soft);
+        color: var(--ink);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      .tnum {
+        font-variant-numeric: tabular-nums;
+      }
+
+      /* ── HERO (indigo night band — single use) ──────────────── */
+      .hero {
+        background: var(--secondary);
+        color: #fff;
+        padding: 64px 32px 56px;
+        text-align: center;
+      }
+      .hero-eyebrow {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        opacity: 0.7;
+        margin-bottom: 14px;
+      }
+      .hero h1 {
+        font-family: 'Fraunces', Georgia, serif;
+        font-weight: 700;
+        font-size: 44px;
+        line-height: 1.08;
+        letter-spacing: -1.2px;
+        max-width: 760px;
+        margin: 0 auto;
+      }
+      .hero-sub {
+        margin: 16px auto 0;
+        max-width: 560px;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.82);
+      }
+      .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 36px;
+      }
+      .hero-stat {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 14px;
+        padding: 16px 22px;
+        min-width: 130px;
+      }
+      .hero-stat-num {
+        font-family: 'Fraunces', Georgia, serif;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 1;
+      }
+      .hero-stat-label {
+        font-size: 12.5px;
+        color: rgba(255, 255, 255, 0.72);
+        margin-top: 7px;
+      }
+
+      /* ── LAYOUT ─────────────────────────────────────────────── */
+      .content {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 56px 24px 72px;
+      }
+      .section {
+        margin-bottom: var(--section-gap);
+      }
+      .section-title {
+        font-family: 'Fraunces', Georgia, serif;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        color: var(--ink);
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .section-note {
+        color: var(--ink-muted);
+        font-size: 14.5px;
+        margin-bottom: 20px;
+      }
+      .section-rule {
+        height: 1px;
+        background: var(--hairline);
+        margin-bottom: 22px;
+      }
+
+      /* ── CARDS ──────────────────────────────────────────────── */
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: var(--card-gap);
+      }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--hairline);
+        border-radius: 14px;
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+      }
+      .card-icon {
+        font-size: 24px;
+        line-height: 1;
+      }
+      .card h3 {
+        font-family: 'Hanken Grotesk', sans-serif;
+        font-size: 15.5px;
+        font-weight: 600;
+        line-height: 1.34;
+        color: var(--ink);
+        letter-spacing: -0.1px;
+      }
+      .card p {
+        font-size: 14px;
+        color: var(--ink-secondary);
+        line-height: 1.6;
+        flex: 1;
+      }
+      .card-tag {
+        align-self: flex-start;
+        margin-top: 2px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--ink-muted);
+        background: var(--canvas-soft);
+        border: 1px solid var(--hairline);
+        padding: 3px 9px;
+        border-radius: 999px;
+      }
+
+      /* highlight card — one primary-tint accent for the lead items */
+      .card.lead {
+        border-color: rgba(0, 117, 222, 0.28);
+        background: rgba(0, 117, 222, 0.04);
+      }
+
+      /* ── BEHIND THE SCENES (muted, technical) ───────────────── */
+      .bts {
+        background: var(--surface);
+        border: 1px solid var(--hairline);
+        border-radius: 14px;
+        padding: 26px 28px;
+      }
+      .bts-title {
+        font-family: 'Fraunces', Georgia, serif;
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+      .bts ul {
+        margin: 0;
+        padding-left: 20px;
+      }
+      .bts li {
+        font-size: 13.5px;
+        color: var(--ink-muted);
+        line-height: 1.7;
+        margin-bottom: 6px;
+      }
+
+      /* ── FOOTER ─────────────────────────────────────────────── */
+      .footer {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 28px 24px 56px;
+        border-top: 1px solid var(--hairline);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
+        font-size: 13.5px;
+        color: var(--ink-muted);
+      }
+      .footer a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+      .footer a:hover {
+        color: var(--primary-active);
+        text-decoration: underline;
+      }
+
+      @media (max-width: 560px) {
+        .hero h1 {
+          font-size: 32px;
+        }
+        .hero-stat {
+          min-width: 108px;
+          padding: 13px 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ── HERO ────────────────────────────────────────────────── -->
+    <header class="hero">
+      <div class="hero-eyebrow">Chronicle · Ops Platform</div>
+      <h1>Invoices, sync, and supply chain — Chronicle's biggest week yet</h1>
+      <p class="hero-sub">Email invoice intake goes live, California data starts syncing, and a new component catalog connects supply chain to product costs.</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num tnum">18</div>
+          <div class="hero-stat-label">improvements shipped</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num tnum">5</div>
+          <div class="hero-stat-label">areas touched</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">Invoices</div>
+          <div class="hero-stat-label">biggest area</div>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- ══ HIGHLIGHTS ════════════════════════════════════════════ -->
+      <section class="section">
+        <div class="section-title">⭐ Three things that changed how the team works</div>
+        <div class="section-note">The biggest user-facing wins of the week.</div>
+        <div class="section-rule"></div>
+        <div class="card-grid">
+
+          <article class="card lead">
+            <div class="card-icon">📬</div>
+            <h3>Forward an invoice email — it shows up in the review queue automatically</h3>
+            <p>The email intake pipeline is now live. Vendors send invoices to a dedicated address; Chronicle picks them up, extracts the line items, and drops a draft into the review queue with a Slack notification. The team confirms with one click — no more manual entry.</p>
+            <span class="card-tag">Invoices</span>
+          </article>
+
+          <article class="card lead">
+            <div class="card-icon">📦</div>
+            <h3>Component SKU catalog is open for business</h3>
+            <p>A new catalog tracks the individual components and materials that go into finished products — packaging, inserts, hardware, and so on. As invoice actuals come in, costs roll up to the component level automatically, connecting supply chain to product costing.</p>
+            <span class="card-tag">Supply Chain</span>
+          </article>
+
+          <article class="card lead">
+            <div class="card-icon">🌎</div>
+            <h3>California orders and vendor inventory are now syncing</h3>
+            <p>A new state integration brings California distributor orders into Chronicle alongside the existing WA data. Vendor-managed inventory (VMI) is mirrored in the same sync, so the team can see what's on consignment and what's been pulled through — in one place.</p>
+            <span class="card-tag">Integrations</span>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ══ INVOICES & EXPENSES ═══════════════════════════════════ -->
+      <section class="section">
+        <div class="section-title">🧾 Invoice review got a lot more powerful</div>
+        <div class="section-note">Seven improvements to how invoices are captured, reviewed, and confirmed this week.</div>
+        <div class="section-rule"></div>
+        <div class="card-grid">
+
+          <article class="card">
+            <div class="card-icon">💬</div>
+            <h3>Confirm invoices right from the Slack card</h3>
+            <p>When an invoice arrives, a Slack card lets the team categorize, confirm, or reject it without touching the app. A dropdown right in the card picks the operational category (utilities, supplies, packaging, etc.) before confirming.</p>
+            <span class="card-tag">Invoices</span>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">✏️</div>
+            <h3>Reviewers can add, remove, or edit any line item</h3>
+            <p>The review screen is fully editable now. Add a missing line, remove a duplicate, or correct an amount — all before hitting Confirm. Line amounts and sub-cent unit prices are supported.</p>
+            <span class="card-tag">Invoices</span>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">💳</div>
+            <h3>Payment-processing fees tracked separately</h3>
+            <p>If a distributor charges a card processing fee on top of the order total, it now appears as its own line in Chronicle — so the cost record reflects what was actually paid.</p>
+            <span class="card-tag">Invoices</span>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🔢</div>
+            <h3>Unit prices shown at full precision</h3>
+            <p>Per-unit prices on invoice line items now display four decimal places, so high-volume items where fractions of a cent matter are legible and accurate in the review screen.</p>
+            <span class="card-tag">Invoices</span>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🗂️</div>
+            <h3>Source document visible during review</h3>
+            <p>The original invoice PDF or image now appears alongside the extracted data on the draft review screen — so reviewers can compare the AI's read against the source in a single view without switching tabs.</p>
+            <span class="card-tag">Invoices</span>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🏷️</div>
+            <h3>Smart category pre-fill on every invoice</h3>
+            <p>Chronicle now guesses the right operational category for each invoice based on the vendor and line descriptions. The guess pre-fills the dropdown so confirmation is usually one click, but the reviewer can always override.</p>
+            <span class="card-tag">Invoices</span>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📥</div>
+            <h3>Inbox panel shows all email-sourced invoices</h3>
+            <p>A new Inbox panel on the Invoices page lists every invoice that arrived by email — including ones flagged for a second look (unknown sender, missing attachment, etc.) — so nothing slips through.</p>
+            <span class="card-tag">Invoices</span>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ══ MONEY & PROFIT ════════════════════════════════════════ -->
+      <section class="section">
+        <div class="section-title">💰 Store credits are now visible in Chronicle</div>
+        <div class="section-note">New dashboard added this week.</div>
+        <div class="section-rule"></div>
+        <div class="card-grid">
+
+          <article class="card">
+            <div class="card-icon">🏪</div>
+            <h3>Store credit dashboard — by account and over time</h3>
+            <p>A new view shows how much store credit each account is carrying, with a trend chart so the team can see credit balances building up or being redeemed over time.</p>
+            <span class="card-tag">Credits</span>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ══ DASHBOARDS & REPORTS ══════════════════════════════════ -->
+      <section class="section">
+        <div class="section-title">📊 Spend chart now shows the full picture</div>
+        <div class="section-note">One chart improvement this week.</div>
+        <div class="section-rule"></div>
+        <div class="card-grid">
+
+          <article class="card">
+            <div class="card-icon">📈</div>
+            <h3>Payment-processing fees included in the spend breakdown</h3>
+            <p>Processing fees charged on distributor orders are now folded into the spend chart alongside invoices and expenses, so the chart reflects what was actually spent — not just the face-value order amounts.</p>
+            <span class="card-tag">Spend</span>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ══ NAVIGATION & EXPERIENCE ══════════════════════════════ -->
+      <section class="section">
+        <div class="section-title">🧭 Slack cards now link straight into the app</div>
+        <div class="section-note">Workflow shortcut added this week.</div>
+        <div class="section-rule"></div>
+        <div class="card-grid">
+
+          <article class="card">
+            <div class="card-icon">🔗</div>
+            <h3>"Open in Ops" takes you straight to the invoice</h3>
+            <p>Slack invoice cards now include a deep link that opens the exact draft or recorded invoice in Chronicle — no hunting through the review queue. Works for both pending drafts and already-confirmed records.</p>
+            <span class="card-tag">Navigation</span>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ══ FIXES & POLISH ════════════════════════════════════════ -->
+      <section class="section">
+        <div class="section-title">🐞 Fixes and polish</div>
+        <div class="section-note">Five things that were quietly wrong and are now right.</div>
+        <div class="section-rule"></div>
+        <div class="card-grid">
+
+          <article class="card">
+            <div class="card-icon">📅</div>
+            <h3>Spend chart month grouping was broken — fixed</h3>
+            <p>An invalid date format was causing some expense and invoice entries to land in a catch-all bucket instead of their correct month. The chart now groups by the right period.</p>
+            <span class="card-tag">Fix</span>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🚚</div>
+            <h3>Shipping rows no longer appear as line items</h3>
+            <p>When AI extracted invoices with embedded shipping or freight rows in the line-item table, those rows were landing as regular line items. They now correctly roll into the shipping total.</p>
+            <span class="card-tag">Fix</span>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📋</div>
+            <h3>Email invoices now show in the "To review" queue</h3>
+            <p>Drafts created from incoming emails weren't appearing in the review queue — only uploaded invoices were. Both sources now show correctly.</p>
+            <span class="card-tag">Fix</span>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">⚠️</div>
+            <h3>Invoice confirmation errors are specific now</h3>
+            <p>When a confirm fails validation, the app and Slack both now show the actual reason — instead of a generic "something went wrong" — so the reviewer knows exactly what to fix.</p>
+            <span class="card-tag">Fix</span>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">👥</div>
+            <h3>Owners can manage team access again</h3>
+            <p>A permissions gap was blocking active owners from adding or removing team members. Fixed — user management works as expected for anyone with owner access.</p>
+            <span class="card-tag">Fix</span>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ══ BEHIND THE SCENES ═════════════════════════════════════ -->
+      <section class="section">
+        <div class="bts">
+          <div class="bts-title">⚙️ Behind the scenes</div>
+          <ul>
+            <li>Firestore security rules extended and locked for the new email receipts store</li>
+            <li>Slack invoice interactivity wired end-to-end (bot → card → confirm → record) with secret management in production</li>
+            <li>General reliability hardening across multiple surfaces — error surfaces, edge cases, and permissions gaps closed</li>
+            <li>California state adapter architecture follows the same pluggable pattern as WA — a new state is a config + adapter, not a new codebase</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ── FOOTER ──────────────────────────────────────────────── -->
+    <footer class="footer">
+      <div>
+        Ops Platform (Chronicle) — what landed this week.<br />Questions? Drop them in
+        <strong>#all-mwah</strong> on Slack.
+      </div>
+      <div class="tnum">Week of June 22–28, 2026</div>
+    </footer>
+  </body>
+</html>

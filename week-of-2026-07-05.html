@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MWAH — Week of June 29 – July 5, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --hero-rose:   #FBBAD4;
+      --hero-lav:    #C5B8EF;
+      --soft-rose:   #F8A0C9;
+      --lavender:    #BDB0EA;
+      --rose-dark:   #C2497A;
+      --lav-dark:    #7055B8;
+      --tag-portal-bg:  #FDDDE9;
+      --tag-portal-tx:  #A83060;
+      --tag-mgmt-bg:    #EDE5F7;
+      --tag-mgmt-tx:    #6E3A9C;
+      --tag-feature-bg: #D1FAE5;
+      --tag-feature-tx: #065F46;
+      --tag-fix-bg:     #FEF3C7;
+      --tag-fix-tx:     #92400E;
+      --tag-infra-bg:   #DBEAFE;
+      --tag-infra-tx:   #1D4ED8;
+      --tag-web-bg:     #FFE4D6;
+      --tag-web-tx:     #B24A1B;
+      --tag-design-bg:  #F0EAFF;
+      --tag-design-tx:  #5B21B6;
+      --page-bg:     #FAFAFA;
+      --card-bg:     #FFFFFF;
+      --card-radius: 16px;
+      --section-gap: 48px;
+      --card-gap:    20px;
+      --text-primary: #18181B;
+      --text-secondary: #52525B;
+      --text-muted:  #A1A1AA;
+      --border:      #E4E4E7;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--page-bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HERO ─────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(140deg, #FBBAD4 0%, #EDD8F5 45%, #C5B8EF 100%);
+      padding: 64px 32px 56px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 20% 80%, rgba(255,255,255,0.35) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.25) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; max-width: 760px; margin: 0 auto; }
+    .hero-brand {
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rose-dark);
+      margin-bottom: 20px;
+      opacity: 0.85;
+    }
+    .hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(28px, 5vw, 46px);
+      font-weight: 800;
+      color: #1A0A24;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .hero-date {
+      font-family: 'Poppins', sans-serif;
+      font-size: 17px;
+      font-weight: 500;
+      color: #3D1A54;
+      opacity: 0.75;
+      margin-bottom: 40px;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .hero-stat {
+      background: rgba(255,255,255,0.65);
+      backdrop-filter: blur(8px);
+      border-radius: 14px;
+      padding: 18px 28px;
+      min-width: 140px;
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+    .hero-stat-num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--rose-dark);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .hero-stat-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #4A2070;
+      opacity: 0.8;
+    }
+
+    /* ─── LAYOUT ────────────────────────────────────────────── */
+    .content { max-width: 1080px; margin: 0 auto; padding: 56px 24px 80px; }
+
+    .section { margin-bottom: var(--section-gap); }
+    .section-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ─── CARDS ─────────────────────────────────────────────── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--card-gap);
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .card-icon { font-size: 28px; line-height: 1; }
+    .card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+    .card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .card-tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 99px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-top: 4px;
+      align-self: flex-start;
+    }
+
+    /* Highlight — full width, gradient bg */
+    .card.highlight {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, #FFF0F7 0%, #F5EEFF 100%);
+      border: 1.5px solid #EDD8F5;
+      padding: 32px 36px;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 24px;
+    }
+    .card.highlight .card-icon { font-size: 40px; padding-top: 4px; flex-shrink: 0; }
+    .card.highlight .card-body { flex: 1; }
+    .card.highlight h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #1A0A24;
+    }
+    .card.highlight p { font-size: 15px; }
+    .card.highlight .card-tag { margin-top: 12px; }
+
+    /* Tag colors */
+    .tag-portal  { background: var(--tag-portal-bg);  color: var(--tag-portal-tx); }
+    .tag-mgmt    { background: var(--tag-mgmt-bg);    color: var(--tag-mgmt-tx); }
+    .tag-feature { background: var(--tag-feature-bg); color: var(--tag-feature-tx); }
+    .tag-fix     { background: var(--tag-fix-bg);     color: var(--tag-fix-tx); }
+    .tag-infra   { background: var(--tag-infra-bg);   color: var(--tag-infra-tx); }
+    .tag-web     { background: var(--tag-web-bg);     color: var(--tag-web-tx); }
+    .tag-design  { background: var(--tag-design-bg);  color: var(--tag-design-tx); }
+
+    /* ─── BEHIND THE SCENES ─────────────────────────────────── */
+    .bts {
+      background: #1E1B2E;
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: var(--section-gap);
+    }
+    .bts-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #E2D9F3;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .bts ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 10px 32px;
+    }
+    .bts li {
+      font-size: 13px;
+      color: #A89CC8;
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.55;
+    }
+    .bts li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--soft-rose);
+      font-weight: 700;
+      opacity: 0.6;
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding-top: 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-prod {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .footer-prod a {
+      color: var(--rose-dark);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .footer-prod a:hover { text-decoration: underline; }
+    .footer-right { text-align: right; }
+    .footer-version {
+      font-family: 'Poppins', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .footer-version span {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      display: block;
+      margin-top: 2px;
+      letter-spacing: 0.04em;
+    }
+    .footer-slack {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .hero { padding: 48px 20px 44px; }
+      .hero-stats { gap: 16px; }
+      .hero-stat { min-width: 110px; padding: 14px 18px; }
+      .content { padding: 40px 16px 60px; }
+      .card.highlight { flex-direction: column; gap: 16px; }
+      .bts { padding: 28px 24px; }
+      .footer { flex-direction: column; }
+      .footer-right { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── HERO ──────────────────────────────────────────────────── -->
+<header class="hero">
+  <div class="hero-inner">
+    <p class="hero-brand">MWAH CRM · Weekly Deploy Report</p>
+    <h1>This week at MWAH</h1>
+    <p class="hero-date">June 29 – July 5, 2026</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">40+</div>
+        <div class="hero-stat-label">improvements</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">12</div>
+        <div class="hero-stat-label">versions shipped</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">🎛️</div>
+        <div class="hero-stat-label">biggest area: dashboard makeover</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ─── MAIN CONTENT ──────────────────────────────────────────── -->
+<main class="content">
+
+  <!-- HIGHLIGHTS -->
+  <section class="section">
+    <div class="section-title">⭐ Highlights of the week</div>
+    <div class="card-grid">
+
+      <article class="card highlight">
+        <div class="card-icon">🎛️</div>
+        <div class="card-body">
+          <h3>Make the dashboard yours — drag, pin, save, and switch between custom views</h3>
+          <p>Your dashboard is now fully customizable. A new Customize button lets you drag widgets into any order, pin the ones you care about, hide the ones you don't, and pull in more from a widget library. When you get your layout right, save it with a name — "Monday pack prep," "Month-end review," whatever — and switch between saved views from a new Views menu. Your setup follows you across devices and updates the moment a new order comes in.</p>
+          <span class="card-tag tag-feature">Dashboard</span>
+        </div>
+      </article>
+
+      <article class="card highlight">
+        <div class="card-icon">🔄</div>
+        <div class="card-body">
+          <h3>VMI is end-to-end — proposals, auto-approval, warehouse stock, buyer self-service, and chain group orders all live</h3>
+          <p>This week completed the full VMI loop. Reps can build a reorder proposal from the Inventory page, send it with a personal note in a pre-send compose window, and let the system auto-place if the store doesn't respond in time (with a Decline link in the email for stores that don't want autopilot). Buyers manage their own settings and see their live shelf from the portal. Chains get one group email covering every low-stock location. And a new Warehouse tab shows MWAH's own GrowFlow stock — on hand, reserved, and sellable — so reps know what's available to ship before they build a proposal.</p>
+          <span class="card-tag tag-feature">VMI</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section class="section">
+    <div class="section-title">🎛️ Dashboard</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">📌</div>
+        <h3>Save named dashboard views and switch on the fly</h3>
+        <p>Save your current layout as a named view and switch between views from the Views menu — so your "start of day" setup and "end of week" setup can both exist without one overwriting the other.</p>
+        <span class="card-tag tag-feature">New feature</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">⚡</div>
+        <h3>Dashboard numbers refresh in real time</h3>
+        <p>The dashboard now updates the moment a new order comes in or an order is transferred — no page reload needed. Pipeline totals stay locked to the active pipeline even when the month rolls over.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🏷️</div>
+        <h3>Top Drivers now labels new stores clearly</h3>
+        <p>The Top Drivers widget labels its change column "MoM" and marks brand-new stores as "New" — so a big jump from zero doesn't look like a sudden surge from an existing account.</p>
+        <span class="card-tag tag-fix">Polish</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- INVENTORY + VMI -->
+  <section class="section">
+    <div class="section-title">📦 Inventory + VMI</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">🏗️</div>
+        <h3>Warehouse tab shows MWAH's own GrowFlow stock</h3>
+        <p>A new Warehouse tab on the Inventory page shows every MWAH lot in the WA warehouse — units on hand, reserved, and sellable per flavor, plus which lots are expiring soon. Only MWAH products and bulk Distillate show; other brands sharing our GrowFlow account are filtered out with a small note.</p>
+        <span class="card-tag tag-feature">New feature</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📧</div>
+        <h3>One-tap reorder emails — buyers confirm right from the inbox</h3>
+        <p>Buyers now tap "Confirm order" directly inside the proposal email and the PO is drafted without a separate review page. They can still tap "Edit this order" to adjust before confirming — the one-tap path is the shortcut, not a lock-in.</p>
+        <span class="card-tag tag-feature">VMI</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">⏱️</div>
+        <h3>Stores that don't respond get auto-placed</h3>
+        <p>VMI stores that don't reply to a reorder proposal by the deadline now have their order placed automatically. The proposal email says so up front and includes a Decline link. Stores that want to click every time can switch to "Require explicit approval" in their VMI settings.</p>
+        <span class="card-tag tag-feature">VMI</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔗</div>
+        <h3>Chain group orders: pick which locations to include</h3>
+        <p>When sending a chain's group reorder, each store now has a checkbox — you can deselect any locations you're skipping this cycle. The totals, email, and created orders all follow your selection.</p>
+        <span class="card-tag tag-feature">VMI</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📋</div>
+        <h3>Inventory loads fast at scale, reorder queue is smarter</h3>
+        <p>The Inventory page now shows the first batch of stores immediately and loads the rest as you scroll — no more slow full-page loads with 177+ stores. Stores that were just delivered are held out of the reorder queue until their stock numbers catch up, so you don't get nudged to reorder a shop that was restocked yesterday.</p>
+        <span class="card-tag tag-fix">Performance</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">❌</div>
+        <h3>Cancel an open VMI proposal</h3>
+        <p>Reps can now cancel a proposal that's out but shouldn't be — it withdraws the proposal, instantly disables the buyer's approval link, and marks the row "Cancelled" in the Proposals tab.</p>
+        <span class="card-tag tag-feature">VMI</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- BUYER PORTAL -->
+  <section class="section">
+    <div class="section-title">🛍️ Buyer portal</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">🛒</div>
+        <h3>Abandoned cart reminders go out automatically</h3>
+        <p>Buyers who save a cart in the portal but don't submit it get a friendly reminder email two days later. They can turn reminders off anytime under Account &gt; Profile.</p>
+        <span class="card-tag tag-portal">New feature</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📊</div>
+        <h3>VMI self-service: buyers manage their own settings in the portal</h3>
+        <p>VMI-enrolled stores can review and update their approval window and supply targets from the portal, and changes sync back to the CRM in real time. Stores not yet on VMI see a clear explainer and a quick way to share their register info.</p>
+        <span class="card-tag tag-portal">VMI</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- PORTAL MANAGEMENT -->
+  <section class="section">
+    <div class="section-title">👥 Portal management</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">🗂️</div>
+        <h3>Portal Mgmt is down to 5 clear tabs</h3>
+        <p>The Portal Mgmt page has been reorganized from 11 tabs into 5: Dashboard, Directory (Stores + Users), Inbox (all 5 buyer queues with counts), Health (Email + Performance), and Settings. The Abandoned Carts queue now works, the Stores search is wired up, and the whole page fits on a phone screen.</p>
+        <span class="card-tag tag-mgmt">Overhaul</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🗑️</div>
+        <h3>Abandoned Carts queue for staff</h3>
+        <p>Portal Mgmt has a new Abandoned Carts view — saved buyer carts that never became orders, with the cart snapshot, buyer contact, and estimated value. Reps can add a note or close a row with a reason; rows auto-close when the buyer orders.</p>
+        <span class="card-tag tag-mgmt">New feature</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ORDERS + FULFILLMENT -->
+  <section class="section">
+    <div class="section-title">📦 Orders + fulfillment</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">🚚</div>
+        <h3>GrowFlow delivery status is now in the PO</h3>
+        <p>The PO detail panel has a Shipping card showing the GrowFlow manifest timeline — departed, arrived, and scheduled delivery. Fulfillment rows show an "In transit" or "Arrived" chip at a glance, and managers can toggle on payment status to see which invoices are paid.</p>
+        <span class="card-tag tag-feature">New feature</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">💰</div>
+        <h3>Price Groups — track per-store deals in the CRM</h3>
+        <p>Set a per-store or per-chain deal ($/unit off, per-product overrides) under Admin › Price Groups. Orders and invoices stay at full list price, but your dashboard commission and net sales now reflect the real economics. All Orders and Fulfillment rows show a small deal badge — the rate is kept internal.</p>
+        <span class="card-tag tag-feature">New feature</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- REPORTS -->
+  <section class="section">
+    <div class="section-title">📊 Reports</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">📋</div>
+        <h3>Report Builder has a cleaner three-step layout</h3>
+        <p>Report Builder now walks you through three steps: pick what you're reporting on, narrow it down, then choose your columns. You can now build reports on Chains too, and the run button is clearly labeled "Run Report."</p>
+        <span class="card-tag tag-feature">Redesign</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- EMAIL -->
+  <section class="section">
+    <div class="section-title">📧 Email</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">📎</div>
+        <h3>Attachments now show on Store and Contact timelines</h3>
+        <p>Email attachments appear on the Contact and Store timelines — not just the inbox. Embedded images render correctly instead of breaking, and duplicate "noname" entries are gone from the attachment list so the real PDFs are easy to find and open.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔍</div>
+        <h3>Gmail-style "Show details" in the email reader</h3>
+        <p>The email reader now has a "Show details" expander (from, reply-to, to, CC, date, subject) and hover tooltips for truncated sender addresses — matching the Gmail experience reps already know.</p>
+        <span class="card-tag tag-feature">New feature</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- MOBILE -->
+  <section class="section">
+    <div class="section-title">📱 Mobile</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">👆</div>
+        <h3>Mobile touch targets, nav, and back buttons all improved</h3>
+        <p>A full mobile audit landed this week: today's tasks sit at the top of the mobile dashboard, buttons are easier to tap, Chains / All Orders / Samples are now reachable from the More menu, the back button works on Inventory and Credits, and it keeps your place in long lists.</p>
+        <span class="card-tag tag-fix">Polish</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- PUBLIC WEBSITE -->
+  <section class="section">
+    <div class="section-title">🌐 Public website — gimmemwah.com</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">🗺️</div>
+        <h3>CA store locator polish — correct names and wider search coverage</h3>
+        <p>California stores on the Find Us map now show customer-facing names (e.g. Purple Lotus instead of internal codes), and the search bounds were widened so more CA locations surface correctly on the map.</p>
+        <span class="card-tag tag-web">CA expansion</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- BEHIND THE SCENES -->
+  <section class="section bts">
+    <div class="bts-title">⚙️ Behind the scenes</div>
+    <ul>
+      <li>Fulfillment schedule cutoffs (12pm Tue/Fri → Mon–Wed / Wed–Fri cycles) are now editable in the admin panel instead of hardcoded — the schedule can be adjusted without a code change.</li>
+      <li>Admin panel was reorganized: 10 tabs (Orders/Data grouping), role definitions explained inline, data-wipe tools grouped under Reset Data, and mobile user rows expand to show Disable/Mark-internal actions.</li>
+      <li>The MCP CLI got a correctness and parity audit — stale tool descriptions, off-by-one date windows, and coverage gaps were fixed; drift guards now run in the local pre-commit hook instead of CI.</li>
+      <li>GrowFlow BQ extension instance was renamed to fit the 63-character Cloud Functions name limit — had been silently failing scheduled syncs.</li>
+      <li>VMI proposals no longer create a draft order on send — a holder waits for buyer approval, then the draft is created; no more orphan drafts from proposals nobody confirmed.</li>
+      <li>The ops-sync API gained a `/v1/growflow-inventory` endpoint and the warehouse-sync cadence became a config value so it can be tuned without a redeploy.</li>
+      <li>Automation tooling was updated: standup, mock, and ship skills were tuned; a timezone-reviewer subagent was added to catch day-bucketing issues at review time.</li>
+      <li>Team Performance scorecard was retired from the Reports menu — performance data still lives on the dashboard and Activity page, which is where managers already use it.</li>
+      <li>CA locator: Nabis pagination was fixed (orders endpoint corrected, 0-indexed pagination), so all CA stores now import across every page — not just the first.</li>
+    </ul>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-prod">
+      Production: <a href="https://app.gimmemwah.com">app.gimmemwah.com</a> ·
+      Buyer portal: <a href="https://buy.gimmemwah.com">buy.gimmemwah.com</a> ·
+      Public site: <a href="https://gimmemwah.com">gimmemwah.com</a><br>
+      Questions? Drop them in <strong>#all-mwah</strong> on Slack.
+    </div>
+    <div class="footer-right">
+      <div class="footer-version">v101.1<span>latest deployed version</span></div>
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>

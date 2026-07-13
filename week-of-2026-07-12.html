@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MWAH — Week of June 29 – July 5, 2026</title>
+  <title>MWAH — Week of July 6 – July 12, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -315,19 +315,19 @@
   <div class="hero-inner">
     <p class="hero-brand">MWAH CRM · Weekly Deploy Report</p>
     <h1>This week at MWAH</h1>
-    <p class="hero-date">June 29 – July 5, 2026</p>
+    <p class="hero-date">July 6 – July 12, 2026</p>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-num">40+</div>
+        <div class="hero-stat-num">20+</div>
         <div class="hero-stat-label">improvements</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">12</div>
+        <div class="hero-stat-num">9</div>
         <div class="hero-stat-label">versions shipped</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">🎛️</div>
-        <div class="hero-stat-label">biggest area: dashboard makeover</div>
+        <div class="hero-stat-num">🔬</div>
+        <div class="hero-stat-label">biggest area: analytics &amp; quality sweep</div>
       </div>
     </div>
   </div>
@@ -342,20 +342,20 @@
     <div class="card-grid">
 
       <article class="card highlight">
-        <div class="card-icon">🎛️</div>
+        <div class="card-icon">🚨</div>
         <div class="card-body">
-          <h3>Make the dashboard yours — drag, pin, save, and switch between custom views</h3>
-          <p>Your dashboard is now fully customizable. A new Customize button lets you drag widgets into any order, pin the ones you care about, hide the ones you don't, and pull in more from a widget library. When you get your layout right, save it with a name — "Monday pack prep," "Month-end review," whatever — and switch between saved views from a new Views menu. Your setup follows you across devices and updates the moment a new order comes in.</p>
-          <span class="card-tag tag-feature">Dashboard</span>
+          <h3>My Scorecard and Sales Coach were showing 0 for every rep since March — now fixed</h3>
+          <p>A silent bug had been zeroing out visits, calls, and emails on every rep's personal scorecard, the Team Scorecard, and the Sales Coach widget since March 2026. The numbers looked wrong but never errored, so the issue went unnoticed for over four months. This week's deep design audit caught it — the data was always there, it just wasn't being read correctly. All three surfaces now reflect actual activity.</p>
+          <span class="card-tag tag-fix">Critical fix</span>
         </div>
       </article>
 
       <article class="card highlight">
-        <div class="card-icon">🔄</div>
+        <div class="card-icon">📊</div>
         <div class="card-body">
-          <h3>VMI is end-to-end — proposals, auto-approval, warehouse stock, buyer self-service, and chain group orders all live</h3>
-          <p>This week completed the full VMI loop. Reps can build a reorder proposal from the Inventory page, send it with a personal note in a pre-send compose window, and let the system auto-place if the store doesn't respond in time (with a Decline link in the email for stores that don't want autopilot). Buyers manage their own settings and see their live shelf from the portal. Chains get one group email covering every low-stock location. And a new Warehouse tab shows MWAH's own GrowFlow stock — on hand, reserved, and sellable — so reps know what's available to ship before they build a proposal.</p>
-          <span class="card-tag tag-feature">VMI</span>
+          <h3>Insights and Trends got a full accuracy pass — labels, charts, and time windows all corrected</h3>
+          <p>A thorough audit of the Insights, Trends, and Competitor Pricing pages found and fixed several issues reps had probably just learned to work around: the "Prospect" KPI now clearly says "Never ordered · has buying power" so it doesn't get confused with the broader Store Health label; the sell-through trend chart no longer shows a trendline through the current incomplete day; month-over-month comparison shows "—" instead of a fake $0 when history doesn't go back far enough; and a dead "vs prior period" checkbox that never did anything was removed. The pages now say what they mean.</p>
+          <span class="card-tag tag-fix">Accuracy</span>
         </div>
       </article>
 
@@ -368,74 +368,53 @@
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">📌</div>
-        <h3>Save named dashboard views and switch on the fly</h3>
-        <p>Save your current layout as a named view and switch between views from the Views menu — so your "start of day" setup and "end of week" setup can both exist without one overwriting the other.</p>
-        <span class="card-tag tag-feature">New feature</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">⚡</div>
-        <h3>Dashboard numbers refresh in real time</h3>
-        <p>The dashboard now updates the moment a new order comes in or an order is transferred — no page reload needed. Pipeline totals stay locked to the active pipeline even when the month rolls over.</p>
+        <div class="card-icon">📈</div>
+        <h3>Revenue trend bars look right again</h3>
+        <p>The projected current-month bar was sometimes rendering shorter than smaller prior months — it looked like revenue was declining when it wasn't. Fixed so the bar accurately shows how the month is tracking relative to history.</p>
         <span class="card-tag tag-fix">Bug fix</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🏷️</div>
-        <h3>Top Drivers now labels new stores clearly</h3>
-        <p>The Top Drivers widget labels its change column "MoM" and marks brand-new stores as "New" — so a big jump from zero doesn't look like a sudden surge from an existing account.</p>
-        <span class="card-tag tag-fix">Polish</span>
+        <div class="card-icon">🎯</div>
+        <h3>KPI cards are easier to read at a glance</h3>
+        <p>KPI icons are now color-coded, foot metrics are in bold black, and delta indicators (the up/down arrows) now light up at a 1% change instead of 5% — so small meaningful moves register earlier.</p>
+        <span class="card-tag tag-feature">Polish</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔔</div>
+        <h3>Portal and Inventory badges show the moment you log in</h3>
+        <p>The notification badges on the Portal Mgmt and Inventory sidebar links now load at startup, so you can see pending items and attention alerts before you visit those pages. People QR sign-up counts also appear on the People nav icon.</p>
+        <span class="card-tag tag-feature">New feature</span>
       </article>
 
     </div>
   </section>
 
-  <!-- INVENTORY + VMI -->
+  <!-- ANALYTICS -->
   <section class="section">
-    <div class="section-title">📦 Inventory + VMI</div>
+    <div class="section-title">📊 Analytics</div>
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">🏗️</div>
-        <h3>Warehouse tab shows MWAH's own GrowFlow stock</h3>
-        <p>A new Warehouse tab on the Inventory page shows every MWAH lot in the WA warehouse — units on hand, reserved, and sellable per flavor, plus which lots are expiring soon. Only MWAH products and bulk Distillate show; other brands sharing our GrowFlow account are filtered out with a small note.</p>
-        <span class="card-tag tag-feature">New feature</span>
+        <div class="card-icon">🧪</div>
+        <h3>Samples Given Out chart no longer double-counts</h3>
+        <p>The Samples chart was counting samples twice — once from CRM activity logs and once from GrowFlow transaction data. It now counts only CRM-logged samples, which is the accurate number your reps actually recorded.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">📧</div>
-        <h3>One-tap reorder emails — buyers confirm right from the inbox</h3>
-        <p>Buyers now tap "Confirm order" directly inside the proposal email and the PO is drafted without a separate review page. They can still tap "Edit this order" to adjust before confirming — the one-tap path is the shortcut, not a lock-in.</p>
-        <span class="card-tag tag-feature">VMI</span>
+        <div class="card-icon">📉</div>
+        <h3>Sell-through trend is honest about the current period</h3>
+        <p>The trendline on the sell-through chart was extending through today's in-progress day, which artificially pulled the line down mid-week. It now stops at the most recent complete day so the trend reflects actual finished data.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">⏱️</div>
-        <h3>Stores that don't respond get auto-placed</h3>
-        <p>VMI stores that don't reply to a reorder proposal by the deadline now have their order placed automatically. The proposal email says so up front and includes a Decline link. Stores that want to click every time can switch to "Require explicit approval" in their VMI settings.</p>
-        <span class="card-tag tag-feature">VMI</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">🔗</div>
-        <h3>Chain group orders: pick which locations to include</h3>
-        <p>When sending a chain's group reorder, each store now has a checkbox — you can deselect any locations you're skipping this cycle. The totals, email, and created orders all follow your selection.</p>
-        <span class="card-tag tag-feature">VMI</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">📋</div>
-        <h3>Inventory loads fast at scale, reorder queue is smarter</h3>
-        <p>The Inventory page now shows the first batch of stores immediately and loads the rest as you scroll — no more slow full-page loads with 177+ stores. Stores that were just delivered are held out of the reorder queue until their stock numbers catch up, so you don't get nudged to reorder a shop that was restocked yesterday.</p>
-        <span class="card-tag tag-fix">Performance</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">❌</div>
-        <h3>Cancel an open VMI proposal</h3>
-        <p>Reps can now cancel a proposal that's out but shouldn't be — it withdraws the proposal, instantly disables the buyer's approval link, and marks the row "Cancelled" in the Proposals tab.</p>
-        <span class="card-tag tag-feature">VMI</span>
+        <div class="card-icon">🏪</div>
+        <h3>Chain Locations status is now accurate</h3>
+        <p>The Status column in a chain's Locations tab was showing "Active" for every store regardless of actual buying recency. It now derives the right status — buying, overdue, or new — the same way the rest of the CRM does.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
       </article>
 
     </div>
@@ -447,17 +426,10 @@
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">🛒</div>
-        <h3>Abandoned cart reminders go out automatically</h3>
-        <p>Buyers who save a cart in the portal but don't submit it get a friendly reminder email two days later. They can turn reminders off anytime under Account &gt; Profile.</p>
+        <div class="card-icon">📡</div>
+        <h3>Portal analytics pilot — understanding how buyers actually use the portal</h3>
+        <p>A privacy-first analytics pilot launched on the buyer portal this week. It tracks what buyers click on and where they drop off — no personal data, no order details — just enough signal to understand which parts of the portal work well and which need improvement. The team uses the data; buyers' privacy is protected.</p>
         <span class="card-tag tag-portal">New feature</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">📊</div>
-        <h3>VMI self-service: buyers manage their own settings in the portal</h3>
-        <p>VMI-enrolled stores can review and update their approval window and supply targets from the portal, and changes sync back to the CRM in real time. Stores not yet on VMI see a clear explainer and a quick way to share their register info.</p>
-        <span class="card-tag tag-portal">VMI</span>
       </article>
 
     </div>
@@ -469,16 +441,16 @@
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">🗂️</div>
-        <h3>Portal Mgmt is down to 5 clear tabs</h3>
-        <p>The Portal Mgmt page has been reorganized from 11 tabs into 5: Dashboard, Directory (Stores + Users), Inbox (all 5 buyer queues with counts), Health (Email + Performance), and Settings. The Abandoned Carts queue now works, the Stores search is wired up, and the whole page fits on a phone screen.</p>
-        <span class="card-tag tag-mgmt">Overhaul</span>
+        <div class="card-icon">🏷️</div>
+        <h3>Price Groups moved to the Stores tab</h3>
+        <p>Per-store deal tracking (Price Groups) now lives under the Stores tab in Admin where it makes more sense alongside store-specific settings. Dark-mode contrast on the pending buyer license panel was also fixed.</p>
+        <span class="card-tag tag-mgmt">Polish</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🗑️</div>
-        <h3>Abandoned Carts queue for staff</h3>
-        <p>Portal Mgmt has a new Abandoned Carts view — saved buyer carts that never became orders, with the cart snapshot, buyer contact, and estimated value. Reps can add a note or close a row with a reason; rows auto-close when the buyer orders.</p>
+        <div class="card-icon">🧢</div>
+        <h3>Monthly trade sample cap — now admin-configurable</h3>
+        <p>Admins can now set a company-wide monthly cap on how many trade samples go out through the portal. When the cap is reached, the portal automatically pauses sample ordering for the rest of the month. Reps handing out samples directly are not affected — only portal trade samples count.</p>
         <span class="card-tag tag-mgmt">New feature</span>
       </article>
 
@@ -491,68 +463,45 @@
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">🚚</div>
-        <h3>GrowFlow delivery status is now in the PO</h3>
-        <p>The PO detail panel has a Shipping card showing the GrowFlow manifest timeline — departed, arrived, and scheduled delivery. Fulfillment rows show an "In transit" or "Arrived" chip at a glance, and managers can toggle on payment status to see which invoices are paid.</p>
-        <span class="card-tag tag-feature">New feature</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">💰</div>
-        <h3>Price Groups — track per-store deals in the CRM</h3>
-        <p>Set a per-store or per-chain deal ($/unit off, per-product overrides) under Admin › Price Groups. Orders and invoices stay at full list price, but your dashboard commission and net sales now reflect the real economics. All Orders and Fulfillment rows show a small deal badge — the rate is kept internal.</p>
-        <span class="card-tag tag-feature">New feature</span>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- REPORTS -->
-  <section class="section">
-    <div class="section-title">📊 Reports</div>
-    <div class="card-grid">
-
-      <article class="card">
-        <div class="card-icon">📋</div>
-        <h3>Report Builder has a cleaner three-step layout</h3>
-        <p>Report Builder now walks you through three steps: pick what you're reporting on, narrow it down, then choose your columns. You can now build reports on Chains too, and the run button is clearly labeled "Run Report."</p>
-        <span class="card-tag tag-feature">Redesign</span>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- EMAIL -->
-  <section class="section">
-    <div class="section-title">📧 Email</div>
-    <div class="card-grid">
-
-      <article class="card">
-        <div class="card-icon">📎</div>
-        <h3>Attachments now show on Store and Contact timelines</h3>
-        <p>Email attachments appear on the Contact and Store timelines — not just the inbox. Embedded images render correctly instead of breaking, and duplicate "noname" entries are gone from the attachment list so the real PDFs are easy to find and open.</p>
+        <div class="card-icon">🔍</div>
+        <h3>Contact merge tool is safer and more transparent</h3>
+        <p>Two bugs were fixed in the Find Duplicates merge flow: an excluded contact could previously slip through and win the merge (now blocked at the selection step), and errors during merge were silently swallowed — you'd see a success toast even if part of the merge failed. Failures are now surfaced clearly.</p>
         <span class="card-tag tag-fix">Bug fix</span>
       </article>
 
-      <article class="card">
-        <div class="card-icon">🔍</div>
-        <h3>Gmail-style "Show details" in the email reader</h3>
-        <p>The email reader now has a "Show details" expander (from, reply-to, to, CC, date, subject) and hover tooltips for truncated sender addresses — matching the Gmail experience reps already know.</p>
-        <span class="card-tag tag-feature">New feature</span>
-      </article>
-
     </div>
   </section>
 
-  <!-- MOBILE -->
+  <!-- VISUAL / DESIGN -->
   <section class="section">
-    <div class="section-title">📱 Mobile</div>
+    <div class="section-title">🎨 Visual &amp; design</div>
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">👆</div>
-        <h3>Mobile touch targets, nav, and back buttons all improved</h3>
-        <p>A full mobile audit landed this week: today's tasks sit at the top of the mobile dashboard, buttons are easier to tap, Chains / All Orders / Samples are now reachable from the More menu, the back button works on Inventory and Credits, and it keeps your place in long lists.</p>
+        <div class="card-icon">🖋️</div>
+        <h3>Notification rule builder redesigned</h3>
+        <p>The admin panel's Notification Rules builder got a visual overhaul — cleaner header, grouped steps with a proper sub-text, and a preview card that shows what the rule will actually send before you save it.</p>
+        <span class="card-tag tag-design">Redesign</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">✅</div>
+        <h3>GrowFlow API Review panel is cleaner and clearer</h3>
+        <p>The reconciliation "GrowFlow API Review" tab was redesigned to use the CRM's standard visual language — blocking vs. data-quality items are now distinguished by a small status dot on the section header rather than color-coded side bars, and the layout is consistent in both light and dark mode.</p>
+        <span class="card-tag tag-design">Redesign</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🌙</div>
+        <h3>Dark mode polish across 10+ surfaces</h3>
+        <p>A sweep this week fixed dark-mode contrast, spacing, and alignment across tables, reconciliation tabs, the samples table, and several card components. The app should look consistently polished in dark mode now, not just light.</p>
+        <span class="card-tag tag-fix">Polish</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🏭</div>
+        <h3>Inventory warehouse table shows more useful columns</h3>
+        <p>The lot table in the Warehouse tab now shows Harvested date and Oldest stock instead of Expiration and Batch — the latter were always blank for MWAH goods. The layout and column alignment were also cleaned up, and the always-zero "Lots expiring" KPI was removed.</p>
         <span class="card-tag tag-fix">Polish</span>
       </article>
 
@@ -566,9 +515,16 @@
 
       <article class="card">
         <div class="card-icon">🗺️</div>
-        <h3>CA store locator polish — correct names and wider search coverage</h3>
-        <p>California stores on the Find Us map now show customer-facing names (e.g. Purple Lotus instead of internal codes), and the search bounds were widened so more CA locations surface correctly on the map.</p>
-        <span class="card-tag tag-web">CA expansion</span>
+        <h3>Find Us map and store list stay in sync as you explore</h3>
+        <p>The store list on the Find Us page now updates automatically as you pan and zoom the map — you only see the stores that are currently in view. No more scrolling through a full list when you're zoomed into a neighborhood.</p>
+        <span class="card-tag tag-web">Improvement</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📱</div>
+        <h3>Mobile locator experience improved</h3>
+        <p>Several mobile usability improvements landed on the public site: the product carousel has clearer navigation cues, the locator is smoother to scroll on small screens, and the overall mobile feel is tighter.</p>
+        <span class="card-tag tag-web">Polish</span>
       </article>
 
     </div>
@@ -578,15 +534,16 @@
   <section class="section bts">
     <div class="bts-title">⚙️ Behind the scenes</div>
     <ul>
-      <li>Fulfillment schedule cutoffs (12pm Tue/Fri → Mon–Wed / Wed–Fri cycles) are now editable in the admin panel instead of hardcoded — the schedule can be adjusted without a code change.</li>
-      <li>Admin panel was reorganized: 10 tabs (Orders/Data grouping), role definitions explained inline, data-wipe tools grouped under Reset Data, and mobile user rows expand to show Disable/Mark-internal actions.</li>
-      <li>The MCP CLI got a correctness and parity audit — stale tool descriptions, off-by-one date windows, and coverage gaps were fixed; drift guards now run in the local pre-commit hook instead of CI.</li>
-      <li>GrowFlow BQ extension instance was renamed to fit the 63-character Cloud Functions name limit — had been silently failing scheduled syncs.</li>
-      <li>VMI proposals no longer create a draft order on send — a holder waits for buyer approval, then the draft is created; no more orphan drafts from proposals nobody confirmed.</li>
-      <li>The ops-sync API gained a `/v1/growflow-inventory` endpoint and the warehouse-sync cadence became a config value so it can be tuned without a redeploy.</li>
-      <li>Automation tooling was updated: standup, mock, and ship skills were tuned; a timezone-reviewer subagent was added to catch day-bucketing issues at review time.</li>
-      <li>Team Performance scorecard was retired from the Reports menu — performance data still lives on the dashboard and Activity page, which is where managers already use it.</li>
-      <li>CA locator: Nabis pagination was fixed (orders endpoint corrected, 0-indexed pagination), so all CA stores now import across every page — not just the first.</li>
+      <li>The in-app "What's New" modal is gone — it was rarely opened. Version tracking continues; reps just won't be interrupted by a pop-up.</li>
+      <li>The public website's store locator was accidentally exposing internal CRM store IDs in its data feed — these were removed and the feed was hardened.</li>
+      <li>Activity icons had a mismatch since the order-type normalization change — orders were showing the phone (call) icon. Fixed.</li>
+      <li>Calendar month-view was rendering store names without escaping them — a potential XSS vector caught and closed in the design audit.</li>
+      <li>GrowFlow warehouse mapping was incorrectly promoting 30,000 grams of bulk oil as 30k units of finished sellable product. The mapping now correctly ignores raw materials and non-sellable lots.</li>
+      <li>The menu intelligence endpoint was 500ing in production due to a missing database index — fixed with a new pointer-doc architecture that also makes the query much faster and complete across all stores.</li>
+      <li>CI security audit now enforces dependency vulnerability scanning — failures are no longer silently ignored.</li>
+      <li>Mobile reorder carousel got 44px touch targets on its nav arrows, meeting accessibility sizing standards.</li>
+      <li>The revenue projection formula is now one shared helper instead of four independent copies — so all the surfaces that show "on pace for" will always agree.</li>
+      <li>Ops platform parity tests now pin the BQ view queries to code so a view drift can't silently break the API.</li>
     </ul>
   </section>
 
@@ -599,7 +556,7 @@
       Questions? Drop them in <strong>#all-mwah</strong> on Slack.
     </div>
     <div class="footer-right">
-      <div class="footer-version">v101.1<span>latest deployed version</span></div>
+      <div class="footer-version">v101.18<span>latest deployed version</span></div>
     </div>
   </footer>
 

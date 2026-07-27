@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MWAH — Week of July 13 – July 19, 2026</title>
+  <title>MWAH — Week of July 20 – July 26, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -315,19 +315,19 @@
   <div class="hero-inner">
     <p class="hero-brand">MWAH CRM · Weekly Deploy Report</p>
     <h1>This week at MWAH</h1>
-    <p class="hero-date">July 13 – July 19, 2026</p>
+    <p class="hero-date">July 20 – July 26, 2026</p>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-num">18+</div>
+        <div class="hero-stat-num">12+</div>
         <div class="hero-stat-label">improvements</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">10</div>
+        <div class="hero-stat-num">11</div>
         <div class="hero-stat-label">versions shipped</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">📦</div>
-        <div class="hero-stat-label">biggest area: inventory &amp; reorders</div>
+        <div class="hero-stat-num">🛍️</div>
+        <div class="hero-stat-label">biggest area: buyer portal</div>
       </div>
     </div>
   </div>
@@ -342,72 +342,21 @@
     <div class="card-grid">
 
       <article class="card highlight">
-        <div class="card-icon">📦</div>
+        <div class="card-icon">📧</div>
         <div class="card-body">
-          <h3>The VMI reorder flow got a top-to-bottom rebuild this week</h3>
-          <p>Three interconnected pieces of the vendor-managed reorder system all shipped together. The purchase order reps send to ops now looks right — MWAH logo, proper two-column layout, correct quantities. The adjustment window and delivery date pickers moved onto the reorder builder itself, so every quantity and coverage line updates live as you change them. And the suggested reorder quantities now factor in the actual delivery schedule, not just raw stock. What used to take multiple back-and-forths to square up is now one coherent form that produces a polished PO in one pass.</p>
+          <h3>You can now read teammate emails right from Store Detail — no Gmail connection needed</h3>
+          <p>This one came straight out of the July 21 all-hands. Hannah and Maddie raised it: the Emails tab on a store showed that a teammate had sent something, but you couldn't actually read it unless you were signed in to that person's Gmail account. Now any team member can click a row to expand the full email — from, to, cc, date, the whole message body, and any attachments — right where the row sits. No redirection, no "connect your Gmail" wall, no guessing what was said.</p>
           <span class="card-tag tag-feature">New feature</span>
         </div>
       </article>
 
       <article class="card highlight">
-        <div class="card-icon">🔭</div>
+        <div class="card-icon">🔄</div>
         <div class="card-body">
-          <h3>Competitor pricing tracking cut its error rate from 52% to near zero</h3>
-          <p>The Menu Intelligence system that tracks competitor pricing at dispensaries was quietly failing on over half of all store checks. The root cause: roughly 130 stores in the crawl list had no online menu to pull from — they were never going to return data. The system now detects menuless stores on first check and skips them for 28 days, focusing crawl time on stores where pricing data actually exists. Competitor pricing on the Insights page should now be reliably up to date across all relevant stores.</p>
-          <span class="card-tag tag-fix">Major fix</span>
+          <h3>The CRM now fixes itself if it gets stuck on the loading screen</h3>
+          <p>A production issue this week left the CRM showing "Loading dashboard..." forever with no error and no way out except clearing browser site data by hand. The root cause was Firestore's offline persistence getting wedged — and since the app sat inside the same stuck client, it couldn't see any problem. The fix adds a lightweight watcher that runs separately from the main app. If the CRM is loading but a quick probe to Firebase answers in milliseconds, that's a wedged local persistence layer, not a network issue — and the app now detects that, clears the lock, and reloads cleanly instead of leaving reps stranded.</p>
+          <span class="card-tag tag-fix">Critical fix</span>
         </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- INVENTORY + REORDERS -->
-  <section class="section">
-    <div class="section-title">📦 Inventory &amp; reorders</div>
-    <div class="card-grid">
-
-      <article class="card">
-        <div class="card-icon">🍓</div>
-        <h3>Pipeline now shows how many units of each flavor are committed</h3>
-        <p>A new Flavor Count tab in Pipeline rolls up units of each MWAH flavor across all active orders — so you can watch inventory draw-down in real time without opening every order individually. Samples are included since they pull from the same physical stock.</p>
-        <span class="card-tag tag-feature">New feature</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">🏭</div>
-        <h3>Warehouse "Sellable" count no longer includes raw distillate</h3>
-        <p>The Sellable quantity in the Warehouse tab was counting bulk distillate as finished sellable product — inflating the available number. It now excludes non-sellable lots, so the count reflects actual units that can ship.</p>
-        <span class="card-tag tag-fix">Bug fix</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">📅</div>
-        <h3>Reorder suggestions now fit the actual delivery schedule</h3>
-        <p>Suggested reorder quantities are now calculated against the real delivery window, not just raw stock levels. What gets suggested will arrive when there's actually a delivery to attach it to.</p>
-        <span class="card-tag tag-feature">Improvement</span>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- CALENDAR + DASHBOARD -->
-  <section class="section">
-    <div class="section-title">🗓️ Calendar &amp; dashboard</div>
-    <div class="card-grid">
-
-      <article class="card">
-        <div class="card-icon">🔴</div>
-        <h3>Calendar shows a live "now" line as you work</h3>
-        <p>Day and week views now show a red current-time indicator — a thin horizontal rule with a dot — positioned at the exact current minute. In week view it's pinned to today's column so it doesn't float across the whole grid. The line moves as the day progresses.</p>
-        <span class="card-tag tag-feature">New feature</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">⚡</div>
-        <h3>Switching dashboard views is noticeably faster</h3>
-        <p>The Views dropdown was rebuilding the entire dashboard every time it opened, even when you weren't switching views. It now only rebuilds when the view actually changes, so toggling between your saved views is instant.</p>
-        <span class="card-tag tag-fix">Performance</span>
       </article>
 
     </div>
@@ -419,61 +368,75 @@
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">📥</div>
-        <h3>Portal inbox is clearer and more actionable</h3>
-        <p>The portal inbox got a cleanup this week: timestamps now show correctly, the rejection flow has clearer labels and a more prominent button, and Slack alerts fire at the right moments so the team doesn't miss incoming requests.</p>
+        <div class="card-icon">📊</div>
+        <h3>Buyers can now see their own inventory analytics in the portal</h3>
+        <p>A new analytics section in the buyer portal shows each store their sell-through trends and stock levels over time. Buyers get context on their own pace directly in the ordering flow, without needing to ask a rep.</p>
+        <span class="card-tag tag-portal">New feature</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔁</div>
+        <h3>The reorder experience in the portal got a significant rework</h3>
+        <p>VMI self-service — the page where buyers see reorder suggestions and can approve, adjust, or decline — was rebuilt this week. Navigation is clearer, the layout is tighter, and the state when a store has no current inventory to reorder is now handled gracefully rather than showing a broken view.</p>
+        <span class="card-tag tag-portal">Improvement</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">💬</div>
+        <h3>Reorder recommendation copy is clearer</h3>
+        <p>The language around why a reorder is being suggested was updated to be more straightforward for buyers reading it in context. Less jargon, more plain math.</p>
         <span class="card-tag tag-portal">Polish</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🚨</div>
-        <h3>Checkout failures now alert the team immediately</h3>
-        <p>When a buyer hits an error during portal checkout, it now pings the ops team right away — so problems get investigated quickly instead of sitting in a log file until someone thinks to look.</p>
-        <span class="card-tag tag-portal">Improvement</span>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- ANALYTICS -->
-  <section class="section">
-    <div class="section-title">📊 Competitor pricing</div>
-    <div class="card-grid">
-
-      <article class="card">
-        <div class="card-icon">🏪</div>
-        <h3>Jane Dispensary locations now show up in competitor data</h3>
-        <p>The competitor pricing tracker was missing Jane stores in the crawl — a mapping gap that's now fixed. Jane's current pricing is captured and shows alongside other competitors in the Insights view.</p>
+        <div class="card-icon">🛡️</div>
+        <h3>Portal errors now surface properly</h3>
+        <p>A gap in the portal's error handling meant certain failure states were being swallowed silently — buyers would see a blank or broken page with no explanation. The error handler is now wired in so problems surface with context instead of disappearing.</p>
         <span class="card-tag tag-fix">Bug fix</span>
       </article>
 
+    </div>
+  </section>
+
+  <!-- PORTAL MANAGEMENT -->
+  <section class="section">
+    <div class="section-title">👥 Portal management &amp; admin</div>
+    <div class="card-grid">
+
       <article class="card">
-        <div class="card-icon">🗂️</div>
-        <h3>Product categories in competitor pricing are consistent</h3>
-        <p>Different dispensary menu systems use different category names for the same product types, which made the competitor pricing table hard to read. Categories are now normalized so the same products group together across all stores.</p>
-        <span class="card-tag tag-fix">Accuracy</span>
+        <div class="card-icon">📥</div>
+        <h3>Admins can now import POSaBIT monthly reports for customer mix analytics</h3>
+        <p>A new import tool in the admin panel lets managers bring in completed calendar-month POSaBIT reports — customer demographics, product mix, retailer breakdown. Imports are idempotent (re-uploading the same file is safe) and audited. The data feeds directly into the Insights customer mix view.</p>
+        <span class="card-tag tag-mgmt">New feature</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🏷️</div>
+        <h3>POSaBIT retail promotions now show on the store page</h3>
+        <p>Active POSaBIT promotions at a store are now surfaced in Store Detail alongside pricing context. Reps can see what deals are running at each location before a visit or call.</p>
+        <span class="card-tag tag-mgmt">New feature</span>
       </article>
 
     </div>
   </section>
 
-  <!-- PUBLIC WEBSITE -->
+  <!-- ORDERS + FULFILLMENT -->
   <section class="section">
-    <div class="section-title">🌐 Public website — gimmemwah.com</div>
+    <div class="section-title">📦 Orders &amp; fulfillment</div>
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">🛒</div>
-        <h3>Catalyst Cannabis stores are now on the Find Us map</h3>
-        <p>MWAH is now available at Catalyst Cannabis locations in California — customers searching the Find Us map will now see Catalyst stores with the correct availability info. Pacific Coast Fruit stores were also added ahead of their Friday go-live.</p>
-        <span class="card-tag tag-web">New stores</span>
+        <div class="card-icon">🔔</div>
+        <h3>Fulfillment gets pinged when notes are added after a PO is confirmed</h3>
+        <p>If a rep adds a note to an order that's already been confirmed and is heading to fulfillment, the team now gets a Slack alert right away. Post-confirmation notes are exceptions — this makes sure they don't get missed before the order ships.</p>
+        <span class="card-tag tag-feature">Improvement</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">📊</div>
-        <h3>CA store inventory data is more accurate</h3>
-        <p>The store locator's availability data for California locations now correctly reflects edited deliveries — so the "upcoming restock" signals buyers see are based on the most current delivery records.</p>
-        <span class="card-tag tag-web">Accuracy</span>
+        <div class="card-icon">🔗</div>
+        <h3>GrowFlow reconciliation is more resilient to temporary errors</h3>
+        <p>GrowFlow occasionally returns success-looking responses that actually contain an error buried in the body — the kind of thing that should trigger a retry, not a failure. The reconciliation sync now catches those cases and retries, so transient GrowFlow hiccups don't interrupt the daily sync.</p>
+        <span class="card-tag tag-fix">Reliability</span>
       </article>
 
     </div>
@@ -483,16 +446,16 @@
   <section class="section bts">
     <div class="bts-title">⚙️ Behind the scenes</div>
     <ul>
-      <li>Every browser confirm/alert popup in the CRM is now a branded, centered dialog — no more Chrome's ugly URL-bar chip style on deletions and confirmations. 80 sites across the app converted.</li>
-      <li>Chain store counts and KPI numbers now stay in sync across every surface — a drift where the KPI tab and Orders tab showed different store totals was fixed.</li>
-      <li>JS and CSS files can now be cached permanently in your browser — each deploy gets a unique stamp, so pages load faster on repeat visits without serving stale code.</li>
-      <li>Sentry's Firestore error queue now self-heals when it falls over — errors surface cleanly and with full context instead of getting dropped.</li>
-      <li>New end-to-end automated tests cover the full portal checkout flow and CRM order money paths — so regressions in the most critical flows get caught before they ship.</li>
-      <li>Reconciliation bulk-action buttons are centered again, and the card layout in light mode no longer shows white text on a white background.</li>
-      <li>Store license succession ("Convert to renewal") now shows a loading spinner during the conversion, and handles edge cases that used to silently fail.</li>
-      <li>Several upcoming MWAH flavors are now registered in the product catalog ahead of launch — the system is ready when they go live.</li>
-      <li>Slack: fulfillment leads are no longer tagged on every Order Confirmed notification — only order-specific fulfillment alerts fire to the right people.</li>
-      <li>Competitor pricing data deduplication is now enforced — the same store's prices can't appear twice in an Insights comparison.</li>
+      <li>Portal callables (order creation, product listing, order history) were running sequential network calls one-at-a-time — parallelizing them cut the time-to-data noticeably for buyers in the checkout flow.</li>
+      <li>The portal's Slack alert emails were generating "orphaned event" errors in the monitoring system — a missing audit log tag that's now fixed.</li>
+      <li>A new executable semantic layer formalizes how analytics metrics are defined and queried across MCP, BigQuery, and the OpenClaw bot — ensuring numbers mean the same thing wherever they appear.</li>
+      <li>The projected sales pace calculation was audited and reconciled against the governed metric definition — any surface showing pace now uses one canonical helper.</li>
+      <li>Analytics health guards updated so the Insights page doesn't show misleading numbers when a data source is partially unavailable.</li>
+      <li>Store selector contrast improved in the portal so it's readable on all backgrounds.</li>
+      <li>Decision IDs are now automatically scoped to their PR number, enforced by the pre-commit hook — no more accidental ID collisions when multiple PRs land the same week.</li>
+      <li>Emulator secrets are now isolated so real production credentials can't leak into local test runs.</li>
+      <li>Portal security hardened across several public endpoints — adversarial edge cases from a full security pass are now closed.</li>
+      <li>Dependency updates: firebase-functions 7.3.0, Sentry 10.67.0, Resend 6.18.0, React 19.2.8.</li>
     </ul>
   </section>
 
@@ -505,7 +468,7 @@
       Questions? Drop them in <strong>#all-mwah</strong> on Slack.
     </div>
     <div class="footer-right">
-      <div class="footer-version">v101.28<span>latest deployed version</span></div>
+      <div class="footer-version">v101.48<span>latest deployed version</span></div>
     </div>
   </footer>
 

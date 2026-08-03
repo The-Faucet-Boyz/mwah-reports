@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MWAH — Week of July 20 – July 26, 2026</title>
+  <title>MWAH — Week of July 27 – August 2, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -315,19 +315,19 @@
   <div class="hero-inner">
     <p class="hero-brand">MWAH CRM · Weekly Deploy Report</p>
     <h1>This week at MWAH</h1>
-    <p class="hero-date">July 20 – July 26, 2026</p>
+    <p class="hero-date">July 27 – August 2, 2026</p>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-num">12+</div>
+        <div class="hero-stat-num">17+</div>
         <div class="hero-stat-label">improvements</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">11</div>
+        <div class="hero-stat-num">4</div>
         <div class="hero-stat-label">versions shipped</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">🛍️</div>
-        <div class="hero-stat-label">biggest area: buyer portal</div>
+        <div class="hero-stat-num">🏗️</div>
+        <div class="hero-stat-label">biggest area: platform</div>
       </div>
     </div>
   </div>
@@ -342,57 +342,21 @@
     <div class="card-grid">
 
       <article class="card highlight">
-        <div class="card-icon">📧</div>
+        <div class="card-icon">🏢</div>
         <div class="card-body">
-          <h3>You can now read teammate emails right from Store Detail — no Gmail connection needed</h3>
-          <p>This one came straight out of the July 21 all-hands. Hannah and Maddie raised it: the Emails tab on a store showed that a teammate had sent something, but you couldn't actually read it unless you were signed in to that person's Gmail account. Now any team member can click a row to expand the full email — from, to, cc, date, the whole message body, and any attachments — right where the row sits. No redirection, no "connect your Gmail" wall, no guessing what was said.</p>
-          <span class="card-tag tag-feature">New feature</span>
+          <h3>The CRM is becoming a multi-brand platform</h3>
+          <p>This week laid the foundation for the CRM to support multiple brands operating under the same system — each with its own data, users, and settings, but sharing the same infrastructure. A new workspace provisioning flow lets a new brand be set up end-to-end. This is a significant step in where the platform is headed, and most of the work is invisible for now — it's the scaffolding everything else will build on.</p>
+          <span class="card-tag tag-infra">Platform expansion</span>
         </div>
       </article>
 
       <article class="card highlight">
-        <div class="card-icon">🔄</div>
+        <div class="card-icon">⚡</div>
         <div class="card-body">
-          <h3>The CRM now fixes itself if it gets stuck on the loading screen</h3>
-          <p>A production issue this week left the CRM showing "Loading dashboard..." forever with no error and no way out except clearing browser site data by hand. The root cause was Firestore's offline persistence getting wedged — and since the app sat inside the same stuck client, it couldn't see any problem. The fix adds a lightweight watcher that runs separately from the main app. If the CRM is loading but a quick probe to Firebase answers in milliseconds, that's a wedged local persistence layer, not a network issue — and the app now detects that, clears the lock, and reloads cleanly instead of leaving reps stranded.</p>
-          <span class="card-tag tag-fix">Critical fix</span>
+          <h3>The CRM is noticeably faster across the board</h3>
+          <p>A coordinated performance sprint this week touched the CRM's boot sequence, the Inventory page, and the Dashboard. The CRM now reaches its first usable screen faster by deferring background work until after the initial paint. The Inventory page was split into separate store and warehouse views so each loads only what it needs. And a group of memory leaks that caused slowdowns in long sessions have been sealed. If the app felt sluggish before, it should feel considerably snappier now.</p>
+          <span class="card-tag tag-feature">Performance</span>
         </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- BUYER PORTAL -->
-  <section class="section">
-    <div class="section-title">🛍️ Buyer portal</div>
-    <div class="card-grid">
-
-      <article class="card">
-        <div class="card-icon">📊</div>
-        <h3>Buyers can now see their own inventory analytics in the portal</h3>
-        <p>A new analytics section in the buyer portal shows each store their sell-through trends and stock levels over time. Buyers get context on their own pace directly in the ordering flow, without needing to ask a rep.</p>
-        <span class="card-tag tag-portal">New feature</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">🔁</div>
-        <h3>The reorder experience in the portal got a significant rework</h3>
-        <p>VMI self-service — the page where buyers see reorder suggestions and can approve, adjust, or decline — was rebuilt this week. Navigation is clearer, the layout is tighter, and the state when a store has no current inventory to reorder is now handled gracefully rather than showing a broken view.</p>
-        <span class="card-tag tag-portal">Improvement</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">💬</div>
-        <h3>Reorder recommendation copy is clearer</h3>
-        <p>The language around why a reorder is being suggested was updated to be more straightforward for buyers reading it in context. Less jargon, more plain math.</p>
-        <span class="card-tag tag-portal">Polish</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">🛡️</div>
-        <h3>Portal errors now surface properly</h3>
-        <p>A gap in the portal's error handling meant certain failure states were being swallowed silently — buyers would see a blank or broken page with no explanation. The error handler is now wired in so problems surface with context instead of disappearing.</p>
-        <span class="card-tag tag-fix">Bug fix</span>
       </article>
 
     </div>
@@ -404,16 +368,16 @@
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">📥</div>
-        <h3>Admins can now import POSaBIT monthly reports for customer mix analytics</h3>
-        <p>A new import tool in the admin panel lets managers bring in completed calendar-month POSaBIT reports — customer demographics, product mix, retailer breakdown. Imports are idempotent (re-uploading the same file is safe) and audited. The data feeds directly into the Insights customer mix view.</p>
+        <div class="card-icon">🤖</div>
+        <h3>VMI reorders can now run on autopilot for trusted stores</h3>
+        <p>A new "pre-authorized" mode for VMI lets you designate stores where inventory suggestions should convert to orders automatically — no rep approval step. When an order goes through, the rep gets a notification. Stores where reps want to review every suggestion still work the same way as before.</p>
         <span class="card-tag tag-mgmt">New feature</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🏷️</div>
-        <h3>POSaBIT retail promotions now show on the store page</h3>
-        <p>Active POSaBIT promotions at a store are now surfaced in Store Detail alongside pricing context. Reps can see what deals are running at each location before a visit or call.</p>
+        <div class="card-icon">🗂️</div>
+        <h3>POSaBIT now has a dedicated admin tab</h3>
+        <p>POSaBIT sync management has been promoted to its own tab in the admin panel, with store-mapping review built in. You can see which stores are connected, spot any mapping issues, and fix them without hunting through settings.</p>
         <span class="card-tag tag-mgmt">New feature</span>
       </article>
 
@@ -426,36 +390,88 @@
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">🔔</div>
-        <h3>Fulfillment gets pinged when notes are added after a PO is confirmed</h3>
-        <p>If a rep adds a note to an order that's already been confirmed and is heading to fulfillment, the team now gets a Slack alert right away. Post-confirmation notes are exceptions — this makes sure they don't get missed before the order ships.</p>
-        <span class="card-tag tag-feature">Improvement</span>
+        <div class="card-icon">🤝</div>
+        <h3>Volume commitments are now trackable on price groups</h3>
+        <p>You can now set a volume commitment threshold on a price group — when a store hits their agreed purchase level, that's tracked and visible in the credits dashboard. Useful for accounts where a commitment is part of the deal structure.</p>
+        <span class="card-tag tag-feature">New feature</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🔗</div>
-        <h3>GrowFlow reconciliation is more resilient to temporary errors</h3>
-        <p>GrowFlow occasionally returns success-looking responses that actually contain an error buried in the body — the kind of thing that should trigger a retry, not a failure. The reconciliation sync now catches those cases and retries, so transient GrowFlow hiccups don't interrupt the daily sync.</p>
-        <span class="card-tag tag-fix">Reliability</span>
+        <div class="card-icon">🔍</div>
+        <h3>A full GrowFlow-to-CRM reconciliation audit now runs automatically</h3>
+        <p>The reconciliation process now includes a complete cross-reference between GrowFlow's records and every CRM order, surfacing mismatches before they create billing or reporting problems. The monthly audit is also more resilient to edge-case data that previously caused it to stumble.</p>
+        <span class="card-tag tag-feature">New feature</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ANALYTICS -->
+  <section class="section">
+    <div class="section-title">📊 Analytics &amp; insights</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">🧬</div>
+        <h3>Product analytics now show the right numbers</h3>
+        <p>A mismatch in how product identity was tracked was causing some SKUs to appear merged or miscounted in analytics views — making sold-per-day and product performance numbers unreliable for affected items. Fixed, so the Insights product breakdown reflects what actually sold.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">💳</div>
+        <h3>Credits dashboard is cleaner and more readable</h3>
+        <p>Range display and tooltips on the credits dashboard were showing incorrect or confusing values in certain views. The Discounts activity credit totals also now display the right amount. Both are cleaned up.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- PUBLIC WEBSITE -->
+  <section class="section">
+    <div class="section-title">🌐 Public website (gimmemwah.com)</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">📍</div>
+        <h3>Newsletter signups now show where subscribers are from</h3>
+        <p>The sign-up form now captures your approximate state (WA, CA, etc.) at the point of signup, so the team can see geographic distribution across the subscriber list without anyone having to fill in a field manually.</p>
+        <span class="card-tag tag-web">New feature</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📈</div>
+        <h3>Better understanding of what drives engagement on the site</h3>
+        <p>Privacy-minimized Mixpanel analytics were added to gimmemwah.com — no PII, no session recording — so the team can see which pages and features drive the most interaction. Reporting quality was also hardened to make the data more reliable.</p>
+        <span class="card-tag tag-web">New feature</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔎</div>
+        <h3>The site shows up more accurately in Google search</h3>
+        <p>A pass on the site's indexing signals cleaned up duplicate and conflicting meta tags. The UTM campaign link builder was also aligned with the current campaign taxonomy, so links generated for marketing campaigns track correctly.</p>
+        <span class="card-tag tag-web">Improvement</span>
       </article>
 
     </div>
   </section>
 
   <!-- BEHIND THE SCENES -->
-  <section class="section bts">
+  <section class="bts">
     <div class="bts-title">⚙️ Behind the scenes</div>
     <ul>
-      <li>Portal callables (order creation, product listing, order history) were running sequential network calls one-at-a-time — parallelizing them cut the time-to-data noticeably for buyers in the checkout flow.</li>
-      <li>The portal's Slack alert emails were generating "orphaned event" errors in the monitoring system — a missing audit log tag that's now fixed.</li>
-      <li>A new executable semantic layer formalizes how analytics metrics are defined and queried across MCP, BigQuery, and the OpenClaw bot — ensuring numbers mean the same thing wherever they appear.</li>
-      <li>The projected sales pace calculation was audited and reconciled against the governed metric definition — any surface showing pace now uses one canonical helper.</li>
-      <li>Analytics health guards updated so the Insights page doesn't show misleading numbers when a data source is partially unavailable.</li>
-      <li>Store selector contrast improved in the portal so it's readable on all backgrounds.</li>
-      <li>Decision IDs are now automatically scoped to their PR number, enforced by the pre-commit hook — no more accidental ID collisions when multiple PRs land the same week.</li>
-      <li>Emulator secrets are now isolated so real production credentials can't leak into local test runs.</li>
-      <li>Portal security hardened across several public endpoints — adversarial edge cases from a full security pass are now closed.</li>
-      <li>Dependency updates: firebase-functions 7.3.0, Sentry 10.67.0, Resend 6.18.0, React 19.2.8.</li>
+      <li>CRM boot critical path trimmed — non-essential work now defers until after first paint, reducing time-to-usable-screen.</li>
+      <li>Inventory page split into dedicated store and warehouse routes — each loads only the data it needs, cutting page weight significantly.</li>
+      <li>Dashboard and inventory memory leaks sealed — long sessions no longer accumulate invisible overhead that slowed things down over time.</li>
+      <li>VMI alert targeting fixed — alerts were firing for too many stores; now they fire only for stores actively enrolled in VMI.</li>
+      <li>Initial invoice assignment alerts quieted — startup was generating alert noise before the first sync completed.</li>
+      <li>CRM batch view fixes: stage labels now display correctly, duplicate stockout rows removed, per-rep activity colors working again.</li>
+      <li>Email health retries made durable and idempotent — the retry system was occasionally triggering double-runs on transient failures.</li>
+      <li>Portal analytics now exclude "view-as" sessions where reps are browsing in buyer mode — buyer-facing metrics are cleaner as a result.</li>
+      <li>Deploy self-heal: when Cloud Functions hit a Cloud Run CPU quota ceiling during deploy, affected functions are now automatically detected and re-deployed without any manual intervention.</li>
+      <li>Google Sheets Apps Script for signup tracking automated via CI, with several data-mapping and column-ordering fixes so Sheet rows are accurate and complete.</li>
+      <li>Dependency updates: Playwright 1.62.0, MCP SDK, pdfkit 0.19.1, Sentry Node 10.68.0, svix 1.99.1.</li>
     </ul>
   </section>
 
@@ -468,7 +484,7 @@
       Questions? Drop them in <strong>#all-mwah</strong> on Slack.
     </div>
     <div class="footer-right">
-      <div class="footer-version">v101.48<span>latest deployed version</span></div>
+      <div class="footer-version">v101.60<span>latest deployed version</span></div>
     </div>
   </footer>
 

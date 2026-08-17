@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MWAH — Week of August 3 – August 9, 2026</title>
+  <title>MWAH — Week of August 10 – August 16, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -315,19 +315,19 @@
   <div class="hero-inner">
     <p class="hero-brand">MWAH CRM · Weekly Deploy Report</p>
     <h1>This week at MWAH</h1>
-    <p class="hero-date">August 3 – August 9, 2026</p>
+    <p class="hero-date">August 10 – August 16, 2026</p>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-num">20+</div>
+        <div class="hero-stat-num">30+</div>
         <div class="hero-stat-label">improvements</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">4</div>
-        <div class="hero-stat-label">versions shipped</div>
+        <div class="hero-stat-num">7</div>
+        <div class="hero-stat-label">CRM versions shipped</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">🔄</div>
-        <div class="hero-stat-label">biggest area: reconciliation</div>
+        <div class="hero-stat-num">🌐</div>
+        <div class="hero-stat-label">biggest area: alerts + website launch</div>
       </div>
     </div>
   </div>
@@ -342,21 +342,43 @@
     <div class="card-grid">
 
       <article class="card highlight">
-        <div class="card-icon">💰</div>
+        <div class="card-icon">🔔</div>
         <div class="card-body">
-          <h3>You can now see what each store owes — in the CRM</h3>
-          <p>A new Accounts Receivable surface is live in the CRM, giving reps and managers a direct view of outstanding balances by store. No more cross-referencing spreadsheets or waiting for a finance update — what's owed is now visible right where you're already working with stores.</p>
+          <h3>The Alert Center got a major upgrade</h3>
+          <p>Alerts are now smarter in every direction. When the same issue fires a burst of pings, they get coalesced into one clean notification instead of flooding the channel. A new availability alert type fires when something critical stops working. Alerts now tag the right person directly at dispatch time based on who's on duty. And specific alert types can be given a skip code so they quiet down without drowning out the ones that matter.</p>
           <span class="card-tag tag-feature">New feature</span>
         </div>
       </article>
 
       <article class="card highlight">
-        <div class="card-icon">↩️</div>
+        <div class="card-icon">🍵</div>
         <div class="card-body">
-          <h3>Returns are now part of the reconciliation workflow</h3>
-          <p>When a store returns product, that return is now visible, creditable, and closable directly inside the reconciliation interface. Previously, returns required manual workarounds outside the system. They're now a first-class part of the process — you can see them, apply a credit, and close them out, all in one place.</p>
-          <span class="card-tag tag-feature">New feature</span>
+          <h3>Two new flavors are live on the website — with campaign film</h3>
+          <p>Strawberry Matcha and Wild Watermelon Ice have launched with full dedicated pages on gimmemwah.com. The homepage shows a rotating hero feature for the new drops, and a Strawberry Matcha campaign video is live for customers to experience the brand story before they visit a store.</p>
+          <span class="card-tag tag-web">Brand launch</span>
         </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ALERT CENTER -->
+  <section class="section">
+    <div class="section-title">🔔 Alert Center</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">📧</div>
+        <h3>Hannah + Maddie now get email alerts for three buyer situations</h3>
+        <p>Three buyer-facing situations — the ones most likely to need immediate attention from the ops team — now trigger a direct email to Hannah and Maddie. The team can also configure which buyer alerts route to email going forward.</p>
+        <span class="card-tag tag-feature">New feature</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">✅</div>
+        <h3>Alert parity checks are running again</h3>
+        <p>The checks that verify alert counts are accurate and consistent were silently failing. They're fixed and running, so alert numbers you see reflect what's actually happening.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
       </article>
 
     </div>
@@ -368,117 +390,124 @@
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">🔐</div>
-        <h3>Locked-out buyers see a clear message instead of a confusing error</h3>
-        <p>When a buyer tries to sign in but their account isn't active, they now see a clear explanation — instead of a generic data error that made it look like something was broken.</p>
-        <span class="card-tag tag-portal">UX improvement</span>
+        <div class="card-icon">🎬</div>
+        <h3>Flavor and video engagement now tracked per product</h3>
+        <p>The portal now measures which flavor pages buyers visit and whether they watch the promo video for each product. This gives the team visibility into which flavors are generating the most interest before a buyer places an order.</p>
+        <span class="card-tag tag-portal">New tracking</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🛒</div>
-        <h3>Stalled carts are managed more reliably</h3>
-        <p>The menu for closing or managing a stalled cart was sometimes unreachable. That's fixed. Carts where the store has already placed an order through the rep are now also closed automatically, so they don't linger as false "pending" activity.</p>
-        <span class="card-tag tag-portal">Bug fix</span>
+        <div class="card-icon">🖼️</div>
+        <h3>Product images on order detail are back</h3>
+        <p>Flavor thumbnails on the order detail screen had stopped loading and were falling back to a blank image. They're back and pulling the correct art for each product.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">⏰</div>
-        <h3>Abandoned cart follow-ups now run reliably</h3>
-        <p>The automated sweeps that follow up on abandoned carts were hitting their own concurrency limits and stopping early. They now run to completion every time.</p>
-        <span class="card-tag tag-portal">Bug fix</span>
+        <div class="card-icon">👁️</div>
+        <h3>"View as buyer" is more stable</h3>
+        <p>The View-as-buyer mode had two separate issues: it was occasionally logging outages during the account handoff, and it sometimes raced with the authentication setup on load. Both are fixed.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">✉️</div>
+        <h3>Checkout email validation tightened</h3>
+        <p>The checkout canary that validates orders at submission now applies the same email rules as the form itself — so the same address is accepted or rejected at both stages.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
       </article>
 
     </div>
   </section>
 
-  <!-- ORDERS + FULFILLMENT -->
+  <!-- ORDERS + RECONCILIATION -->
   <section class="section">
-    <div class="section-title">📦 Orders &amp; fulfillment</div>
+    <div class="section-title">📦 Orders &amp; reconciliation</div>
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">🤝</div>
-        <h3>Deal settlements are now detected and exported correctly</h3>
-        <p>When a deal is baked into an invoice, the system now detects it and includes a dedicated Deal Settlement block in the monthly export. Reps and managers can see exactly what was settled and on which invoice.</p>
+        <div class="card-icon">🔗</div>
+        <h3>The reconciliation link picker has been redesigned</h3>
+        <p>When linking a settlement match in reconciliation, the picker and confirmation modals now show copy that adapts to what you're actually doing — making it much clearer what you're about to confirm before you commit.</p>
+        <span class="card-tag tag-feature">UX improvement</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔄</div>
+        <h3>Amount Review is no longer a dead end</h3>
+        <p>When a settlement had a line in Amount Review, the page was getting stuck in a refresh loop with no way forward. It now reads the right evidence and surfaces a clear path to resolution.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🧹</div>
+        <h3>Unmatched blockers don't get re-carried after manual resolution</h3>
+        <p>When a blocker was already resolved out-of-band (e.g. manually linked), the system was still carrying it forward on subsequent passes as if it were unresolved. That's fixed — once it's linked, it stays linked.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📱</div>
+        <h3>Order info shows first on mobile PO detail</h3>
+        <p>On the purchase order detail screen on mobile, the Order Info panel was loading as the secondary view instead of the primary one. The read order is corrected.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- PRODUCTS + DEALS -->
+  <section class="section">
+    <div class="section-title">🛒 Products &amp; deals</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">🎥</div>
+        <h3>Each product can now have its own promo video</h3>
+        <p>In the admin panel, you can now upload a promotional video to each individual product. A "video available" badge appears on the product listing so it's clear which flavors have video assets ready for the portal.</p>
         <span class="card-tag tag-feature">New feature</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🔔</div>
-        <h3>Reconciliation alerts are now reliable and won't fire twice</h3>
-        <p>The alerts that fire when reconciliation needs attention were sometimes going quiet or triggering multiple times for the same issue. They're now durable — they fire once, stay visible until resolved, and clear cleanly.</p>
-        <span class="card-tag tag-fix">Bug fix</span>
+        <div class="card-icon">⚠️</div>
+        <h3>A warning appears before a deal window closes</h3>
+        <p>When you're about to end a deal, you'll now see a confirmation prompt before it's gone — whether you accessed it through the price group screen or the store detail view. No more accidentally closing out a deal.</p>
+        <span class="card-tag tag-feature">New feature</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">📋</div>
-        <h3>GrowFlow settlement and return handling fixed</h3>
-        <p>The way GrowFlow settlement entries and rejected returns were being processed had edge cases that caused mismatches. The matching logic is now more accurate, so those edge cases no longer produce phantom discrepancies.</p>
-        <span class="card-tag tag-fix">Bug fix</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">📊</div>
-        <h3>Monthly export is more accurate</h3>
-        <p>The monthly export now reflects only paid reps in commission figures, carries a list-price caveat where relevant, and has cleaner copy throughout. Less manual cleanup after you download it.</p>
-        <span class="card-tag tag-fix">Improvement</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">🧃</div>
-        <h3>Fulfillment flavor order is now consistent</h3>
-        <p>The order flavors appeared in on the fulfillment view wasn't matching the expected sequence. It's aligned now.</p>
-        <span class="card-tag tag-fix">Bug fix</span>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- ANALYTICS + INSIGHTS -->
-  <section class="section">
-    <div class="section-title">📊 Analytics &amp; insights</div>
-    <div class="card-grid">
-
-      <article class="card">
-        <div class="card-icon">💳</div>
-        <h3>Credits ledger is now visible again</h3>
-        <p>The ledger view and kind-breakdown bands in the credits dashboard were failing to render. They're back and displaying correctly.</p>
-        <span class="card-tag tag-fix">Bug fix</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">📣</div>
-        <h3>GrowFlow daily alerts are easier to act on</h3>
-        <p>The GrowFlow daily alerts were formatted in a way that made it hard to scan quickly. They're now structured for speed — the most important information surfaces at a glance so you can act without digging.</p>
-        <span class="card-tag tag-fix">Improvement</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">🔍</div>
-        <h3>Insights metrics are more clearly labeled</h3>
-        <p>Several metrics in the Insights view had labels or dashboard context that didn't make their meaning obvious. They've been clarified so it's easier to know what you're looking at and what it's telling you.</p>
-        <span class="card-tag tag-fix">Improvement</span>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- PORTAL MANAGEMENT -->
-  <section class="section">
-    <div class="section-title">👥 Portal management &amp; admin</div>
-    <div class="card-grid">
-
-      <article class="card">
-        <div class="card-icon">🪪</div>
-        <h3>License changes route through one guided flow</h3>
-        <p>There used to be two ways to update a store's license in the admin panel — a quick-link card and a guided modal — which caused confusion about which to use. The quick-link card is retired; everything now goes through the guided modal, where the intent (renewal vs. correction) is clear.</p>
+        <div class="card-icon">🗂️</div>
+        <h3>Product and sample controls are now in one place</h3>
+        <p>The admin views for managing products and sample allocations have been brought into one consolidated section, reducing the back-and-forth between screens when making related changes.</p>
         <span class="card-tag tag-mgmt">Improvement</span>
       </article>
 
+    </div>
+  </section>
+
+  <!-- DASHBOARD + NOTIFICATIONS -->
+  <section class="section">
+    <div class="section-title">📊 Dashboard &amp; notifications</div>
+    <div class="card-grid">
+
       <article class="card">
-        <div class="card-icon">✏️</div>
-        <h3>Sales reps can now update store name and address</h3>
-        <p>Reps in the Sales role were blocked from editing a store's name or address, even for obvious corrections. That restriction has been relaxed — reps can now keep store info accurate without needing an admin to step in.</p>
+        <div class="card-icon">🧮</div>
+        <h3>Monthly sample costs now show the real count</h3>
+        <p>The monthly costs KPI on the dashboard was undercounting samples — it wasn't picking up all real sample lines. It now reflects the accurate total for the month.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔕</div>
+        <h3>Test-store orders no longer trigger change-request pings</h3>
+        <p>The sweep that checks for stale pending change requests was pinging for orders attached to test stores — which don't represent real accounts. Those false positives are filtered out.</p>
+        <span class="card-tag tag-fix">Bug fix</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">💬</div>
+        <h3>Sample-limit tooltips are clearer in the admin panel</h3>
+        <p>The explainers for per-account sample limits in the admin panel have been converted from inline warning banners to cleaner info tooltips, and the workspace heading now uses the correct font.</p>
         <span class="card-tag tag-mgmt">Improvement</span>
       </article>
 
@@ -491,16 +520,9 @@
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">📈</div>
-        <h3>Inventory now shows 6-week and 8-week sales velocity</h3>
-        <p>The Avg Sales/Day figure on inventory snapshots now comes in two additional windows — 6 weeks and 8 weeks — alongside the existing shorter window. Useful for spotting seasonal trends or smoothing out one-off weeks when deciding how much to reorder.</p>
-        <span class="card-tag tag-feature">New feature</span>
-      </article>
-
-      <article class="card">
         <div class="card-icon">🔗</div>
-        <h3>POSaBIT sync is more reliable</h3>
-        <p>The sync was occasionally timing out silently, leaving data stale with no indication of what happened. It now surfaces the issue clearly. A separate re-link prompt that kept nagging even after a successful link is also gone.</p>
+        <h3>Inventory stays linked when a store's identity changes</h3>
+        <p>When a store's identity information changed in the CRM (license renewal, correction, etc.), the corresponding POSaBIT mapping was sometimes coming loose. The two are now kept in sync automatically.</p>
         <span class="card-tag tag-fix">Bug fix</span>
       </article>
 
@@ -513,30 +535,44 @@
     <div class="card-grid">
 
       <article class="card">
+        <div class="card-icon">🍵</div>
+        <h3>Strawberry Matcha + Wild Watermelon Ice have launched pages</h3>
+        <p>Both new flavors are live with their own product detail pages, featured in the rotating launch hero on the homepage, and indexed so they show up in search right away.</p>
+        <span class="card-tag tag-web">New feature</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🎬</div>
+        <h3>A Strawberry Matcha campaign film is live</h3>
+        <p>The brand campaign video for Strawberry Matcha is now embedded on the homepage — giving customers a visual taste of the flavor and the brand world before they find a store.</p>
+        <span class="card-tag tag-web">New feature</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">✍️</div>
+        <h3>KISS LABS launched with a full Pennifer editorial</h3>
+        <p>The KISS LABS section is live with a Pennifer feature article — an editorial-style piece with a magazine pullquote, a distinctive internet-native voice, and a link from the site footer. It's MWAH's first original editorial content presence.</p>
+        <span class="card-tag tag-web">New feature</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">👩</div>
+        <h3>About page reframed as a women-centered brand story</h3>
+        <p>The About page has been redesigned around MWAH's identity as a women-led brand — with editorial imagery, a cleaner standfirst, and copy that puts the brand story front and center.</p>
+        <span class="card-tag tag-web">Redesign</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🤖</div>
+        <h3>AI search agents now get better answers about MWAH</h3>
+        <p>When someone asks an AI assistant about MWAH, the answer now comes from structured flavor and brand content published on the site. The site also submits new pages to search engines immediately when they go live, so they're found faster.</p>
+        <span class="card-tag tag-web">Discoverability</span>
+      </article>
+
+      <article class="card">
         <div class="card-icon">🗺️</div>
-        <h3>California stores now appear on the locator</h3>
-        <p>MWAH's California retail accounts are now included in the store locator feed on gimmemwah.com. California customers can now find where to buy, just like Washington customers.</p>
-        <span class="card-tag tag-web">New feature</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">🛍️</div>
-        <h3>Products now have their own dedicated page</h3>
-        <p>A proper product listing page is live at gimmemwah.com/products — with individual flavor pages for Berry Baddie and Glow Up Grape. A mobile locator bug that emerged alongside this work has also been fixed.</p>
-        <span class="card-tag tag-web">New feature</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">🔎</div>
-        <h3>The site is more discoverable in search</h3>
-        <p>A pass on meta tags, canonical signals, GA4 key events, and page structure makes the site more accurately represented in Google search results. AI crawlers also get a cleaner picture of what MWAH is and does.</p>
-        <span class="card-tag tag-web">Improvement</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">📧</div>
-        <h3>Signup tracking is smarter</h3>
-        <p>The signup capture flow now enriches each subscriber entry with lifecycle data — so the team can understand how someone moved from first capture to confirmed subscriber, making the list more useful for follow-up.</p>
+        <h3>Locator is cleaner and more accurate</h3>
+        <p>Store locator filters have been simplified. Highway 29 has been removed. Stores that only received sample product (not real stock) no longer appear as stocked, so customers are directed to the right locations.</p>
         <span class="card-tag tag-web">Improvement</span>
       </article>
 
@@ -547,17 +583,16 @@
   <section class="bts">
     <div class="bts-title">⚙️ Behind the scenes</div>
     <ul>
-      <li>firebase-admin 13 → 14 migration completed — 3 production Cloud Functions and 44 scripts now on the latest admin SDK.</li>
-      <li>Entire Cloud Functions fleet, CI pipeline, and local dev tooling moved to Node.js 24.</li>
-      <li>Firestore indexes now deploy before the code that queries them — previously a new index could ship after the code, causing runtime errors in the gap.</li>
-      <li>Smoke test false positives fixed — a healthy backend-only deploy was being flagged as a failure; shallow-clone git diffs were being read as "no changes."</li>
-      <li>Weekly audit backlog cleared and recurring findings are now automated — a scheduled check catches the same categories going forward without manual review.</li>
-      <li>CI required checks made resilient: checks no longer fail when main moves under a PR, and the skip gate fails closed when the branch has no qualifying history.</li>
-      <li>BigQuery client upgraded to v9 in MCP — breaking-change migration done.</li>
-      <li>Upcoming flavor SKUs registered in the product catalog for the Ops mirror — guarded so they remain non-orderable until officially activated.</li>
-      <li>Recon "Skip" decision now accurately reflected in the Decisions tab — previously showed stale state after a single skip.</li>
-      <li>Mixpanel pilot added to the private SEO reporting pipeline — site behavior data now feeds into weekly search performance reports.</li>
-      <li>Dependency updates: @playwright/test 1.62.1, firebase 12.17.1, firebase-functions 7.3.2, @sentry/node 10.69.0, googleapis 174.0.1, resend 6.18.1.</li>
+      <li>CRM store data backfilled from the August 9 WSLCB retailer list — new licenses and name updates are reflected.</li>
+      <li>Session startup now reports any abandoned git worktrees and what they contain — without ever touching or removing them.</li>
+      <li>Stale one-off migration scripts, spent build artifacts, and outdated reports cleaned from the repo.</li>
+      <li>Portal robots.txt now served explicitly — search crawlers get the correct rules for the buyer portal.</li>
+      <li>Deployment failure recovery hardened — edge cases in the self-heal flow no longer leave functions in a stuck state.</li>
+      <li>CRM email field editing and validation fixed — the form was accepting some addresses that wouldn't send.</li>
+      <li>Website: SEO reporting pipeline made reliable — Mixpanel exports now chunk by day instead of timing out on large date ranges.</li>
+      <li>Website: AI referral traffic and post-signup discovery sources now measured in analytics.</li>
+      <li>Website: Default favicon fallback added — pages without their own icon no longer show a blank tab.</li>
+      <li>Dependency updates: @sentry/node 10.70.0, @google-cloud/bigquery 9.0.1, resend 6.19.0, esbuild 0.28.2.</li>
     </ul>
   </section>
 
@@ -570,7 +605,7 @@
       Questions? Drop them in <strong>#all-mwah</strong> on Slack.
     </div>
     <div class="footer-right">
-      <div class="footer-version">v102.6<span>latest deployed version</span></div>
+      <div class="footer-version">v102.17<span>latest deployed version</span></div>
     </div>
   </footer>
 

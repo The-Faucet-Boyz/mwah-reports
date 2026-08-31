@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MWAH — Week of August 24 – August 30, 2026</title>
+  <title>MWAH — Week of August 25 – August 30, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -289,11 +289,6 @@
       margin-top: 2px;
       letter-spacing: 0.04em;
     }
-    .footer-slack {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-top: 6px;
-    }
 
     /* ─── RESPONSIVE ─────────────────────────────────────────── */
     @media (max-width: 640px) {
@@ -315,15 +310,15 @@
   <div class="hero-inner">
     <p class="hero-brand">MWAH CRM · Weekly Deploy Report</p>
     <h1>This week at MWAH</h1>
-    <p class="hero-date">August 24 – August 30, 2026</p>
+    <p class="hero-date">August 25 – August 30, 2026</p>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-num">17+</div>
+        <div class="hero-stat-num">14+</div>
         <div class="hero-stat-label">improvements shipped</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num">3</div>
-        <div class="hero-stat-label">new versions</div>
+        <div class="hero-stat-label">CRM versions (v102.33–35)</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num">Portal &amp; fulfillment</div>
@@ -345,7 +340,7 @@
         <div class="card-icon">🔁</div>
         <div class="card-body">
           <h3>Buyers can now reorder from any past order</h3>
-          <p>The buyer portal now shows a "Suggested Reorder" section based on previous purchases, and every past order in Order History has a quick reorder action. Buyers can rebuild a familiar order in seconds without starting from scratch — a big time-saver for stores that order the same mix regularly.</p>
+          <p>The buyer portal now shows a "Suggested Reorder" section based on previous purchases, and every past order in Order History has a quick reorder action. Buyers can rebuild a familiar order in seconds without starting from scratch — a big time-saver for stores that run the same mix every cycle.</p>
           <span class="card-tag tag-portal">Buyer portal</span>
         </div>
       </article>
@@ -370,13 +365,13 @@
       <article class="card">
         <div class="card-icon">🚦</div>
         <h3>Order minimum applies to buyers, not rep proposals</h3>
-        <p>The order minimum now only blocks buyers at checkout — reps putting together proposals aren't gated. This means reps can draft small "test" orders or samples without hitting a wall, while buyers still see the minimum enforced when they check out themselves.</p>
+        <p>The order minimum now only blocks buyers at checkout — reps putting together proposals aren't gated. This means reps can draft small test orders or sample builds without hitting a wall, while buyers still see the minimum enforced when they place their own orders.</p>
         <span class="card-tag tag-feature">New behavior</span>
       </article>
 
       <article class="card">
         <div class="card-icon">📋</div>
-        <h3>VMI proposals can't be edited below the order minimum</h3>
+        <h3>VMI proposals can't go below the order minimum</h3>
         <p>When a buyer adjusts a vendor-managed inventory proposal, the edit is now floored at the order minimum. No more accidentally approving a proposal that would come in under the minimum.</p>
         <span class="card-tag tag-feature">VMI</span>
       </article>
@@ -384,7 +379,7 @@
       <article class="card">
         <div class="card-icon">✨</div>
         <h3>New flavors get a better label in VMI</h3>
-        <p>Flavors that just launched now show "New flavor — try it out!" in vendor-managed inventory suggestions, instead of being flagged as a "Slow mover." Much more accurate for a brand-new SKU.</p>
+        <p>Flavors that just launched now show "New flavor — try it out!" in vendor-managed inventory suggestions instead of being flagged as a "Slow mover." Much more accurate for a brand-new SKU that hasn't had time to build a sales history.</p>
         <span class="card-tag tag-fix">VMI</span>
       </article>
 
@@ -406,14 +401,14 @@
       <article class="card">
         <div class="card-icon">🔒</div>
         <h3>Completed orders stay locked in their fulfillment week</h3>
-        <p>A routing bug was causing completed orders to get re-sorted out of a locked fulfillment week when the view refreshed. That's fixed — a completed order stays exactly where it landed.</p>
+        <p>A routing bug was causing completed orders to get re-sorted out of a locked fulfillment week when the view refreshed. Fixed — a completed order now stays exactly where it landed.</p>
         <span class="card-tag tag-fix">Fulfillment</span>
       </article>
 
       <article class="card">
         <div class="card-icon">📜</div>
-        <h3>28 stuck Jul 29 orders are visible again</h3>
-        <p>A batch of 28 orders from the July 29 fulfillment cycle were stuck and not appearing in the All view. They're restored. The All view also no longer silently cuts off at 500 orders — the full list loads now.</p>
+        <h3>28 stuck Jul 29 orders are visible again + full list loads</h3>
+        <p>A batch of 28 orders from the July 29 fulfillment cycle were stuck and not showing in the All view. They're restored. The All view also no longer silently cuts off at 500 orders — the full list loads now.</p>
         <span class="card-tag tag-fix">Fulfillment</span>
       </article>
 
@@ -426,16 +421,9 @@
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">🗺️</div>
-        <h3>Dashboard chip when POSaBIT stores need mapping</h3>
-        <p>When a POSaBIT retailer shows up in inventory data but hasn't been matched to a CRM store yet, a chip now appears on the dashboard to flag it. Catches gaps before they cause inventory blind spots.</p>
-        <span class="card-tag tag-feature">Dashboard</span>
-      </article>
-
-      <article class="card">
         <div class="card-icon">🔬</div>
         <h3>Daily automated data-quality sweep</h3>
-        <p>A new daily probe runs automatically and reports any data integrity issues to #crm-audit. Catches problems before they surface as wrong numbers or missing records — the team sees issues before anyone has to go looking.</p>
+        <p>A new daily probe runs automatically and reports any data integrity issues to #crm-audit. Catches problems before they surface as wrong numbers or missing records — the team sees issues proactively, before anyone has to go looking.</p>
         <span class="card-tag tag-feature">Data quality</span>
       </article>
 
@@ -448,7 +436,7 @@
 
       <article class="card">
         <div class="card-icon">⚠️</div>
-        <h3>App now tells you when data might be capped</h3>
+        <h3>App tells you when data might be capped</h3>
         <p>If the live data cache hits its saturation limit, the app now surfaces a visible notice rather than silently showing a partial dataset. You'll know when you're looking at incomplete data instead of guessing.</p>
         <span class="card-tag tag-feature">Transparency</span>
       </article>
@@ -463,22 +451,22 @@
 
       <article class="card">
         <div class="card-icon">🗺️</div>
-        <h3>Store locator map switched to OpenFreeMap</h3>
-        <p>The Find Us map now uses OpenFreeMap instead of CartoDB. The map loads faster, has no API key dependency, and includes full fallback handling if the map itself fails to load — so the store list always stays usable even without the visual map.</p>
+        <h3>Store locator switched to OpenFreeMap</h3>
+        <p>The Find Us map now uses OpenFreeMap instead of CartoDB. Loads faster, has no API key dependency, and includes full fallback handling if the map fails — so the store list always stays usable even without the visual map.</p>
         <span class="card-tag tag-web">gimmemwah.com</span>
       </article>
 
       <article class="card">
         <div class="card-icon">📍</div>
         <h3>Washington and California discovery pages</h3>
-        <p>Two new state hub pages went live — one for Washington shoppers and one for California. Each page helps people searching for MWAH in their state find the right retailers, with structured data for search engines.</p>
+        <p>Two new state hub pages went live — one for Washington shoppers, one for California. Each page helps people searching for MWAH in their state find the right retailers, with structured data for search engines to pick up.</p>
         <span class="card-tag tag-web">gimmemwah.com</span>
       </article>
 
       <article class="card">
         <div class="card-icon">🔍</div>
-        <h3>Homepage flavor copy excluded from search snippets</h3>
-        <p>Individual flavor descriptions on the homepage were leaking into Google's preview snippet for the site, making search results look like a product list instead of a brand homepage. Fixed — the homepage now controls its own snippet copy cleanly.</p>
+        <h3>Homepage controls its own search snippet</h3>
+        <p>Individual flavor descriptions were leaking into Google's preview snippet for the site, making search results look like a product list instead of a brand homepage. Fixed — the homepage now surfaces clean summary copy in search.</p>
         <span class="card-tag tag-web">SEO</span>
       </article>
 
@@ -490,17 +478,18 @@
     <div class="bts-title">⚙️ Behind the scenes</div>
     <ul>
       <li>Reconciliation history documents split into detail and full sub-docs — faster loads, lower read cost for large stores.</li>
-      <li>Portal crawler exclusion rules hardened — search bots get the right rules on every request.</li>
-      <li>Portal store-row divider contrast restored after a merge race left it briefly red on main.</li>
+      <li>POSaBIT inventory reads now served from a materialized read set — faster queries, lower Firestore cost at scale.</li>
+      <li>Portal crawler exclusion rules hardened — search bots get the right directives on every request.</li>
+      <li>Portal store-row divider contrast restored after a merge race briefly set it to red on main.</li>
       <li>Table headers now fill across every column; horizontal rubber-band scroll eliminated on all table views.</li>
-      <li>Inventory background-resolve now correctly handles "recorded touch" rows that were previously skipped.</li>
       <li>GrowFlow payment-field stripping now logs when it runs — easier to audit recon edge cases.</li>
       <li>WCIA input field width corrected in the fulfillment view.</li>
       <li>Sentry auto-triage: closed the assigned-and-forgotten backlog gap so old issues don't linger unreviewed.</li>
       <li>CI deploy-failure Slack alert now shows the commit subject line, not the full multi-line message.</li>
       <li>Semantic source inventory refreshed in the analytics layer.</li>
       <li>Six deferred infra and audit items closed from the 2026-08-29 alerts sweep.</li>
-      <li>Dependency maintenance: Sentry, pdfkit, resend, Firebase SDK, vitest, svix all updated.</li>
+      <li>Website SEO measurement pipeline aligned — Mixpanel product-view contract corrected, reporting diagnostics restored.</li>
+      <li>Dependency maintenance: Firebase SDK, Sentry, pdfkit, resend, vitest, svix, firebase-admin all updated.</li>
     </ul>
   </section>
 

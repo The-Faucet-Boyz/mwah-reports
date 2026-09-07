@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MWAH — Week of August 25 – August 30, 2026</title>
+  <title>MWAH — Week of August 31 – September 6, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -310,18 +310,18 @@
   <div class="hero-inner">
     <p class="hero-brand">MWAH CRM · Weekly Deploy Report</p>
     <h1>This week at MWAH</h1>
-    <p class="hero-date">August 25 – August 30, 2026</p>
+    <p class="hero-date">August 31 – September 6, 2026</p>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-num">14+</div>
+        <div class="hero-stat-num">20+</div>
         <div class="hero-stat-label">improvements shipped</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num">3</div>
-        <div class="hero-stat-label">CRM versions (v102.33–35)</div>
+        <div class="hero-stat-label">CRM versions (v102.41–43)</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">Portal &amp; fulfillment</div>
+        <div class="hero-stat-num">Map + Territory</div>
         <div class="hero-stat-label">biggest focus area</div>
       </div>
     </div>
@@ -337,108 +337,115 @@
     <div class="card-grid">
 
       <article class="card highlight">
-        <div class="card-icon">🔁</div>
+        <div class="card-icon">🗺️</div>
         <div class="card-body">
-          <h3>Buyers can now reorder from any past order</h3>
-          <p>The buyer portal now shows a "Suggested Reorder" section based on previous purchases, and every past order in Order History has a quick reorder action. Buyers can rebuild a familiar order in seconds without starting from scratch — a big time-saver for stores that run the same mix every cycle.</p>
-          <span class="card-tag tag-portal">Buyer portal</span>
+          <h3>The map got a full rebuild — plan routes, track visits, and see territory coverage at a glance</h3>
+          <p>The Stores map is now a territory planning tool. Reps can switch between three views: Off (default clean slate), Visits (color-coded by how recently a store was seen), and Coverage (colored by the strength of the relationship). A Washington state boundary keeps you oriented, the filter panel works exactly like the list view so saved filters apply everywhere, and you can plot a driving route straight from the filtered results — waypoints auto-sorted into an efficient order with turn-by-turn ready to hand off to Maps.</p>
+          <span class="card-tag tag-feature">Map + Territory</span>
         </div>
       </article>
 
       <article class="card highlight">
-        <div class="card-icon">♿</div>
+        <div class="card-icon">📊</div>
         <div class="card-body">
-          <h3>Full WCAG AA color and button accessibility pass</h3>
-          <p>Every color, text contrast, and button state across all three CRM themes now meets WCAG AA standards. This was a comprehensive sweep — not just a handful of spots — so the entire app reads cleanly for everyone on the team, including on lower-brightness screens.</p>
-          <span class="card-tag tag-design">Visual / design</span>
+          <h3>Inventory numbers overhauled — 44 data issues corrected across Inventory, Insights, and Trends</h3>
+          <p>A systematic audit found and fixed 44 individual data issues across the Inventory, Insights, and Trends dashboards — bad subtotals, miscounted segments, tooltip totals that didn't add up, and a Days Supply field that was reporting 99 when it couldn't be calculated instead of honestly saying "unknown." Every one of these is fixed and the numbers now tell the real story.</p>
+          <span class="card-tag tag-fix">Inventory + Analytics</span>
         </div>
       </article>
 
     </div>
   </section>
 
-  <!-- BUYER PORTAL -->
+  <!-- STORES + TERRITORY -->
   <section class="section">
-    <div class="section-title">🛍️ Buyer portal</div>
+    <div class="section-title">📍 Stores + territory</div>
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">🚦</div>
-        <h3>Order minimum applies to buyers, not rep proposals</h3>
-        <p>The order minimum now only blocks buyers at checkout — reps putting together proposals aren't gated. This means reps can draft small test orders or sample builds without hitting a wall, while buyers still see the minimum enforced when they place their own orders.</p>
-        <span class="card-tag tag-feature">New behavior</span>
+        <div class="card-icon">🔍</div>
+        <h3>Filter row rebuilt around what reps actually ask</h3>
+        <p>The filter bar on the Stores and Map pages was reorganized around the questions reps ask most. The most-used filters are front and center now, and the layout stays consistent between the list view and the map so switching between them doesn't mean re-learning the controls.</p>
+        <span class="card-tag tag-feature">Stores</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">📋</div>
-        <h3>VMI proposals can't go below the order minimum</h3>
-        <p>When a buyer adjusts a vendor-managed inventory proposal, the edit is now floored at the order minimum. No more accidentally approving a proposal that would come in under the minimum.</p>
-        <span class="card-tag tag-feature">VMI</span>
+        <div class="card-icon">🏆</div>
+        <h3>Contests now live under the Stores tab</h3>
+        <p>Contest tracking moved into the Stores section alongside the map so it's easier to find in context. You no longer need to navigate to a separate area to check on active contests for stores you're looking at.</p>
+        <span class="card-tag tag-feature">Stores</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">✨</div>
-        <h3>New flavors get a better label in VMI</h3>
-        <p>Flavors that just launched now show "New flavor — try it out!" in vendor-managed inventory suggestions instead of being flagged as a "Slow mover." Much more accurate for a brand-new SKU that hasn't had time to build a sales history.</p>
-        <span class="card-tag tag-fix">VMI</span>
+        <div class="card-icon">🎨</div>
+        <h3>Map coverage view with color toggle and ring indicators</h3>
+        <p>The Coverage view on the map now colors stores by the type of relationship (consignment, wholesale, etc.) with a toggle to switch between relationship mode and intensity mode. Larger stores show a ring around their pin so size differences are easier to read at a glance.</p>
+        <span class="card-tag tag-feature">Map</span>
       </article>
 
     </div>
   </section>
 
-  <!-- ORDERS + FULFILLMENT -->
+  <!-- PROPOSALS + STORE DETAIL -->
   <section class="section">
-    <div class="section-title">📦 Orders + fulfillment</div>
+    <div class="section-title">📋 Proposals + store detail</div>
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">🏳️</div>
-        <h3>Bulk flag and unflag orders in fulfillment</h3>
-        <p>Ops can now select multiple orders at once and flag or unflag them in bulk — no more clicking through orders one by one when something needs to be marked for follow-up or cleared after review.</p>
-        <span class="card-tag tag-feature">Fulfillment</span>
+        <div class="card-icon">🔎</div>
+        <h3>Store drill-down opens right inside a proposal</h3>
+        <p>When reviewing a proposal, reps can now expand a store's detail panel inline without navigating away. The panel includes week-over-week deltas so you can see how the store's numbers shifted since the last proposal period — all without losing your place in the proposal list.</p>
+        <span class="card-tag tag-feature">Proposals</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🔒</div>
-        <h3>Completed orders stay locked in their fulfillment week</h3>
-        <p>A routing bug was causing completed orders to get re-sorted out of a locked fulfillment week when the view refreshed. Fixed — a completed order now stays exactly where it landed.</p>
-        <span class="card-tag tag-fix">Fulfillment</span>
+        <div class="card-icon">📧</div>
+        <h3>Read full email threads right in the activity feed</h3>
+        <p>Activity rows that reference an email can now be expanded to show the full message body inline. No more switching to a separate view to see what was actually said.</p>
+        <span class="card-tag tag-feature">Proposals</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">📜</div>
-        <h3>28 stuck Jul 29 orders are visible again + full list loads</h3>
-        <p>A batch of 28 orders from the July 29 fulfillment cycle were stuck and not showing in the All view. They're restored. The All view also no longer silently cuts off at 500 orders — the full list loads now.</p>
-        <span class="card-tag tag-fix">Fulfillment</span>
+        <div class="card-icon">🏷️</div>
+        <h3>Contact tags visible in the People tab</h3>
+        <p>Any tags you've added to a store contact now show up directly in the store's People tab, so reps don't need to open the full contact record to see at-a-glance labels like "decision maker" or "does reorders."</p>
+        <span class="card-tag tag-feature">Store detail</span>
       </article>
 
     </div>
   </section>
 
-  <!-- DASHBOARD + ANALYTICS -->
+  <!-- INVENTORY + ANALYTICS -->
   <section class="section">
-    <div class="section-title">📱 Dashboard + analytics</div>
+    <div class="section-title">📦 Inventory + analytics</div>
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">🔬</div>
-        <h3>Daily automated data-quality sweep</h3>
-        <p>A new daily probe runs automatically and reports any data integrity issues to #crm-audit. Catches problems before they surface as wrong numbers or missing records — the team sees issues proactively, before anyone has to go looking.</p>
-        <span class="card-tag tag-feature">Data quality</span>
+        <div class="card-icon">⚡</div>
+        <h3>Store Triage opens on the most urgent stores first</h3>
+        <p>When you open the Store Triage view in Inventory, it now defaults to sorting by shortest runway — stores that are closest to running out of stock come first. The most pressing situations are at the top without any manual sorting needed.</p>
+        <span class="card-tag tag-feature">Inventory</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">📊</div>
-        <h3>Samples Given Out chart now shows full history</h3>
-        <p>The Samples trend chart in Analytics was only showing the past month. It now loads the full history, so you can see the long-term samples arc and compare against earlier periods.</p>
+        <div class="card-icon">📉</div>
+        <h3>Samples metrics unified across CRM and reporting</h3>
+        <p>The "Samples Given Out" number was being calculated differently in the CRM dashboard vs. the analytics reports, causing totals that didn't match. There's now a single definition that both surfaces share, so the numbers are consistent everywhere you look.</p>
         <span class="card-tag tag-fix">Analytics</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">⚠️</div>
-        <h3>App tells you when data might be capped</h3>
-        <p>If the live data cache hits its saturation limit, the app now surfaces a visible notice rather than silently showing a partial dataset. You'll know when you're looking at incomplete data instead of guessing.</p>
-        <span class="card-tag tag-feature">Transparency</span>
+        <div class="card-icon">🔕</div>
+        <h3>4 high-volume notification types are now opt-in</h3>
+        <p>Four notification types that were firing too frequently for most reps — including certain order-edit alerts — are now off by default. Anyone who wants them can turn them back on in their notification settings. The default inbox is quieter for everyone else.</p>
+        <span class="card-tag tag-feature">Notifications</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">💲</div>
+        <h3>Discounts dashboard simplified, pricing tabs cleaned up</h3>
+        <p>The Discounts dashboards and pricing tabs were carrying redundant sections that added noise without adding clarity. Both were streamlined — same information, fewer clicks to get to it.</p>
+        <span class="card-tag tag-feature">Dashboard</span>
       </article>
 
     </div>
@@ -450,23 +457,16 @@
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">🗺️</div>
-        <h3>Store locator switched to OpenFreeMap</h3>
-        <p>The Find Us map now uses OpenFreeMap instead of CartoDB. Loads faster, has no API key dependency, and includes full fallback handling if the map fails — so the store list always stays usable even without the visual map.</p>
+        <div class="card-icon">🔄</div>
+        <h3>Product carousel on the homepage loops without stopping</h3>
+        <p>The product showcase on gimmemwah.com now loops continuously — once it reaches the last product it wraps back around automatically instead of stopping at the end. A smoother experience for visitors browsing the lineup.</p>
         <span class="card-tag tag-web">gimmemwah.com</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">📍</div>
-        <h3>Washington and California discovery pages</h3>
-        <p>Two new state hub pages went live — one for Washington shoppers, one for California. Each page helps people searching for MWAH in their state find the right retailers, with structured data for search engines to pick up.</p>
-        <span class="card-tag tag-web">gimmemwah.com</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">🔍</div>
-        <h3>Homepage controls its own search snippet</h3>
-        <p>Individual flavor descriptions were leaking into Google's preview snippet for the site, making search results look like a product list instead of a brand homepage. Fixed — the homepage now surfaces clean summary copy in search.</p>
+        <div class="card-icon">📅</div>
+        <h3>SEO report pipeline made more reliable</h3>
+        <p>The automated SEO reporting system can now tolerate delays in its scheduled triggers and also recover historical data if a report run is ever missed. The weekly reporting should be a lot more resilient going forward.</p>
         <span class="card-tag tag-web">SEO</span>
       </article>
 
@@ -477,19 +477,16 @@
   <section class="bts">
     <div class="bts-title">⚙️ Behind the scenes</div>
     <ul>
-      <li>Reconciliation history documents split into detail and full sub-docs — faster loads, lower read cost for large stores.</li>
-      <li>POSaBIT inventory reads now served from a materialized read set — faster queries, lower Firestore cost at scale.</li>
-      <li>Portal crawler exclusion rules hardened — search bots get the right directives on every request.</li>
-      <li>Portal store-row divider contrast restored after a merge race briefly set it to red on main.</li>
-      <li>Table headers now fill across every column; horizontal rubber-band scroll eliminated on all table views.</li>
-      <li>GrowFlow payment-field stripping now logs when it runs — easier to audit recon edge cases.</li>
-      <li>WCIA input field width corrected in the fulfillment view.</li>
-      <li>Sentry auto-triage: closed the assigned-and-forgotten backlog gap so old issues don't linger unreviewed.</li>
-      <li>CI deploy-failure Slack alert now shows the commit subject line, not the full multi-line message.</li>
-      <li>Semantic source inventory refreshed in the analytics layer.</li>
-      <li>Six deferred infra and audit items closed from the 2026-08-29 alerts sweep.</li>
-      <li>Website SEO measurement pipeline aligned — Mixpanel product-view contract corrected, reporting diagnostics restored.</li>
-      <li>Dependency maintenance: Firebase SDK, Sentry, pdfkit, resend, vitest, svix, firebase-admin all updated.</li>
+      <li>Contact notes migrated to a proper subcollection — faster reads and a cleaner data model for large stores with many contacts.</li>
+      <li>Store notes and fulfillment notes exposed in the automation layer — agent tools can now read and update notes without a workaround.</li>
+      <li>Map CSS injection fix — a timing bug was causing the map to load unstyled on some navigations; a spinner now holds the map until tiles are ready.</li>
+      <li>Rep identity anchored to user ID in analytics — display-name snapshots were causing reps to appear as separate entities after a name change.</li>
+      <li>Alert noise reduced — order edits that only touch an invoice number no longer trigger notifications to the ops team.</li>
+      <li>Semantic routing eval questions pinned — each question now has a single canonical answer path, preventing drift across model updates.</li>
+      <li>BigQuery samples view made NULL-safe — blank store IDs were producing phantom rows in aggregate reports.</li>
+      <li>CRM audit gaps closed and several obsolete code paths removed.</li>
+      <li>Sentry alert-rule sync ported to the Workflows API; the old approach was deprecated.</li>
+      <li>Dependency maintenance across CRM and website: svix, pdfkit, resend, BigQuery client, googleapis, qs, fast-uri, and others updated.</li>
     </ul>
   </section>
 
@@ -502,7 +499,7 @@
       Questions? Drop them in <strong>#all-mwah</strong> on Slack.
     </div>
     <div class="footer-right">
-      <div class="footer-version">v102.35<span>latest deployed version</span></div>
+      <div class="footer-version">v102.43<span>latest deployed version</span></div>
     </div>
   </footer>
 

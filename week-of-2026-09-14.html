@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MWAH — Week of August 31 – September 6, 2026</title>
+  <title>MWAH — Week of September 7 – September 13, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -310,18 +310,18 @@
   <div class="hero-inner">
     <p class="hero-brand">MWAH CRM · Weekly Deploy Report</p>
     <h1>This week at MWAH</h1>
-    <p class="hero-date">August 31 – September 6, 2026</p>
+    <p class="hero-date">September 7 – September 13, 2026</p>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-num">20+</div>
+        <div class="hero-stat-num">30+</div>
         <div class="hero-stat-label">improvements shipped</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">3</div>
-        <div class="hero-stat-label">CRM versions (v102.41–43)</div>
+        <div class="hero-stat-num">2</div>
+        <div class="hero-stat-label">CRM versions (v102.44–45)</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">Map + Territory</div>
+        <div class="hero-stat-num">Inventory</div>
         <div class="hero-stat-label">biggest focus area</div>
       </div>
     </div>
@@ -337,115 +337,144 @@
     <div class="card-grid">
 
       <article class="card highlight">
-        <div class="card-icon">🗺️</div>
+        <div class="card-icon">📦</div>
         <div class="card-body">
-          <h3>The map got a full rebuild — plan routes, track visits, and see territory coverage at a glance</h3>
-          <p>The Stores map is now a territory planning tool. Reps can switch between three views: Off (default clean slate), Visits (color-coded by how recently a store was seen), and Coverage (colored by the strength of the relationship). A Washington state boundary keeps you oriented, the filter panel works exactly like the list view so saved filters apply everywhere, and you can plot a driving route straight from the filtered results — waypoints auto-sorted into an efficient order with turn-by-turn ready to hand off to Maps.</p>
-          <span class="card-tag tag-feature">Map + Territory</span>
+          <h3>Inventory got a full overhaul — the numbers finally add up, and working the queue is much faster</h3>
+          <p>This was a big week for Inventory. The By Product view was rebuilt from the ground up with POSaBIT data parity — you now see a runway bar, order tiles, and performance tiles side by side so everything you need to decide on a reorder is in one place. Tab counts now show actual work items. The sidebar badge counts stores with a problem, not just emails sent. Proposals & Emails got a multi-select status filter with Expired finally exposed. And a switched-off product no longer ghosts its way onto CRM surfaces after it's been pulled.</p>
+          <span class="card-tag tag-feature">Inventory</span>
         </div>
       </article>
 
       <article class="card highlight">
-        <div class="card-icon">📊</div>
+        <div class="card-icon">🌸</div>
         <div class="card-body">
-          <h3>Inventory numbers overhauled — 44 data issues corrected across Inventory, Insights, and Trends</h3>
-          <p>A systematic audit found and fixed 44 individual data issues across the Inventory, Insights, and Trends dashboards — bad subtotals, miscounted segments, tooltip totals that didn't add up, and a Days Supply field that was reporting 99 when it couldn't be calculated instead of honestly saying "unknown." Every one of these is fixed and the numbers now tell the real story.</p>
-          <span class="card-tag tag-fix">Inventory + Analytics</span>
+          <h3>MWAHcha is now front and center on the homepage — the new kits have their moment</h3>
+          <p>gimmemwah.com now leads with a coming-soon hero for MWAHcha kits, with a "See the Line" link and a CTA pointing customers to their nearest store. The hero is fully optimized for mobile. This is the first time MWAHcha has had a dedicated homepage presence — customers landing on the site will know something exciting is coming.</p>
+          <span class="card-tag tag-web">gimmemwah.com</span>
         </div>
       </article>
 
     </div>
   </section>
 
-  <!-- STORES + TERRITORY -->
+  <!-- INVENTORY + PROPOSALS -->
   <section class="section">
-    <div class="section-title">📍 Stores + territory</div>
+    <div class="section-title">📦 Inventory + proposals</div>
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">🔍</div>
-        <h3>Filter row rebuilt around what reps actually ask</h3>
-        <p>The filter bar on the Stores and Map pages was reorganized around the questions reps ask most. The most-used filters are front and center now, and the layout stays consistent between the list view and the map so switching between them doesn't mean re-learning the controls.</p>
-        <span class="card-tag tag-feature">Stores</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">🏆</div>
-        <h3>Contests now live under the Stores tab</h3>
-        <p>Contest tracking moved into the Stores section alongside the map so it's easier to find in context. You no longer need to navigate to a separate area to check on active contests for stores you're looking at.</p>
-        <span class="card-tag tag-feature">Stores</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">🎨</div>
-        <h3>Map coverage view with color toggle and ring indicators</h3>
-        <p>The Coverage view on the map now colors stores by the type of relationship (consignment, wholesale, etc.) with a toggle to switch between relationship mode and intensity mode. Larger stores show a ring around their pin so size differences are easier to read at a glance.</p>
-        <span class="card-tag tag-feature">Map</span>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- PROPOSALS + STORE DETAIL -->
-  <section class="section">
-    <div class="section-title">📋 Proposals + store detail</div>
-    <div class="card-grid">
-
-      <article class="card">
-        <div class="card-icon">🔎</div>
-        <h3>Store drill-down opens right inside a proposal</h3>
-        <p>When reviewing a proposal, reps can now expand a store's detail panel inline without navigating away. The panel includes week-over-week deltas so you can see how the store's numbers shifted since the last proposal period — all without losing your place in the proposal list.</p>
-        <span class="card-tag tag-feature">Proposals</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">📧</div>
-        <h3>Read full email threads right in the activity feed</h3>
-        <p>Activity rows that reference an email can now be expanded to show the full message body inline. No more switching to a separate view to see what was actually said.</p>
-        <span class="card-tag tag-feature">Proposals</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">🏷️</div>
-        <h3>Contact tags visible in the People tab</h3>
-        <p>Any tags you've added to a store contact now show up directly in the store's People tab, so reps don't need to open the full contact record to see at-a-glance labels like "decision maker" or "does reorders."</p>
-        <span class="card-tag tag-feature">Store detail</span>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- INVENTORY + ANALYTICS -->
-  <section class="section">
-    <div class="section-title">📦 Inventory + analytics</div>
-    <div class="card-grid">
-
-      <article class="card">
-        <div class="card-icon">⚡</div>
-        <h3>Store Triage opens on the most urgent stores first</h3>
-        <p>When you open the Store Triage view in Inventory, it now defaults to sorting by shortest runway — stores that are closest to running out of stock come first. The most pressing situations are at the top without any manual sorting needed.</p>
+        <div class="card-icon">📊</div>
+        <h3>By Product view rebuilt with side-by-side POSaBIT data</h3>
+        <p>The Inventory By Product view was rebuilt to match what POSaBIT shows — you now see a runway bar, a current-order tile, and a performance tile together, so the decision to reorder (or not) is visible without hunting across tabs.</p>
         <span class="card-tag tag-feature">Inventory</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">📉</div>
-        <h3>Samples metrics unified across CRM and reporting</h3>
-        <p>The "Samples Given Out" number was being calculated differently in the CRM dashboard vs. the analytics reports, causing totals that didn't match. There's now a single definition that both surfaces share, so the numbers are consistent everywhere you look.</p>
-        <span class="card-tag tag-fix">Analytics</span>
+        <div class="card-icon">🔽</div>
+        <h3>Multi-select status filter on Proposals & Emails, Expired now included</h3>
+        <p>The Proposals & Emails panel now lets you filter by more than one status at a time. Expired proposals are also exposed for the first time — useful for tracking stores that had a proposal fall through and need a follow-up.</p>
+        <span class="card-tag tag-feature">Proposals</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🔕</div>
-        <h3>4 high-volume notification types are now opt-in</h3>
-        <p>Four notification types that were firing too frequently for most reps — including certain order-edit alerts — are now off by default. Anyone who wants them can turn them back on in their notification settings. The default inbox is quieter for everyone else.</p>
-        <span class="card-tag tag-feature">Notifications</span>
+        <div class="card-icon">🔢</div>
+        <h3>Tab counts show real work, and the sidebar badge counts actual problems</h3>
+        <p>Inventory tab counts now reflect real items waiting for attention rather than a raw send total. The sidebar badge was also corrected — it now counts stores that have an actual issue, not the number of outgoing proposal sends.</p>
+        <span class="card-tag tag-fix">Inventory</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">💲</div>
-        <h3>Discounts dashboard simplified, pricing tabs cleaned up</h3>
-        <p>The Discounts dashboards and pricing tabs were carrying redundant sections that added noise without adding clarity. Both were streamlined — same information, fewer clicks to get to it.</p>
-        <span class="card-tag tag-feature">Dashboard</span>
+        <div class="card-icon">🚫</div>
+        <h3>Switched-off products disappear cleanly from the CRM</h3>
+        <p>When a product is turned off in Admin, it now disappears from all CRM surfaces — proposal views, inventory lists, and store detail — instead of lingering as a ghost entry with no inventory to back it up.</p>
+        <span class="card-tag tag-fix">Inventory</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- MAP + ROUTES -->
+  <section class="section">
+    <div class="section-title">🗺️ Map + routes</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">📍</div>
+        <h3>Route panel reorganized: start your trip, add stops, then save</h3>
+        <p>The route-building panel now flows in the order you actually work — pick a start, add stops along the way, and save when you're done. The old layout put the save action too early and buried the stop list.</p>
+        <span class="card-tag tag-feature">Map</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">➕</div>
+        <h3>Add stores to a route straight from the map pins</h3>
+        <p>"Along the Way" is now properly gated so it only shows when a route is active, and you can add a store to the current route directly from its map pin without opening the full detail panel.</p>
+        <span class="card-tag tag-feature">Map</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">💾</div>
+        <h3>Saved routes tab: route-owner selector no longer clips under the tab strip</h3>
+        <p>A layout bug was causing the route-owner dropdown on the Saved tab to get cut off by the tab bar. The selector now has proper clearance so you can see and use all the options.</p>
+        <span class="card-tag tag-fix">Map</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ALERT CENTER + VMI -->
+  <section class="section">
+    <div class="section-title">🔔 Alert Center + VMI</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">⏸️</div>
+        <h3>Alerts can now be paused and resumed from the command line</h3>
+        <p>Ops can now pause an Alert Center alert directly via CLI without going through the UI — useful for silencing a noisy alert during a deploy or an expected data gap — and resume it just as easily when things are back to normal.</p>
+        <span class="card-tag tag-feature">Alert Center</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🛡️</div>
+        <h3>A paused alert stays paused — the outbox fallback no longer delivers it</h3>
+        <p>There was a case where a paused alert could still get delivered through the outbox fallback path. That gap is closed — a paused alert is now paused everywhere, not just in the primary delivery route.</p>
+        <span class="card-tag tag-fix">Alert Center</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🛒</div>
+        <h3>VMI intro is rep-authored when there's no register data to pull from</h3>
+        <p>When a store doesn't have POS register data available, the VMI builder now generates a rep-written intro rather than leaving a blank or pulling from missing fields. The builder also records what the rep actually saw at the time, so the context is preserved.</p>
+        <span class="card-tag tag-fix">VMI</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- DASHBOARD + NAV -->
+  <section class="section">
+    <div class="section-title">📱 Dashboard + nav</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">🔢</div>
+        <h3>Sidebar counters visible at every screen width, portal inbox fully counted</h3>
+        <p>The sidebar counters were previously hidden at certain viewport widths. They now show at every size, and the portal inbox count is complete — it includes all pending items, not just the ones that fit the previous cap.</p>
+        <span class="card-tag tag-feature">Navigation</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">💤</div>
+        <h3>VMI reorder snooze added to the sidebar</h3>
+        <p>Reps can now snooze a VMI reorder reminder directly from the sidebar counter without navigating into the full VMI flow. Less friction for a task that comes up constantly.</p>
+        <span class="card-tag tag-feature">Navigation</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📐</div>
+        <h3>Compact CRM layout and consistent spacing restored</h3>
+        <p>A regression had loosened the CRM's compact density, making rows taller and spacing uneven compared to the intended design. Both are corrected — the layout is back to the tight, consistent rhythm reps expect.</p>
+        <span class="card-tag tag-fix">Dashboard</span>
       </article>
 
     </div>
@@ -457,17 +486,24 @@
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">🔄</div>
-        <h3>Product carousel on the homepage loops without stopping</h3>
-        <p>The product showcase on gimmemwah.com now loops continuously — once it reaches the last product it wraps back around automatically instead of stopping at the end. A smoother experience for visitors browsing the lineup.</p>
+        <div class="card-icon">🌸</div>
+        <h3>MWAHcha coming-soon hero is live on gimmemwah.com</h3>
+        <p>The homepage now leads with a dedicated MWAHcha hero featuring kit imagery, a "See the Line" teaser link, and a store CTA. The hero is mobile-optimized with a centered layout and correct text sizing on small screens.</p>
         <span class="card-tag tag-web">gimmemwah.com</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">📅</div>
-        <h3>SEO report pipeline made more reliable</h3>
-        <p>The automated SEO reporting system can now tolerate delays in its scheduled triggers and also recover historical data if a report run is ever missed. The weekly reporting should be a lot more resilient going forward.</p>
-        <span class="card-tag tag-web">SEO</span>
+        <div class="card-icon">⚠️</div>
+        <h3>California recall page built and staged</h3>
+        <p>A standalone recall page was built for California — with product photos, alphabetical listing by product and batch, and polished compliance styling. A reversible switch controls whether California-facing content is shown, so the team can flip it on or off without a code change.</p>
+        <span class="card-tag tag-web">Compliance</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">✨</div>
+        <h3>Product carousel and homepage polished for mobile</h3>
+        <p>Several mobile rough edges got cleaned up: the product carousel now plays back smoothly, unnecessary arrows were removed from detail buttons, format copy was consolidated in the collection intro, and the locator popup no longer shows pink underlines on its links.</p>
+        <span class="card-tag tag-fix">gimmemwah.com</span>
       </article>
 
     </div>
@@ -477,16 +513,15 @@
   <section class="bts">
     <div class="bts-title">⚙️ Behind the scenes</div>
     <ul>
-      <li>Contact notes migrated to a proper subcollection — faster reads and a cleaner data model for large stores with many contacts.</li>
-      <li>Store notes and fulfillment notes exposed in the automation layer — agent tools can now read and update notes without a workaround.</li>
-      <li>Map CSS injection fix — a timing bug was causing the map to load unstyled on some navigations; a spinner now holds the map until tiles are ready.</li>
-      <li>Rep identity anchored to user ID in analytics — display-name snapshots were causing reps to appear as separate entities after a name change.</li>
-      <li>Alert noise reduced — order edits that only touch an invoice number no longer trigger notifications to the ops team.</li>
-      <li>Semantic routing eval questions pinned — each question now has a single canonical answer path, preventing drift across model updates.</li>
-      <li>BigQuery samples view made NULL-safe — blank store IDs were producing phantom rows in aggregate reports.</li>
-      <li>CRM audit gaps closed and several obsolete code paths removed.</li>
-      <li>Sentry alert-rule sync ported to the Workflows API; the old approach was deprecated.</li>
-      <li>Dependency maintenance across CRM and website: svix, pdfkit, resend, BigQuery client, googleapis, qs, fast-uri, and others updated.</li>
+      <li>Node 24.21.0 LTS standardized across CRM, MCP, and OpenClaw; the MCP package is now engine-strict to catch version mismatches early.</li>
+      <li>Sentry: FirebaseError code is now stamped in beforeSend where it survives the Dedupe plugin — errors were being grouped as generic FirebaseError instead of by specific code.</li>
+      <li>Analytics: Samples Given Out tooltip total was undercounting stacked segments — calculation corrected at the source.</li>
+      <li>Store detail: samples correctly excluded from the Analytics Product Breakdown (they were inflating product-level numbers).</li>
+      <li>Dashboard truncation reporting now says what was dropped and how much, not just that a cap was reached.</li>
+      <li>HIG audit completed across the consumer site and Shopify editorial preview — accessibility and spacing findings addressed.</li>
+      <li>MCP tool descriptions trimmed and self-explanatory reads marked so the tool list is easier to scan.</li>
+      <li>Dependency updates: vitest 5.0, Playwright 1.63, Sentry Node 10.73, Firestore client, resend 6.26, svix 2.3, hono — all across CRM and cloud functions.</li>
+      <li>Shopify editorial preview: MWAH trademark aligned with the wordmark and theme sources captured from the audited unpublished state.</li>
     </ul>
   </section>
 
@@ -499,7 +534,7 @@
       Questions? Drop them in <strong>#all-mwah</strong> on Slack.
     </div>
     <div class="footer-right">
-      <div class="footer-version">v102.43<span>latest deployed version</span></div>
+      <div class="footer-version">v102.45<span>latest deployed version</span></div>
     </div>
   </footer>
 

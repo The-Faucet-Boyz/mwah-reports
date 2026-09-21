@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MWAH — Week of September 7 – September 13, 2026</title>
+  <title>MWAH — Week of September 14 – September 20, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -310,15 +310,15 @@
   <div class="hero-inner">
     <p class="hero-brand">MWAH CRM · Weekly Deploy Report</p>
     <h1>This week at MWAH</h1>
-    <p class="hero-date">September 7 – September 13, 2026</p>
+    <p class="hero-date">September 14 – September 20, 2026</p>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-num">30+</div>
+        <div class="hero-stat-num">35+</div>
         <div class="hero-stat-label">improvements shipped</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">2</div>
-        <div class="hero-stat-label">CRM versions (v102.44–45)</div>
+        <div class="hero-stat-num">4</div>
+        <div class="hero-stat-label">CRM versions (v102.46–49)</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num">Inventory</div>
@@ -339,17 +339,17 @@
       <article class="card highlight">
         <div class="card-icon">📦</div>
         <div class="card-body">
-          <h3>Inventory got a full overhaul — the numbers finally add up, and working the queue is much faster</h3>
-          <p>This was a big week for Inventory. The By Product view was rebuilt from the ground up with POSaBIT data parity — you now see a runway bar, order tiles, and performance tiles side by side so everything you need to decide on a reorder is in one place. Tab counts now show actual work items. The sidebar badge counts stores with a problem, not just emails sent. Proposals & Emails got a multi-select status filter with Expired finally exposed. And a switched-off product no longer ghosts its way onto CRM surfaces after it's been pulled.</p>
+          <h3>Inventory finally tells the whole story — four CRM releases in seven days, all converging on proposals and counts</h3>
+          <p>This was the biggest single-week Inventory overhaul in the CRM's history. Tab counts now show real work items rather than raw send totals. Proposals for products a store has already ordered past no longer appear as things to resend. A new Proposal Metrics tab surfaces trend data so reps can see whether a product is gaining traction before committing to another send cycle. And the entire Inventory area now shares one consistent design across all five tabs.</p>
           <span class="card-tag tag-feature">Inventory</span>
         </div>
       </article>
 
       <article class="card highlight">
-        <div class="card-icon">🌸</div>
+        <div class="card-icon">📸</div>
         <div class="card-body">
-          <h3>MWAHcha is now front and center on the homepage — the new kits have their moment</h3>
-          <p>gimmemwah.com now leads with a coming-soon hero for MWAHcha kits, with a "See the Line" link and a CTA pointing customers to their nearest store. The hero is fully optimized for mobile. This is the first time MWAHcha has had a dedicated homepage presence — customers landing on the site will know something exciting is coming.</p>
+          <h3>gimmemwah.com product pages got a full image gallery — customers can now explore each flavor before they head to a store</h3>
+          <p>Product detail pages on gimmemwah.com now include a scrollable gallery wired to flavor navigation. Clicking a flavor loads its white-ground WA product renders so customers know exactly what they're picking. This is the first time flavor-specific photography has been surfaced on the public site.</p>
           <span class="card-tag tag-web">gimmemwah.com</span>
         </div>
       </article>
@@ -363,118 +363,118 @@
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">📊</div>
-        <h3>By Product view rebuilt with side-by-side POSaBIT data</h3>
-        <p>The Inventory By Product view was rebuilt to match what POSaBIT shows — you now see a runway bar, a current-order tile, and a performance tile together, so the decision to reorder (or not) is visible without hunting across tabs.</p>
-        <span class="card-tag tag-feature">Inventory</span>
+        <div class="card-icon">🔢</div>
+        <h3>Tab counts now show real work items, not sends</h3>
+        <p>Inventory tab counts now reflect actual items waiting for attention rather than a tally of emails sent. You can see at a glance where work actually sits without opening every tab.</p>
+        <span class="card-tag tag-fix">Inventory</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🔽</div>
-        <h3>Multi-select status filter on Proposals & Emails, Expired now included</h3>
-        <p>The Proposals & Emails panel now lets you filter by more than one status at a time. Expired proposals are also exposed for the first time — useful for tracking stores that had a proposal fall through and need a follow-up.</p>
+        <div class="card-icon">✅</div>
+        <h3>Already-ordered proposals drop off the re-send queue</h3>
+        <p>Proposals for products a store has already ordered past no longer appear as work to resend. The queue now shows only stores where a proposal is genuinely needed.</p>
+        <span class="card-tag tag-fix">Inventory</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📊</div>
+        <h3>New Proposal Metrics tab — see how a product is trending before you send</h3>
+        <p>A new Metrics tab on the Inventory panel surfaces send rate, open rate, and order conversion trend data so reps can decide whether a product is gaining traction before committing to another send cycle. The Proposal History tab was also renamed to make navigation clearer.</p>
         <span class="card-tag tag-feature">Proposals</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🔢</div>
-        <h3>Tab counts show real work, and the sidebar badge counts actual problems</h3>
-        <p>Inventory tab counts now reflect real items waiting for attention rather than a raw send total. The sidebar badge was also corrected — it now counts stores that have an actual issue, not the number of outgoing proposal sends.</p>
-        <span class="card-tag tag-fix">Inventory</span>
+        <div class="card-icon">🎨</div>
+        <h3>All five Inventory tabs now look and work as one</h3>
+        <p>The Inventory area now uses a single design system across all five tabs — consistent spacing, typography, and interaction patterns throughout. The CRM component showcase was updated to match.</p>
+        <span class="card-tag tag-design">Inventory</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🚫</div>
-        <h3>Switched-off products disappear cleanly from the CRM</h3>
-        <p>When a product is turned off in Admin, it now disappears from all CRM surfaces — proposal views, inventory lists, and store detail — instead of lingering as a ghost entry with no inventory to back it up.</p>
-        <span class="card-tag tag-fix">Inventory</span>
+        <div class="card-icon">📅</div>
+        <h3>Pick the fulfillment week when sending a proposal</h3>
+        <p>When sending a proposal, reps can now specify which fulfillment week they're targeting. The proposal lands with the right context instead of a generic date range.</p>
+        <span class="card-tag tag-feature">Proposals</span>
       </article>
 
     </div>
   </section>
 
-  <!-- MAP + ROUTES -->
+  <!-- BUYER PORTAL -->
   <section class="section">
-    <div class="section-title">🗺️ Map + routes</div>
+    <div class="section-title">🛒 Buyer portal</div>
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">📍</div>
-        <h3>Route panel reorganized: start your trip, add stops, then save</h3>
-        <p>The route-building panel now flows in the order you actually work — pick a start, add stops along the way, and save when you're done. The old layout put the save action too early and buried the stop list.</p>
+        <div class="card-icon">🔒</div>
+        <h3>Portal switch gates only buyer self-serve — rep tools unaffected</h3>
+        <p>Turning off the portal switch no longer affects rep-side Inventory, Market view, or low-stock emails. The switch now controls what buyers can self-serve, not what reps can see. Hidden flavors are also consistently hidden everywhere the switch applies.</p>
+        <span class="card-tag tag-portal">Buyer portal</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📈</div>
+        <h3>Product performance columns are clearer, runway bars show actual numbers</h3>
+        <p>The portal's Product performance view was reorganized — column headers are self-explanatory, and runway bars now show the actual number alongside the bar so buyers can read it without doing mental math.</p>
+        <span class="card-tag tag-portal">Buyer portal</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔄</div>
+        <h3>Portal order submissions are dramatically more reliable</h3>
+        <p>Three separate edge-case bugs were fixed in the portal's order submission flow: a committed order now echoes back before any checkout gate re-checks, a paused retry is no longer re-offered after the server already refused it, and a lost-response retry is properly allowed through the pause gate. Orders should behave predictably in all cases now.</p>
+        <span class="card-tag tag-fix">Portal orders</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🎁</div>
+        <h3>Trade sample switch respected consistently in the portal</h3>
+        <p>Buyer trade samples now follow the portal on/off switch and the per-flavor sample switch is enforced. Sample orders behave consistently with non-sample orders.</p>
+        <span class="card-tag tag-portal">Samples</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- MAP + STORE DATA -->
+  <section class="section">
+    <div class="section-title">🗺️ Map + store data</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">💹</div>
+        <h3>Sales/day and register status now on the store panel</h3>
+        <p>Opening a store on the map now shows its daily sales rate and whether it has active register data alongside the standard store details. Pin separation also kicks in earlier so nearby stores are easier to tap.</p>
         <span class="card-tag tag-feature">Map</span>
       </article>
 
-      <article class="card">
-        <div class="card-icon">➕</div>
-        <h3>Add stores to a route straight from the map pins</h3>
-        <p>"Along the Way" is now properly gated so it only shows when a route is active, and you can add a store to the current route directly from its map pin without opening the full detail panel.</p>
-        <span class="card-tag tag-feature">Map</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">💾</div>
-        <h3>Saved routes tab: route-owner selector no longer clips under the tab strip</h3>
-        <p>A layout bug was causing the route-owner dropdown on the Saved tab to get cut off by the tab bar. The selector now has proper clearance so you can see and use all the options.</p>
-        <span class="card-tag tag-fix">Map</span>
-      </article>
-
     </div>
   </section>
 
-  <!-- ALERT CENTER + VMI -->
+  <!-- ALERTS + RECONCILIATION -->
   <section class="section">
-    <div class="section-title">🔔 Alert Center + VMI</div>
+    <div class="section-title">🔔 Alerts + reconciliation</div>
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">⏸️</div>
-        <h3>Alerts can now be paused and resumed from the command line</h3>
-        <p>Ops can now pause an Alert Center alert directly via CLI without going through the UI — useful for silencing a noisy alert during a deploy or an expected data gap — and resume it just as easily when things are back to normal.</p>
-        <span class="card-tag tag-feature">Alert Center</span>
+        <div class="card-icon">🚨</div>
+        <h3>Reconciliation no longer sends a false all-clear</h3>
+        <p>An audit alert could previously show "no issues" when issues still existed. That path is closed — a partial reconciliation result can no longer be delivered as a passing score.</p>
+        <span class="card-tag tag-fix">Reconciliation</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🛡️</div>
-        <h3>A paused alert stays paused — the outbox fallback no longer delivers it</h3>
-        <p>There was a case where a paused alert could still get delivered through the outbox fallback path. That gap is closed — a paused alert is now paused everywhere, not just in the primary delivery route.</p>
-        <span class="card-tag tag-fix">Alert Center</span>
+        <div class="card-icon">📣</div>
+        <h3>POSaBIT alerts are in plain language and never truncated</h3>
+        <p>The retailer access-lost Slack alert was rewritten in plain language so anyone reading it knows what happened without decoding a technical message. Store mapping alerts are also no longer cut off mid-sentence when the store list runs long.</p>
+        <span class="card-tag tag-fix">Alerts</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🛒</div>
-        <h3>VMI intro is rep-authored when there's no register data to pull from</h3>
-        <p>When a store doesn't have POS register data available, the VMI builder now generates a rep-written intro rather than leaving a blank or pulling from missing fields. The builder also records what the rep actually saw at the time, so the context is preserved.</p>
-        <span class="card-tag tag-fix">VMI</span>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- DASHBOARD + NAV -->
-  <section class="section">
-    <div class="section-title">📱 Dashboard + nav</div>
-    <div class="card-grid">
-
-      <article class="card">
-        <div class="card-icon">🔢</div>
-        <h3>Sidebar counters visible at every screen width, portal inbox fully counted</h3>
-        <p>The sidebar counters were previously hidden at certain viewport widths. They now show at every size, and the portal inbox count is complete — it includes all pending items, not just the ones that fit the previous cap.</p>
-        <span class="card-tag tag-feature">Navigation</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">💤</div>
-        <h3>VMI reorder snooze added to the sidebar</h3>
-        <p>Reps can now snooze a VMI reorder reminder directly from the sidebar counter without navigating into the full VMI flow. Less friction for a task that comes up constantly.</p>
-        <span class="card-tag tag-feature">Navigation</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">📐</div>
-        <h3>Compact CRM layout and consistent spacing restored</h3>
-        <p>A regression had loosened the CRM's compact density, making rows taller and spacing uneven compared to the intended design. Both are corrected — the layout is back to the tight, consistent rhythm reps expect.</p>
-        <span class="card-tag tag-fix">Dashboard</span>
+        <div class="card-icon">🖋️</div>
+        <h3>Consistent formatting across all order and portal Slack alerts</h3>
+        <p>Order and portal Slack alerts now use the same formatting standard as the rest of the alert system. No more mixed formatting across different alert types in the channel.</p>
+        <span class="card-tag tag-fix">Alerts</span>
       </article>
 
     </div>
@@ -486,24 +486,31 @@
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">🌸</div>
-        <h3>MWAHcha coming-soon hero is live on gimmemwah.com</h3>
-        <p>The homepage now leads with a dedicated MWAHcha hero featuring kit imagery, a "See the Line" teaser link, and a store CTA. The hero is mobile-optimized with a centered layout and correct text sizing on small screens.</p>
+        <div class="card-icon">📸</div>
+        <h3>Product pages: image gallery wired to flavor navigation</h3>
+        <p>Each product detail page now has a gallery that updates when a customer selects a flavor. The gallery shows white-ground WA renders so customers can see exactly what's in each product before visiting a store.</p>
         <span class="card-tag tag-web">gimmemwah.com</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">⚠️</div>
-        <h3>California recall page built and staged</h3>
-        <p>A standalone recall page was built for California — with product photos, alphabetical listing by product and batch, and polished compliance styling. A reversible switch controls whether California-facing content is shown, so the team can flip it on or off without a code change.</p>
-        <span class="card-tag tag-web">Compliance</span>
+        <div class="card-icon">📱</div>
+        <h3>Follow MWAH on Instagram and TikTok — the ask is now on pages people actually reach</h3>
+        <p>The social follow prompt now appears on product pages, the locator, and the about page — not only after a newsletter signup. The popup opens after 10 seconds, the confirmation card was redesigned, and mobile gutters are even across all screen sizes.</p>
+        <span class="card-tag tag-web">Socials</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">✨</div>
-        <h3>Product carousel and homepage polished for mobile</h3>
-        <p>Several mobile rough edges got cleaned up: the product carousel now plays back smoothly, unnecessary arrows were removed from detail buttons, format copy was consolidated in the collection intro, and the locator popup no longer shows pink underlines on its links.</p>
+        <div class="card-icon">🖼️</div>
+        <h3>Follow popup images served at retina resolution on high-DPI screens</h3>
+        <p>The product shot in the follow popup was being served at viewport-sized resolution on all displays. It now delivers the correct density image per device — retina screens get the full-resolution version.</p>
         <span class="card-tag tag-fix">gimmemwah.com</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📍</div>
+        <h3>Locator search action now reads what you actually typed</h3>
+        <p>When a customer typed a location and pressed the search action button, the button wasn't reading the latest input value. It now searches exactly what was typed, matching the expected behavior.</p>
+        <span class="card-tag tag-fix">Locator</span>
       </article>
 
     </div>
@@ -513,15 +520,16 @@
   <section class="bts">
     <div class="bts-title">⚙️ Behind the scenes</div>
     <ul>
-      <li>Node 24.21.0 LTS standardized across CRM, MCP, and OpenClaw; the MCP package is now engine-strict to catch version mismatches early.</li>
-      <li>Sentry: FirebaseError code is now stamped in beforeSend where it survives the Dedupe plugin — errors were being grouped as generic FirebaseError instead of by specific code.</li>
-      <li>Analytics: Samples Given Out tooltip total was undercounting stacked segments — calculation corrected at the source.</li>
-      <li>Store detail: samples correctly excluded from the Analytics Product Breakdown (they were inflating product-level numbers).</li>
-      <li>Dashboard truncation reporting now says what was dropped and how much, not just that a cap was reached.</li>
-      <li>HIG audit completed across the consumer site and Shopify editorial preview — accessibility and spacing findings addressed.</li>
-      <li>MCP tool descriptions trimmed and self-explanatory reads marked so the tool list is easier to scan.</li>
-      <li>Dependency updates: vitest 5.0, Playwright 1.63, Sentry Node 10.73, Firestore client, resend 6.26, svix 2.3, hono — all across CRM and cloud functions.</li>
-      <li>Shopify editorial preview: MWAH trademark aligned with the wordmark and theme sources captured from the audited unpublished state.</li>
+      <li>Four CRM releases in seven days (v102.46 through v102.49) — the fastest release cadence this year.</li>
+      <li>Firebase Admin 14.4.0, React 19.3.0, resend 6.28.0, and YAML 2.9.1 bumped across CRM functions, MCP, and dev dependencies.</li>
+      <li>CI now auto-builds and deploys the hosted MCP server image on every merge to the MCP package directory.</li>
+      <li>Failed scheduled jobs on the website project now alert #infra-alerts so outages don't go silent.</li>
+      <li>CRM to Google Contacts sync made opt-in, preventing unintended overwrites of existing contact records.</li>
+      <li>POSaBIT capture timestamps corrected: the published timestamp is always recorded after the fetch, never before a row's source update time.</li>
+      <li>VMI low-register-data check corrected to ask the right question at the line level, not the store level.</li>
+      <li>Insights live data refresh no longer scrolls reps back to the top of the Overview tab.</li>
+      <li>Website: vitest and gitignore updated to ignore Claude worktree directories so test runs and deploys stay clean.</li>
+      <li>Apps Script deploy verification now checks the actual Google account identity, not just clasp config — prevents silent deploys under the wrong account.</li>
     </ul>
   </section>
 
@@ -534,7 +542,7 @@
       Questions? Drop them in <strong>#all-mwah</strong> on Slack.
     </div>
     <div class="footer-right">
-      <div class="footer-version">v102.45<span>latest deployed version</span></div>
+      <div class="footer-version">v102.49<span>latest deployed version</span></div>
     </div>
   </footer>
 

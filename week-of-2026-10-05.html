@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MWAH — Week of September 21 – September 27, 2026</title>
+  <title>MWAH — Week of September 28 – October 4, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -300,18 +300,18 @@
   <div class="hero-inner">
     <p class="hero-brand">MWAH CRM · Weekly Deploy Report</p>
     <h1>This week at MWAH</h1>
-    <p class="hero-date">September 21 – September 27, 2026</p>
+    <p class="hero-date">September 28 – October 4, 2026</p>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-num">40+</div>
+        <div class="hero-stat-num">20+</div>
         <div class="hero-stat-label">improvements shipped</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">3</div>
-        <div class="hero-stat-label">CRM versions (v102.50–52)</div>
+        <div class="hero-stat-num">2</div>
+        <div class="hero-stat-label">CRM versions (v102.53–54)</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">Pipeline</div>
+        <div class="hero-stat-num">Recon</div>
         <div class="hero-stat-label">biggest focus area</div>
       </div>
     </div>
@@ -325,19 +325,19 @@
     <div class="card-grid">
 
       <article class="card highlight">
-        <div class="card-icon">🚀</div>
+        <div class="card-icon">🔔</div>
         <div class="card-body">
-          <h3>The Pipeline board was completely rebuilt — every open order is now a focused, actionable card with all the facts you need in one glance</h3>
-          <p>The Pipeline view went from a flat list to a board designed around getting orders moving. Each order now shows as a floating card with the key facts labelled — store, flavor counts, limits, and delivery window — so reps can decide what needs attention without drilling in. KPI tiles sit at the top of each lane, and the board pages within a lane rather than collapsing everything into one long scroll. This is the biggest single-week change to the Pipeline surface in the CRM's history.</p>
-          <span class="card-tag tag-feature">Pipeline</span>
+          <h3>The CRM now catches when GrowFlow quietly changes a booked order — and flags it for review before it becomes a settlement problem</h3>
+          <p>When GrowFlow modifies an order that the team has already reconciled and booked, the CRM now detects that change automatically and surfaces it in the Reconciliation inbox. Reps and managers can see exactly what changed, decide how to handle it, and the system locks the row while the decision is saving so nothing gets applied twice. This closes a gap that previously let after-the-fact GrowFlow edits slip through unnoticed.</p>
+          <span class="card-tag tag-feature">Reconciliation</span>
         </div>
       </article>
 
       <article class="card highlight">
-        <div class="card-icon">👻</div>
+        <div class="card-icon">📍</div>
         <div class="card-body">
-          <h3>Pearanormal Activity launched on gimmemwah.com — the new flavor has its own page, store locator layer, and campaign banner</h3>
-          <p>The site's newest flavor went live this week with a full launch: a product detail page with campaign banner and slime/glow effects, a dedicated flavor layer on the store locator showing which stores carry it (or have it on order), and flavor navigation updated across the products listing. Customers can now find Pearanormal at their nearest retailer directly from the site.</p>
+          <h3>The store locator on gimmemwah.com got a full visual tune-up — cleaner tags, sharper status symbols, and a refined color system</h3>
+          <p>Customers visiting the Find Us page now see a much cleaner map: store tags were simplified to show only what matters, the colors and status icons (SOON, INCOMING, etc.) were refined for better contrast and readability, and filter labels now stay legible at larger text sizes. This is the biggest locator polish pass since the Pearanormal launch layer went in last week.</p>
           <span class="card-tag tag-web">gimmemwah.com</span>
         </div>
       </article>
@@ -346,35 +346,28 @@
   </section>
 
   <section class="section">
-    <div class="section-title">📦 Pipeline + orders</div>
+    <div class="section-title">🔄 Reconciliation</div>
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">🗂️</div>
-        <h3>KPI tiles and lane pagination keep the board navigable as it grows</h3>
-        <p>Each Pipeline lane now shows a KPI tile at the top (total orders, total cases) and pages within the lane rather than showing an unbounded scroll. Flavor Count limits and available stock are also visible directly on each card.</p>
-        <span class="card-tag tag-feature">Pipeline</span>
+        <div class="card-icon">🕵️</div>
+        <h3>Changed-after-booking: GrowFlow edits to booked orders are now flagged automatically</h3>
+        <p>If a GrowFlow transfer comes back different from what was booked, the Reconciliation inbox now highlights the discrepancy so it can be reviewed and resolved rather than silently applied.</p>
+        <span class="card-tag tag-feature">Reconciliation</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">📅</div>
-        <h3>Order windows and delivery date requests are now part of the proposal flow</h3>
-        <p>Reps can now request a specific delivery date when creating a proposal, and the CRM knows which ordering windows are open. Scheduled proposals drop in at the right time and the Cancel action works cleanly throughout.</p>
-        <span class="card-tag tag-feature">Orders</span>
+        <div class="card-icon">✅</div>
+        <h3>Settlement blockers now say when the problem is fixed and you're just waiting for the next sync</h3>
+        <p>Previously, a resolved blocker looked the same as an active one until the next sync cleared it. Now the CRM explicitly tells you "fixed — waiting for next check" so you know no further action is needed.</p>
+        <span class="card-tag tag-feature">Reconciliation</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">⚠️</div>
-        <h3>Flavor limit overrides are now visible — in the order detail, the audit log, and Slack</h3>
-        <p>When a manager overrides a flavor order limit, that override now shows up in the order detail view, in the audit log, and in the Slack notification so the whole team knows what was approved and why.</p>
-        <span class="card-tag tag-feature">Order limits</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">🔗</div>
-        <h3>New Order proposals open the builder from any page, and Ships reads Fulfillment</h3>
-        <p>Clicking "New Order" on a proposal now opens the order builder regardless of which page you're on. The Ships column also reads directly from Fulfillment data so it always reflects what's actually scheduled.</p>
-        <span class="card-tag tag-fix">Proposals</span>
+        <div class="card-icon">🔒</div>
+        <h3>Decision rows now lock and show progress while saving, preventing double-applies</h3>
+        <p>When you accept or reject a changed-after-booking decision, the row immediately locks and shows a saving indicator, so there's no confusion about whether the action went through.</p>
+        <span class="card-tag tag-fix">Reconciliation</span>
       </article>
 
     </div>
@@ -385,73 +378,101 @@
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">🎯</div>
-        <h3>New Penetration tab — see which stores carry each product and which don't</h3>
-        <p>The Insights area now has a Penetration tab that shows store-level coverage for each flavor. A quick peek on any store row shows its order history without leaving the view, and closed stores are filtered correctly.</p>
+        <div class="card-icon">🗺️</div>
+        <h3>Insights now shows the top 4 products per county — with a drilldown into each store</h3>
+        <p>The county-level Insights view gained a product breakdown showing the four best-performing SKUs per county. Clicking a product row drills into the individual stores driving that volume, and sorting keeps product names stable as you filter.</p>
         <span class="card-tag tag-feature">Insights</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">📈</div>
-        <h3>Charts animate in and data colors are more readable</h3>
-        <p>Charts in the Trends and Insights views now draw in on load rather than appearing fully-formed. Data series colors were also updated to be more distinct from each other at a glance.</p>
-        <span class="card-tag tag-design">Insights</span>
+        <div class="card-icon">🛒</div>
+        <h3>Evidence-backed wholesale and retail product insights are now available</h3>
+        <p>Product records now surface wholesale and retail insights backed by real sales evidence — reps can see at a glance how a product performs in each channel without leaving the product view.</p>
+        <span class="card-tag tag-feature">Insights</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🏆</div>
-        <h3>Top Chains now supports multiple time frames, and Order Mix breaks out proposals</h3>
-        <p>The dashboard's Top Chains widget can now be viewed across different time windows. The Order Mix breakdown separates proposal-driven orders from direct orders so the source of volume is clearer.</p>
-        <span class="card-tag tag-feature">Dashboard</span>
-      </article>
-
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-title">🚚 Fulfillment</div>
-    <div class="card-grid">
-
-      <article class="card">
-        <div class="card-icon">🗓️</div>
-        <h3>Week totals row and delivery-date import from Lifted are both live</h3>
-        <p>The Fulfillment grid now shows a week totals row at the bottom of each scheduled window. Delivery dates can also be imported directly from Lifted, eliminating manual entry for confirmed deliveries.</p>
-        <span class="card-tag tag-feature">Fulfillment</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">🗃️</div>
-        <h3>Grid polish: device colors, column order, toolbar, and the store cell all cleaned up</h3>
-        <p>The Fulfillment grid got a round of visual polish — device type is now color-coded, columns are in a more logical order, and the toolbar and store cell are cleaner and easier to read on smaller screens.</p>
-        <span class="card-tag tag-design">Fulfillment</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">🔧</div>
-        <h3>Window B, schedule repaints, and empty-window display all fixed</h3>
-        <p>Several Fulfillment scheduling bugs were fixed: Window B now correctly runs Thursday through Monday, window end times are set to 11:59 AM, the schedule repaints without losing your active search or filters, and the current window shows even when it has no deliveries yet.</p>
-        <span class="card-tag tag-fix">Fulfillment</span>
+        <div class="card-icon">🏷️</div>
+        <h3>Wholesale and Retail views across the CRM are clearer and more consistent</h3>
+        <p>Labels and framing for Wholesale vs. Retail context were cleaned up across multiple views so reps always know which lens they're looking through.</p>
+        <span class="card-tag tag-fix">CRM</span>
       </article>
 
     </div>
   </section>
 
   <section class="section">
-    <div class="section-title">🛍️ Buyer portal</div>
+    <div class="section-title">📱 Mobile</div>
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">👁️</div>
-        <h3>Show-password eye is now on the portal sign-in screen</h3>
-        <p>The portal login now has a show/hide password toggle. The CRM's own sign-in screen was also updated to use the shared reference layout for consistency.</p>
-        <span class="card-tag tag-portal">Buyer portal</span>
+        <div class="card-icon">📅</div>
+        <h3>Today view repaints reliably and task dismiss works — plus several layout fixes</h3>
+        <p>The Today screen now repaints correctly after actions, task dismissal works cleanly, DBA lines are plain text instead of styled boxes, and the header spacing and New Order sheet both stay steady on mobile.</p>
+        <span class="card-tag tag-fix">Mobile</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🔍</div>
-        <h3>Tabbed Stores and People peek — and proposals now show in Store Detail Orders</h3>
-        <p>Clicking a store or person record now opens a tabbed peek panel with both Stores and People tabs so you can jump between related records without navigating away. Proposals are also now listed under Store Detail Orders.</p>
-        <span class="card-tag tag-feature">Record peek</span>
+        <div class="card-icon">📞</div>
+        <h3>Contact bar is dark-themed, phone numbers tap to copy, and the pipeline list is more compact</h3>
+        <p>On mobile, the contact action bar now uses a dark style that fits the overall mobile chrome, store phone numbers are tap-to-copy, route icons are correctly styled, and the pipeline store list is condensed for easier scanning.</p>
+        <span class="card-tag tag-fix">Mobile</span>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">🏪 Stores + inventory</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">📦</div>
+        <h3>Pipeline Flavor Count now shows only active pipeline demand, not warehouse stock</h3>
+        <p>The Flavor Count column in the Pipeline view was updated to reflect only the demand that's live in the pipeline. The warehouse columns were removed so the number reflects what's actually in play.</p>
+        <span class="card-tag tag-fix">Pipeline</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔔</div>
+        <h3>Sales gets an alert when a newly mapped POSaBIT store shows up in Inventory</h3>
+        <p>When a store that was recently connected to POSaBIT starts appearing in the Inventory view for the first time, sales is notified automatically so they know the data is live and actionable.</p>
+        <span class="card-tag tag-feature">Inventory</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🪟</div>
+        <h3>Product details redesigned as a compact popup — less screen takeover, same information</h3>
+        <p>The product detail view was rebuilt as a compact popup that appears in context rather than taking over the full screen, making it faster to check a product and get back to what you were doing.</p>
+        <span class="card-tag tag-design">Products</span>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">📋 Orders + chains</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">🔗</div>
+        <h3>Chain membership changes are now audited, with a warning when removing a store could drop an active deal</h3>
+        <p>Every change to chain membership now creates an audit record. If removing a store from a chain would cause an in-progress deal to be dropped, the CRM warns you before the change is applied.</p>
+        <span class="card-tag tag-feature">Chains</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">💰</div>
+        <h3>Manager line edits correctly keep order dollar amounts, and direct sample rows open as expected</h3>
+        <p>Two order-editing fixes: when a manager edits a line item, the total dollar amount now stays correct; and direct sample order rows now open their detail view on tap as expected.</p>
+        <span class="card-tag tag-fix">Orders</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📊</div>
+        <h3>Recognized-revenue parity: an empty month now correctly matches as $0</h3>
+        <p>When a month had no recognized revenue entries, the parity check was treating it as unresolvable instead of a clean $0 match. That's fixed — empty months resolve correctly now.</p>
+        <span class="card-tag tag-fix">Revenue</span>
       </article>
 
     </div>
@@ -462,17 +483,17 @@
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">📋</div>
-        <h3>Reconciliation Decisions inbox is now a side-by-side comparison table</h3>
-        <p>The Decisions inbox in Reconciliation was redesigned as a comparison table so you can see the discrepancy and the proposed resolution side by side without reading back and forth between separate columns.</p>
-        <span class="card-tag tag-feature">Reconciliation</span>
+        <div class="card-icon">🚫</div>
+        <h3>Internal team and QA accounts are excluded from portal analytics</h3>
+        <p>Portal activity metrics no longer include sessions or actions from internal team members and QA test accounts, so the buyer analytics numbers reflect actual customer activity.</p>
+        <span class="card-tag tag-fix">Portal</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🧹</div>
-        <h3>Portal management KPI line is cleaner — order status pills removed, delta rolled in</h3>
-        <p>The portal management KPI line no longer shows raw order status pills alongside the count. The "+N new" indicator is folded directly into the KPI delta so the line is easier to scan at a glance.</p>
-        <span class="card-tag tag-fix">Portal management</span>
+        <div class="card-icon">⚠️</div>
+        <h3>Automatic alerts when a GrowFlow transfer link is bad or missing on a portal order</h3>
+        <p>Portal document processing now checks GrowFlow transfer links on orders and alerts the infra channel automatically when a link is missing or broken — catching integration gaps before they turn into fulfillment problems.</p>
+        <span class="card-tag tag-feature">Portal</span>
       </article>
 
     </div>
@@ -483,30 +504,16 @@
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">👻</div>
-        <h3>Pearanormal Activity: product page, locator layer, and campaign banner</h3>
-        <p>The new flavor launched with its own product detail page (slime + glow effects, approved ghost-themed copy, and a revised campaign banner), a locator flavor layer showing stocked and incoming stores, and updated flavor navigation across the whole products section.</p>
-        <span class="card-tag tag-web">New flavor launch</span>
+        <div class="card-icon">🗺️</div>
+        <h3>Store locator tags simplified — customers see only the most useful status at a glance</h3>
+        <p>The tags on locator store cards and map pins were redesigned to show a single, clear status rather than multiple overlapping labels. Customers can now tell at a glance whether a store is stocked, incoming, or coming soon.</p>
+        <span class="card-tag tag-web">gimmemwah.com</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🛡️</div>
-        <h3>Copied MWAH sites now get a warning — and you get a daily email of new clone leads</h3>
-        <p>If someone copies the MWAH site and serves it under a different domain, visitors now see a clear notice pointing them to the real site. A daily email digest goes out with any new domains detected so the team can act on potential brand confusion.</p>
-        <span class="card-tag tag-web">Brand protection</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">☀️</div>
-        <h3>Age gate now matches the light site theme</h3>
-        <p>The 21+ age gate was updated to use the site's light color scheme and the MWAH logo, so it feels consistent with the rest of the site instead of appearing as a separate experience.</p>
-        <span class="card-tag tag-fix">gimmemwah.com</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">🏠</div>
-        <h3>Homepage and store request layout tightened up</h3>
-        <p>The homepage newsletter signup and the store request form were both compacted to take up less vertical space. The request form now requires an email address (newsletter signup remains optional).</p>
+        <div class="card-icon">🎨</div>
+        <h3>Locator colors, selection state, and status symbols all refined</h3>
+        <p>Map pin colors were adjusted for better contrast, the selected-store highlight is now more distinct, and status clock icons were updated. Filter labels also stay readable when system font size is bumped up.</p>
         <span class="card-tag tag-web">gimmemwah.com</span>
       </article>
 
@@ -516,16 +523,15 @@
   <section class="bts">
     <div class="bts-title">⚙️ Behind the scenes</div>
     <ul>
-      <li>Three CRM releases in one day (v102.50, 51, 52) — all on September 23 — covering a packed week of pipeline, fulfillment, and analytics changes.</li>
-      <li>Shared design-system primitives and a complete component library landed in the CRM, establishing a single token source across every surface.</li>
-      <li>Performance work in the CRM: journey timing added, store data prefetched before navigation, and a boot shell now shows the real UI chrome with a shared spinner during load.</li>
-      <li>Map coverage pins now show sales/day rate inline; stores without a recent sync are faded so reps can instantly see which data is fresh.</li>
-      <li>Inventory: POSaBIT flavor arrays now aligned by flavor code to fix a comparison bug where products were being matched in the wrong order.</li>
-      <li>Website: rate-limit bucket-cap check moved to O(1) — no more scanning all IP keys on every new signup request.</li>
-      <li>Website: the Apps Script signup poller now throttles alerts per scheduled job rather than across a shared global slot, preventing alert storms from one noisy job from silencing others.</li>
-      <li>Store locator feed now has an automated health monitor — if the public feed looks wrong (empty, malformed, or stale) an alert fires automatically.</li>
-      <li>Resend 6.28.1, @sentry/node 10.75.1, googleapis 181.0.0, firebase-functions 7.4.0, and BigQuery client bumped across CRM functions and MCP.</li>
-      <li>Latte Lover returned to the upcoming releases list in both registry copies after a mis-classification was caught.</li>
+      <li>Two CRM releases this week: v102.53 on September 29 and v102.54 on October 3, covering reconciliation, insights, mobile, and inventory work.</li>
+      <li>TypeScript type checking opted in for browser, Functions, and MCP codebases — the codebase is now type-checked across all three surfaces in CI.</li>
+      <li>Type safety phases 3–5 completed: field accessors normalized, notes-parity tests and money-path behavior tests added.</li>
+      <li>Draft order status now decided by the status field, not the stale isDraft flag — BigQuery also fixed to count received orders as inbound correctly.</li>
+      <li>Reconciliation baseline fix: large orders over 80 lines no longer generate a partial booked-change baseline on save.</li>
+      <li>POSaBIT Sales/Day delta fix: whole-store totals now compared instead of per-flavor, eliminating false positives in the change signal.</li>
+      <li>Website Mixpanel tracking paused after a usage overage; pilot doc updated with the pause rationale and resumption plan.</li>
+      <li>Major dependency wave: firebase-admin 14.5.0, @sentry/node 11.1.0, TypeScript 7.0.2, @google-cloud/firestore, google-auth-library, resend 6.30.0, @grpc/grpc-js, @modelcontextprotocol/sdk, and vitest 5.0.2 all bumped across CRM, Functions, and MCP.</li>
+      <li>One-off on-hand history backfill script removed from the codebase after its single use was complete.</li>
     </ul>
   </section>
 
@@ -537,7 +543,7 @@
       Questions? Drop them in <strong>#all-mwah</strong> on Slack.
     </div>
     <div class="footer-right">
-      <div class="footer-version">v102.52<span>latest deployed version</span></div>
+      <div class="footer-version">v102.54<span>latest deployed version</span></div>
     </div>
   </footer>
 

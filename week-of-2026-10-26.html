@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MWAH — Week of October 13 – October 18, 2026</title>
+  <title>MWAH — Week of October 20 – October 25, 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -300,18 +300,18 @@
   <div class="hero-inner">
     <p class="hero-brand">MWAH CRM · Weekly Deploy Report</p>
     <h1>This week at MWAH</h1>
-    <p class="hero-date">October 13 – October 18, 2026</p>
+    <p class="hero-date">October 20 – October 25, 2026</p>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-num">20+</div>
+        <div class="hero-stat-num">25+</div>
         <div class="hero-stat-label">improvements shipped</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">v102.60</div>
-        <div class="hero-stat-label">CRM version this week</div>
+        <div class="hero-stat-num">v102.63</div>
+        <div class="hero-stat-label">latest CRM version</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">Stores</div>
+        <div class="hero-stat-num">Market</div>
         <div class="hero-stat-label">biggest focus area</div>
       </div>
     </div>
@@ -325,20 +325,20 @@
     <div class="card-grid">
 
       <article class="card highlight">
-        <div class="card-icon">🏗️</div>
+        <div class="card-icon">🗺️</div>
         <div class="card-body">
-          <h3>Store pages now show real WA state data — LCB licensing activity and CCRS wholesale purchases, right in the CRM</h3>
-          <p>The at-register data card in Store Detail has been replaced with a live state data card sourced directly from LCB filings and CCRS. Reps can now see each retailer's wholesale purchase history and licensing activity without leaving the store view — no more switching between systems to verify what a store is actually buying.</p>
-          <span class="card-tag tag-feature">Store Detail</span>
+          <h3>The CRM now has a full Market tab — WA state data, county breakdowns, and store-level trends all in one place</h3>
+          <p>A brand-new Market tab is live, pulling in Washington state purchase data alongside county and individual store trends. Reps can now see how their accounts stack up against the broader market, drill into monthly history, and spot competitive patterns — all without leaving the CRM. Market cards, source labels, and navigation were also refined throughout the week as the feature rolled out.</p>
+          <span class="card-tag tag-feature">Market Intelligence</span>
         </div>
       </article>
 
       <article class="card highlight">
-        <div class="card-icon">📐</div>
+        <div class="card-icon">📋</div>
         <div class="card-body">
-          <h3>Dashboard columns are now evenly spaced, and the Chains directory got a proper data grid with retail and wholesale figures</h3>
-          <p>The dashboard home screen now uses three equal-width lanes that align cleanly with the KPI row above. The Chains directory was also updated with explicit grid tracks, a Retail 2025 (LCB) column, and a clear dash where chain coverage is incomplete — replacing a layout that could shift or misalign on different screen sizes.</p>
-          <span class="card-tag tag-design">Dashboard</span>
+          <h3>The CRM now automatically drafts restock proposals for stores not on VMI</h3>
+          <p>For stores that aren't managed through the VMI program, the CRM can now generate a restock proposal automatically based on their order history and current inventory picture. It also keeps sample products in a dedicated section so proposals stay focused and easy to review before sending.</p>
+          <span class="card-tag tag-feature">Orders + Proposals</span>
         </div>
       </article>
 
@@ -346,98 +346,126 @@
   </section>
 
   <section class="section">
-    <div class="section-title">🏪 Store Detail</div>
+    <div class="section-title">📊 Market Intelligence</div>
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">📊</div>
-        <h3>Analytics in Store Detail now splits into Sales and Products sub-tabs</h3>
-        <p>The Analytics panel in a store's detail view has been separated into two focused tabs: Sales (performance over time) and Products (what that store carries). Each tab loads only what it needs, making the view faster and less overwhelming.</p>
-        <span class="card-tag tag-feature">Stores</span>
+        <div class="card-icon">📈</div>
+        <h3>Statewide store trends now include a full month-by-month history</h3>
+        <p>The Market tab's trend view goes deeper — you can now scroll back through monthly purchase history for any WA store, giving a longer-term view of how an account's buying has shifted over time.</p>
+        <span class="card-tag tag-feature">Market</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🗂️</div>
-        <h3>Store Detail actions and controls are cleaner and easier to scan</h3>
-        <p>Less-used actions were consolidated and the Analytics cards were simplified. Delete controls are less prominent so the most important actions are easier to find — especially useful when quickly reviewing a store during a route.</p>
-        <span class="card-tag tag-design">Stores</span>
+        <div class="card-icon">🔓</div>
+        <h3>Market data now shows even for stores without a full license history on file</h3>
+        <p>Previously, the Market tab required a complete license history to display reported macro data. That requirement has been relaxed so reps see useful state and county context even when a store's history is incomplete in the system.</p>
+        <span class="card-tag tag-feature">Market</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🔀</div>
-        <h3>Retail and Wholesale accounts for a chain can now be sorted together</h3>
-        <p>When a chain has both Retail and Wholesale CRM accounts, they now sort together across the stores list so you can compare them side by side instead of hunting through a long list.</p>
-        <span class="card-tag tag-feature">Stores</span>
-      </article>
-
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-title">📋 Permits + alerts</div>
-    <div class="card-grid">
-
-      <article class="card">
-        <div class="card-icon">🔔</div>
-        <h3>Permit-refusal alerts now automatically tag the right ops team members</h3>
-        <p>When a store's permit status creates a refusal condition, the Slack alert now directly tags Maddie, Hannah and Luu — so the right people are looped in immediately without anyone having to forward the message.</p>
-        <span class="card-tag tag-feature">Alerts</span>
+        <div class="card-icon">🏆</div>
+        <h3>Competition winners are now optional, and event reminders have been added</h3>
+        <p>Competition results in the Market view no longer require a winner to be set, so partial or in-progress contests display cleanly. Event reminders have also been added so upcoming market-related dates surface where they're relevant.</p>
+        <span class="card-tag tag-feature">Market</span>
       </article>
 
       <article class="card">
         <div class="card-icon">🚫</div>
-        <h3>Placing an order now surfaces any stores with a blocking permit status up front</h3>
-        <p>Before you submit an order for a store whose permit status would block fulfillment, the CRM now lists those stores prominently so the issue can be addressed first. Portal standing is also stamped at this point, and the Monday digest was updated to reflect current permit states accurately.</p>
-        <span class="card-tag tag-feature">Permits</span>
+        <h3>Competitor pricing data and menu scraping have been retired</h3>
+        <p>The Competitor Pricing section and the menu-scraping data source behind it have been removed from the CRM. The Market tab's WA state data provides a more reliable and complete picture of competitive purchasing without requiring scraped menus.</p>
+        <span class="card-tag tag-design">Market</span>
       </article>
 
     </div>
   </section>
 
   <section class="section">
-    <div class="section-title">📈 Insights + analytics</div>
+    <div class="section-title">📦 Orders + Proposals</div>
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">📁</div>
-        <h3>The Chains directory now shows Retail 2025 and Wholesale columns</h3>
-        <p>Directory rows now include dedicated LCB retail and wholesale purchase figures. If a chain's coverage is incomplete, a clear dash with an accessible explanation shows in that cell instead of leaving it blank or confusing.</p>
-        <span class="card-tag tag-feature">Insights</span>
+        <div class="card-icon">🔁</div>
+        <h3>Sales reps can now close and reopen stores directly from the CRM</h3>
+        <p>Instead of routing through ops, reps can now mark a store as closed or reopen it themselves. The Insights column layout was also made customizable so reps can surface the data that matters most to their route.</p>
+        <span class="card-tag tag-feature">Stores</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🔍</div>
-        <h3>Non-POSaBIT store insights now show the same last-order detail as POSaBIT stores</h3>
-        <p>Stores not tracked through POSaBIT previously showed less context in the Insights view than POSaBIT-connected stores. That gap is closed — last order details now appear consistently regardless of how a store is tracked.</p>
-        <span class="card-tag tag-feature">Insights</span>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">📝</div>
-        <h3>The most recent proposal now appears on Insights, the store peek, and Store Detail</h3>
-        <p>You no longer have to navigate into a store's order history to find the last proposal. It now surfaces inline wherever you're reviewing a store — on the Insights list, the store peek panel, and the full Store Detail page.</p>
-        <span class="card-tag tag-feature">Orders</span>
+        <div class="card-icon">👤</div>
+        <h3>Editing an order no longer drops the rep attribution</h3>
+        <p>When an order was modified after creation, the original rep's name could be overwritten. That's now fixed — edits preserve who placed the order, keeping commission and reporting accurate.</p>
+        <span class="card-tag tag-fix">Orders</span>
       </article>
 
     </div>
   </section>
 
   <section class="section">
-    <div class="section-title">🔄 Reconciliation + operations</div>
+    <div class="section-title">🏪 Store Detail + Inventory</div>
     <div class="card-grid">
 
       <article class="card">
-        <div class="card-icon">⚖️</div>
-        <h3>The daily review alert now shows GrowFlow and CRM totals side by side</h3>
-        <p>When an order appears in the morning reconciliation alert, you can now see both GrowFlow's reported total and the CRM's booked total in the same message. The matched CRM order is also named explicitly, so discrepancies are visible without opening either system.</p>
-        <span class="card-tag tag-feature">Reconciliation</span>
+        <div class="card-icon">📱</div>
+        <h3>The Inventory tab now opens the store's inventory modal on a phone</h3>
+        <p>On mobile, tapping into a store's Inventory tab now opens the full inventory modal just like on desktop, so reps working from their phone can check stock levels during a visit without having to switch devices.</p>
+        <span class="card-tag tag-feature">Store Detail</span>
       </article>
 
       <article class="card">
-        <div class="card-icon">🗺️</div>
-        <h3>Route planning tools on the map can now be hidden while you work</h3>
-        <p>The route tools overlay can be toggled off when you need a clear view of the map while planning stops, then brought back with one click. The toggle now reads its state correctly from the page so it stays consistent across map interactions.</p>
-        <span class="card-tag tag-fix">Routes</span>
+        <div class="card-icon">🧹</div>
+        <h3>CRM detail pages, tables, and the dashboard got a thorough mobile cleanup</h3>
+        <p>Several detail pages had tables that ran off-screen or wrapped awkwardly on smaller displays. Those layouts have been tightened up so the CRM is easier to navigate on the go, especially during route days.</p>
+        <span class="card-tag tag-design">Mobile</span>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">🤖 MWAH Bot + Data Feeds</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">📡</div>
+        <h3>MWAH Bot can now look up a store's LCB license and CCRS purchase data directly</h3>
+        <p>When a rep or ops team member asks the bot about a retailer's regulatory standing or wholesale purchase history, it can now pull that directly from the CRM's LCB and CCRS data — no manual lookups required.</p>
+        <span class="card-tag tag-feature">MWAH Bot</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">⚡</div>
+        <h3>POSaBIT Accept cards stay active and the GrowFlow daily review posts only once</h3>
+        <p>A bug causing POSaBIT payment cards to become unclickable after a session timeout has been fixed — the card now revalidates automatically. Separately, the daily GrowFlow reconciliation alert was doubling up; it now posts exactly once each morning.</p>
+        <span class="card-tag tag-fix">Operations</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔔</div>
+        <h3>Slack store approval messages are reliable again after a silent regression</h3>
+        <p>Store approval notifications in Slack had stopped working correctly after a recent update. The approval cards and their action buttons are fully restored, and failed card actions now recover gracefully instead of dropping silently.</p>
+        <span class="card-tag tag-fix">Alerts</span>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">🌐 Public website</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">📸</div>
+        <h3>New Pennifer lifestyle imagery is live on the Kiss Labs product pages</h3>
+        <p>Fresh editorial photos have been added to the Kiss Labs section of the site — a lifestyle card and hero image in multiple resolutions for clean display across all screen sizes.</p>
+        <span class="card-tag tag-web">gimmemwah.com</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔒</div>
+        <h3>The CMS and public site got a security audit pass this week</h3>
+        <p>An audit of the admin CMS surface and public site found a handful of access and input-handling items to tighten up. Those have been addressed, and stricter access rules are now live for the CMS and the consumer data store.</p>
+        <span class="card-tag tag-web">gimmemwah.com</span>
       </article>
 
     </div>
@@ -446,14 +474,14 @@
   <section class="bts">
     <div class="bts-title">⚙️ Behind the scenes</div>
     <ul>
-      <li>v102.60 shipped October 14; additional verified production deploys followed on October 15 and October 16 as separate feature sets cleared independent smoke checks.</li>
-      <li>Dashboard data responses now share a single safe repaint slot — trailing-data load jitter on the dashboard home screen is reduced.</li>
-      <li>New MCP admin tool for adding reseller permits to stores via the agent interface; permits data also now returned on store lookups.</li>
-      <li>Invalid paid prices are now blocked at the write layer before they can reach Reconciliation.</li>
-      <li>Slack connection confirmations and failed-alert recovery repaired after a silent regression was found in the ops alert workflow.</li>
-      <li>Sentry paging de-duplicated — team no longer receives duplicate CRM alerts for the same incident; release alert lifecycle tightened.</li>
-      <li>CRM table headers are now consistently readable and aligned across all surfaces; header help (the tooltip) and sort controls are properly separated so clicking one doesn't trigger the other.</li>
-      <li>Dep wave: googleapis, @sentry/node, @google-cloud/bigquery (Functions and MCP), Playwright, vitest all updated; actions/github-script bumped to v9.</li>
+      <li>Three CRM versions shipped this week — v102.61 (Monday), v102.62 (Tuesday + Thursday re-verify), v102.63 (Thursday) — as Market Intelligence rolled out in stages.</li>
+      <li>Trends, Insights, and Inventory tabs are noticeably faster after a targeted load-path improvement on the data fetch layer.</li>
+      <li>Market filter controls and period-matching logic were corrected so date comparisons and store matching produce consistent results across all Market views.</li>
+      <li>GrowFlow link warning alerts now route through the CRM alert bot rather than posting raw to Slack, keeping the ops channel readable.</li>
+      <li>CRM running on Node 24.22.1 (patched); website Cloud Functions and site tooling both moved to the same patched Node 24 build.</li>
+      <li>Website operational scripts migrated to Firebase Admin 14 APIs; all scripts verified and covered with new unit tests.</li>
+      <li>Website CI now cancels only superseded checks on a PR, not all checks — reducing unnecessary re-run noise on PRs with multiple pushes.</li>
+      <li>Dep wave across both repos: vitest, Playwright, googleapis, google-auth-library, svix, react-dom, hono, ip-address (CRM); csv-parse, sharp, nanoid, qs, protobufjs, morgan, undici (website).</li>
     </ul>
   </section>
 
@@ -465,7 +493,7 @@
       Questions? Drop them in <strong>#all-mwah</strong> on Slack.
     </div>
     <div class="footer-right">
-      <div class="footer-version">v102.60<span>latest deployed version</span></div>
+      <div class="footer-version">v102.63<span>latest deployed version</span></div>
     </div>
   </footer>
 

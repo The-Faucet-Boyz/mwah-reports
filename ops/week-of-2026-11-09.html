@@ -1,32 +1,33 @@
 <!doctype html>
 <!--
-  Ops weekly recap — week of 2026-11-02.
-  Self-contained; hosted via raw.githack from the public mwah-reports repo.
-  No money figures, no individual names, no sensitive vendor specifics.
+  Ops weekly recap — "What shipped on Ops"
+  Week of November 2–8, 2026
+  Never publish money figures, sensitive vendor specifics or individual names.
 -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ops — Week of Oct 27 – Nov 2, 2026</title>
+    <title>Ops — Week of November 2–8, 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@800&family=Inter:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
-      *, *::before, *::after {
+      *,
+      *::before,
+      *::after {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
 
       :root {
-        /* Chronicle V2 tokens (LOCKED July 2026) */
-        --canvas-soft: #fcfcfb;
+        --canvas-soft: #f6f5f4;
         --surface: #ffffff;
-        --hairline: #e9e8e6;
+        --hairline: #e6e6e6;
         --ink: #0a0a0a;
         --ink-secondary: #31302e;
         --ink-muted: #615d59;
@@ -34,28 +35,33 @@
         --primary: #e84a93;
         --primary-active: #d13a80;
         --primary-border: rgba(232, 74, 147, 0.28);
-        --primary-tint: rgba(232, 74, 147, 0.10);
+        --primary-tint: rgba(232, 74, 147, 0.1);
         --secondary: #213183;
-        /* decorative accents — illustration only */
         --accent-sky: #62aef0;
         --accent-purple: #d6b6f6;
         --accent-teal: #2a9d99;
         --accent-green: #1aae39;
         --accent-orange: #dd5b00;
+        --accent-pink: #ff64c8;
         --section-gap: 52px;
         --card-gap: 18px;
       }
 
       body {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        font-size: 14px;
-        font-weight: 400;
+        font-family:
+          'Hanken Grotesk',
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          sans-serif;
         background: var(--canvas-soft);
         color: var(--ink);
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
       }
-      .tnum { font-variant-numeric: tabular-nums; }
+      .tnum {
+        font-variant-numeric: tabular-nums;
+      }
 
       /* ── HERO ──────────────────────────────────────────────── */
       .hero {
@@ -65,7 +71,7 @@
         text-align: center;
       }
       .hero-eyebrow {
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 600;
         letter-spacing: 0.12em;
         text-transform: uppercase;
@@ -73,7 +79,7 @@
         margin-bottom: 14px;
       }
       .hero h1 {
-        font-family: 'DM Sans', 'Inter', sans-serif;
+        font-family: 'DM Sans', 'Hanken Grotesk', sans-serif;
         font-weight: 800;
         font-size: 44px;
         line-height: 1.08;
@@ -102,13 +108,13 @@
         min-width: 130px;
       }
       .hero-stat-num {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Hanken Grotesk', sans-serif;
         font-size: 30px;
-        font-weight: 600;
+        font-weight: 700;
         line-height: 1;
       }
       .hero-stat-label {
-        font-size: 12px;
+        font-size: 12.5px;
         color: rgba(255, 255, 255, 0.72);
         margin-top: 7px;
       }
@@ -119,10 +125,12 @@
         margin: 0 auto;
         padding: 56px 24px 72px;
       }
-      .section { margin-bottom: var(--section-gap); }
+      .section {
+        margin-bottom: var(--section-gap);
+      }
       .section-title {
-        font-family: 'DM Sans', 'Inter', sans-serif;
-        font-size: 20px;
+        font-family: 'DM Sans', 'Hanken Grotesk', sans-serif;
+        font-size: 24px;
         font-weight: 800;
         letter-spacing: -0.5px;
         color: var(--ink);
@@ -133,7 +141,7 @@
       }
       .section-note {
         color: var(--ink-muted);
-        font-size: 13px;
+        font-size: 14.5px;
         margin-bottom: 20px;
       }
       .section-rule {
@@ -157,16 +165,20 @@
         flex-direction: column;
         gap: 9px;
       }
-      .card-icon { font-size: 24px; line-height: 1; }
+      .card-icon {
+        font-size: 24px;
+        line-height: 1;
+      }
       .card h3 {
-        font-family: 'Inter', sans-serif;
-        font-size: 14px;
-        font-weight: 600;
+        font-family: 'DM Sans', 'Hanken Grotesk', sans-serif;
+        font-size: 15.5px;
+        font-weight: 800;
         line-height: 1.34;
         color: var(--ink);
+        letter-spacing: -0.1px;
       }
       .card p {
-        font-size: 13px;
+        font-size: 14px;
         color: var(--ink-secondary);
         line-height: 1.6;
         flex: 1;
@@ -189,7 +201,7 @@
         background: var(--primary-tint);
       }
 
-      /* ── BEHIND THE SCENES ──────────────────────────────────── */
+      /* ── BEHIND THE SCENES ───────────────────────────────────── */
       .bts {
         background: var(--surface);
         border: 1px solid var(--hairline);
@@ -197,14 +209,17 @@
         padding: 26px 28px;
       }
       .bts-title {
-        font-family: 'Inter', sans-serif;
-        font-size: 14px;
-        font-weight: 600;
+        font-family: 'DM Sans', 'Hanken Grotesk', sans-serif;
+        font-size: 18px;
+        font-weight: 800;
         margin-bottom: 12px;
       }
-      .bts ul { margin: 0; padding-left: 20px; }
+      .bts ul {
+        margin: 0;
+        padding-left: 20px;
+      }
       .bts li {
-        font-size: 13px;
+        font-size: 13.5px;
         color: var(--ink-muted);
         line-height: 1.7;
         margin-bottom: 6px;
@@ -220,7 +235,7 @@
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 16px;
-        font-size: 13px;
+        font-size: 13.5px;
         color: var(--ink-muted);
       }
       .footer a {
@@ -250,131 +265,85 @@
       }
 
       @media (max-width: 560px) {
-        .hero h1 { font-size: 32px; }
-        .hero-stat { min-width: 108px; padding: 13px 16px; }
+        .hero h1 {
+          font-size: 32px;
+        }
+        .hero-stat {
+          min-width: 108px;
+          padding: 13px 16px;
+        }
       }
     </style>
   </head>
   <body>
-    <!-- ── HERO ──────────────────────────────────────────────── -->
+    <!-- ── HERO ────────────────────────────────────────────────── -->
     <header class="hero">
       <div class="hero-eyebrow">Chronicle · Ops Platform</div>
-      <h1>What shipped this week</h1>
-      <p class="hero-sub">A look at every user-facing improvement that landed on the Ops Platform during the week of Oct 27 – Nov 2, 2026.</p>
+      <h1>Faster pages, a smarter board layout, and cleaner data</h1>
+      <p class="hero-sub">A focused week of polish — the app stays responsive while loading, and the numbers you see are more trustworthy.</p>
       <div class="hero-stats">
         <div class="hero-stat">
-          <div class="hero-stat-num tnum">8</div>
+          <div class="hero-stat-num tnum">3</div>
           <div class="hero-stat-label">improvements shipped</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-num tnum">3</div>
-          <div class="hero-stat-label">areas improved</div>
+          <div class="hero-stat-num tnum">2</div>
+          <div class="hero-stat-label">areas touched</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-num">UI</div>
+          <div class="hero-stat-num">Experience</div>
           <div class="hero-stat-label">biggest area</div>
         </div>
       </div>
     </header>
 
     <main class="content">
-
-      <!-- ⭐ HIGHLIGHTS ────────────────────────────────────────── -->
+      <!-- ══ HIGHLIGHTS ════════════════════════════════════════════ -->
       <section class="section">
-        <div class="section-title">⭐ The week's biggest changes</div>
-        <div class="section-note">The three improvements with the most day-to-day impact.</div>
+        <div class="section-title">⭐ The app feels faster and more stable</div>
+        <div class="section-note">The two changes that make the biggest everyday difference.</div>
         <div class="section-rule"></div>
         <div class="card-grid">
-          <article class="card lead">
-            <div class="card-icon">✅</div>
-            <h3>Mark an invoice as done right from its details</h3>
-            <p>You no longer need to navigate away to close out an invoice. A Done action is now available directly inside the invoice details popover, keeping the workflow in one place.</p>
-            <span class="card-tag">Invoices</span>
-          </article>
-          <article class="card lead">
-            <div class="card-icon">📐</div>
-            <h3>Every KPI card looks and works the same way</h3>
-            <p>KPI cards across every page now share one consistent layout and anatomy. Figures, labels, and badges all land in the same spot, making it faster to scan across different sections of the app.</p>
-            <span class="card-tag">UI</span>
-          </article>
           <article class="card lead">
             <div class="card-icon">📋</div>
-            <h3>Supplier page opens as a list by default</h3>
-            <p>The vendor portal supplier page now opens directly in list view, cutting the extra step of switching to list mode every time you land on it.</p>
-            <span class="card-tag">Vendor Portal</span>
+            <h3>The Order Center board fills the screen the right way</h3>
+            <p>The purchasing board now takes up the full viewport below the header, with each month column scrolling on its own — no more blank space below a tall column you can't even see. And instead of a spinner while the board loads, you now see the board's shape right away.</p>
+            <span class="card-tag">Order Center</span>
+          </article>
+          <article class="card lead">
+            <div class="card-icon">⚡</div>
+            <h3>Pages across the platform show their layout while loading</h3>
+            <p>Rather than going blank and then appearing all at once, workspaces across the app now show a skeleton of their own structure while data is on the way. Navigation clicks feel instant from the start.</p>
+            <span class="card-tag">Experience</span>
           </article>
         </div>
       </section>
 
-      <!-- 🧾 INVOICES & EXPENSES ───────────────────────────────── -->
+      <!-- ══ FIXES & POLISH ═════════════════════════════════════════ -->
       <section class="section">
-        <div class="section-title">🧾 Invoices got clearer</div>
-        <div class="section-note">Improvements to how invoice information is presented.</div>
+        <div class="section-title">🐞 Fixes &amp; polish</div>
+        <div class="section-note">Accuracy improvements you may not notice — because they just work now.</div>
         <div class="section-rule"></div>
         <div class="card-grid">
           <article class="card">
-            <div class="card-icon">🔢</div>
-            <h3>Waiting reports show actual invoice numbers</h3>
-            <p>Vendor waiting reports now display the real invoice numbers they are waiting on, rather than a generic sentence. It is now easy to see exactly which invoices are in progress at a glance.</p>
-            <span class="card-tag">Invoices</span>
-          </article>
-        </div>
-      </section>
-
-      <!-- 🧭 NAVIGATION & EXPERIENCE ──────────────────────────── -->
-      <section class="section">
-        <div class="section-title">🧭 The app feels more consistent</div>
-        <div class="section-note">A batch of UI refinements that land this week as part of a focused polish pass.</div>
-        <div class="section-rule"></div>
-        <div class="card-grid">
-          <article class="card">
-            <div class="card-icon">🔤</div>
-            <h3>Unified typography throughout the app</h3>
-            <p>The app now uses four sizes and two weights everywhere. This tightens the visual rhythm and makes it easier to tell headings, labels, and supporting text apart at a glance.</p>
-            <span class="card-tag">UI</span>
-          </article>
-          <article class="card">
-            <div class="card-icon">🖱️</div>
-            <h3>Nav hover states are visible; Spend cards are quieter</h3>
-            <p>Navigation items now give clear hover feedback. Spend cards are visually quieter so figures stand out more. Italic text has been removed throughout the interface.</p>
-            <span class="card-tag">UI</span>
-          </article>
-          <article class="card">
-            <div class="card-icon">✨</div>
-            <h3>Five UI finishing details applied across the app</h3>
-            <p>A set of small but consistent finishing touches has been applied across every surface, making the overall experience feel more polished and intentional.</p>
-            <span class="card-tag">UI</span>
-          </article>
-        </div>
-      </section>
-
-      <!-- 🐞 FIXES & POLISH ──────────────────────────────────── -->
-      <section class="section">
-        <div class="section-title">🐞 Fixes that improve the day-to-day</div>
-        <div class="section-note">Small corrections that add up.</div>
-        <div class="section-rule"></div>
-        <div class="card-grid">
-          <article class="card">
-            <div class="card-icon">🏷️</div>
-            <h3>Informational badges are quieter and easier to read</h3>
-            <p>Badges that communicate information (rather than warnings or actions) are now visually quieter and use better contrast, so they are easier to read without drawing attention away from what matters.</p>
+            <div class="card-icon">🔧</div>
+            <h3>Inventory figures from integrations are now reliably accurate</h3>
+            <p>Source-level stock metrics — including counts that were previously showing as unknown — are now preserved correctly when syncing from connected inventory systems, so the numbers in reports reflect what the integrations actually reported.</p>
             <span class="card-tag">Fix</span>
           </article>
         </div>
       </section>
 
-      <!-- ⚙️ BEHIND THE SCENES ──────────────────────────────── -->
+      <!-- ══ BEHIND THE SCENES ══════════════════════════════════════ -->
       <section class="section">
         <div class="bts">
           <div class="bts-title">⚙️ Behind the scenes</div>
           <ul>
-            <li>Vendor portal now starts up faster and caches fonts for the week, reducing load time on repeat visits.</li>
-            <li>Security hardening for internal platform connections.</li>
-            <li>Routine dependency updates to keep the platform current and secure.</li>
+            <li>Several dependency libraries were updated to stay current with security patches and upstream fixes.</li>
+            <li>End-to-end test infrastructure was aligned to the installed browser environment for more reliable automated checks.</li>
           </ul>
         </div>
       </section>
-
     </main>
 
     <!-- ── FOOTER ──────────────────────────────────────────────── -->
@@ -383,7 +352,7 @@
         Ops Platform (Chronicle) — what landed this week.<br />Questions? Drop them in
         <strong>#all-mwah</strong> on Slack.
       </div>
-      <div class="tnum">Week of Oct 27 – Nov 2, 2026</div>
+      <div class="tnum">Week of November 2–8, 2026</div>
     </footer>
   </body>
 </html>

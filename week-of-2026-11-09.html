@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MWAH — Week of November 3 – 8, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --hero-rose:   #FBBAD4;
+      --hero-lav:    #C5B8EF;
+      --soft-rose:   #F8A0C9;
+      --lavender:    #BDB0EA;
+      --rose-dark:   #C2497A;
+      --lav-dark:    #7055B8;
+      --tag-portal-bg:  #FDDDE9;
+      --tag-portal-tx:  #A83060;
+      --tag-mgmt-bg:    #EDE5F7;
+      --tag-mgmt-tx:    #6E3A9C;
+      --tag-feature-bg: #D1FAE5;
+      --tag-feature-tx: #065F46;
+      --tag-fix-bg:     #FEF3C7;
+      --tag-fix-tx:     #92400E;
+      --tag-infra-bg:   #DBEAFE;
+      --tag-infra-tx:   #1D4ED8;
+      --tag-web-bg:     #FFE4D6;
+      --tag-web-tx:     #B24A1B;
+      --tag-design-bg:  #F0EAFF;
+      --tag-design-tx:  #5B21B6;
+      --page-bg:     #FAFAFA;
+      --card-bg:     #FFFFFF;
+      --card-radius: 16px;
+      --section-gap: 48px;
+      --card-gap:    20px;
+      --text-primary: #18181B;
+      --text-secondary: #52525B;
+      --text-muted:  #A1A1AA;
+      --border:      #E4E4E7;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--page-bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .hero {
+      background: linear-gradient(140deg, #FBBAD4 0%, #EDD8F5 45%, #C5B8EF 100%);
+      padding: 64px 32px 56px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 20% 80%, rgba(255,255,255,0.35) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.25) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; max-width: 760px; margin: 0 auto; }
+    .hero-brand {
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rose-dark);
+      margin-bottom: 20px;
+      opacity: 0.85;
+    }
+    .hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(28px, 5vw, 46px);
+      font-weight: 800;
+      color: #1A0A24;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .hero-date {
+      font-family: 'Poppins', sans-serif;
+      font-size: 17px;
+      font-weight: 500;
+      color: #3D1A54;
+      opacity: 0.75;
+      margin-bottom: 40px;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .hero-stat {
+      background: rgba(255,255,255,0.65);
+      backdrop-filter: blur(8px);
+      border-radius: 14px;
+      padding: 18px 28px;
+      min-width: 140px;
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+    .hero-stat-num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--rose-dark);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .hero-stat-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #4A2070;
+      opacity: 0.8;
+    }
+
+    .content { max-width: 1080px; margin: 0 auto; padding: 56px 24px 80px; }
+    .section { margin-bottom: var(--section-gap); }
+    .section-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--card-gap);
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .card-icon { font-size: 28px; line-height: 1; }
+    .card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+    .card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .card-tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 99px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-top: 4px;
+      align-self: flex-start;
+    }
+
+    .card.highlight {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, #FFF0F7 0%, #F5EEFF 100%);
+      border: 1.5px solid #EDD8F5;
+      padding: 32px 36px;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 24px;
+    }
+    .card.highlight .card-icon { font-size: 40px; padding-top: 4px; flex-shrink: 0; }
+    .card.highlight .card-body { flex: 1; }
+    .card.highlight h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #1A0A24;
+    }
+    .card.highlight p { font-size: 15px; }
+    .card.highlight .card-tag { margin-top: 12px; }
+
+    .tag-portal  { background: var(--tag-portal-bg);  color: var(--tag-portal-tx); }
+    .tag-mgmt    { background: var(--tag-mgmt-bg);    color: var(--tag-mgmt-tx); }
+    .tag-feature { background: var(--tag-feature-bg); color: var(--tag-feature-tx); }
+    .tag-fix     { background: var(--tag-fix-bg);     color: var(--tag-fix-tx); }
+    .tag-infra   { background: var(--tag-infra-bg);   color: var(--tag-infra-tx); }
+    .tag-web     { background: var(--tag-web-bg);     color: var(--tag-web-tx); }
+    .tag-design  { background: var(--tag-design-bg);  color: var(--tag-design-tx); }
+
+    .bts {
+      background: #1E1B2E;
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: var(--section-gap);
+    }
+    .bts-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #E2D9F3;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .bts ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 10px 32px;
+    }
+    .bts li {
+      font-size: 13px;
+      color: #A89CC8;
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.55;
+    }
+    .bts li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--soft-rose);
+      font-weight: 700;
+      opacity: 0.6;
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding-top: 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-prod {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .footer-prod a {
+      color: var(--rose-dark);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .footer-prod a:hover { text-decoration: underline; }
+    .footer-right { text-align: right; }
+    .footer-version {
+      font-family: 'Poppins', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .footer-version span {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      display: block;
+      margin-top: 2px;
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 640px) {
+      .hero { padding: 48px 20px 44px; }
+      .hero-stats { gap: 16px; }
+      .hero-stat { min-width: 110px; padding: 14px 18px; }
+      .content { padding: 40px 16px 60px; }
+      .card.highlight { flex-direction: column; gap: 16px; }
+      .bts { padding: 28px 24px; }
+      .footer { flex-direction: column; }
+      .footer-right { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="hero-brand">MWAH CRM · Weekly Deploy Report</p>
+    <h1>This week at MWAH</h1>
+    <p class="hero-date">November 3 – 8, 2026</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">25+</div>
+        <div class="hero-stat-label">improvements shipped</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">2</div>
+        <div class="hero-stat-label">CRM versions deployed</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">Launch</div>
+        <div class="hero-stat-label">biggest focus area</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <section class="section">
+    <div class="section-title">⭐ Highlights</div>
+    <div class="card-grid">
+
+      <article class="card highlight">
+        <div class="card-icon">☕</div>
+        <div class="card-body">
+          <h3>Latte Lover is live on gimmemwah.com — full product page, gallery, and all</h3>
+          <p>The Latte Lover launch landed on the public site this week. Shoppers now see a dedicated product page complete with photography, a flavor carousel, and updated product listing. Pearanormal Activity has been retired and all imagery swapped out. Every product page also got its images converted to WebP, cutting load times noticeably across the whole lineup.</p>
+          <span class="card-tag tag-web">Public Website</span>
+        </div>
+      </article>
+
+      <article class="card highlight">
+        <div class="card-icon">📋</div>
+        <div class="card-body">
+          <h3>Activity Log rebuilt — faster, shared with the portal, and ready for what’s next</h3>
+          <p>The CRM’s Activity Log was migrated onto a shared API and rebuilt with React under the hood. It now feeds the same data the buyer portal uses, so both sides stay in sync. Launch monitoring was wired in at the same time, connecting new-flavor tracking directly to account delivery reviews so the team can see adoption in real time.</p>
+          <span class="card-tag tag-feature">CRM Architecture</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">🌐 Public website</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">🗺️</div>
+        <h3>Find a Store now points to the main map for Latte Lover</h3>
+        <p>Now that Latte Lover is a core flavor rather than a limited launch, the flavor-specific store filter on the locator has been retired. The hero CTA and all Latte Lover links point to the standard map — cleaner for shoppers.</p>
+        <span class="card-tag tag-web">Public Website</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">⚡</div>
+        <h3>All product images are now WebP — faster on every device</h3>
+        <p>The full product image library was converted to WebP format this week, shaving significant load time from every product page. Mobile visitors especially will notice the difference.</p>
+        <span class="card-tag tag-web">Performance</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🎨</div>
+        <h3>Latte Lover button color polished on mobile</h3>
+        <p>Two small visual fixes landed after launch: the Latte Lover button on mobile now matches the desktop color exactly, so the brand feel is consistent across screen sizes.</p>
+        <span class="card-tag tag-fix">Public Website</span>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">📊 Insights + Analytics</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">📈</div>
+        <h3>POSaBIT Vape Share history is now live — daily and weekly</h3>
+        <p>Reps and coaches can now see daily and weekly Vape Share history pulled from POSaBIT, giving a rolling view of how MWAH products are performing at the shelf over time, not just today.</p>
+        <span class="card-tag tag-feature">Insights</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">☕</div>
+        <h3>Incoming Latte Lover coverage is now visible in the CRM</h3>
+        <p>The CRM now surfaces which stores are on track to receive Latte Lover and when — reps can see coverage in a glance and easily spot gaps in their territory before they become missed opportunities.</p>
+        <span class="card-tag tag-feature">Insights</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔭</div>
+        <h3>“Top 3 flavor out” logic updated for November 9</h3>
+        <p>The store insight that flags when a top-3 flavor goes out of stock was updated to exclude products that have been switched off, so reps see alerts for things that can actually be restocked.</p>
+        <span class="card-tag tag-fix">Insights</span>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">🏪 Store Detail</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">🗂️</div>
+        <h3>Orders and Samples tabs got a full redesign</h3>
+        <p>The Orders and Samples views inside Store Detail have been redesigned and migrated to the new tab component. The layout is cleaner, the KPI cards are evenly sized, and a month total now appears on the Samples summary.</p>
+        <span class="card-tag tag-design">Store Detail</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🤝</div>
+        <h3>Tribal Compact stores are now a distinct store type in the CRM</h3>
+        <p>Tribal Compact stores have their own category in the CRM roster and Ops feed, giving the team a clear view of that segment separately from standard retailers — which also fixes Medical stores being counted where they shouldn’t be.</p>
+        <span class="card-tag tag-feature">Store Detail</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🕐</div>
+        <h3>Date labels now count Pacific calendar days</h3>
+        <p>“3 days ago” and similar labels throughout the CRM now count Pacific calendar days correctly, so reps working in the evening don’t see dates that jump ahead by a day compared to what they expect.</p>
+        <span class="card-tag tag-fix">Store Detail</span>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">👥 Contacts + Admin</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">🔍</div>
+        <h3>Duplicate contact check now works on creates and edits</h3>
+        <p>When adding or editing a contact, the CRM now checks for potential duplicates at both steps — not just on create. If a match is found, a side-by-side comparison prompt appears so the rep can decide how to proceed.</p>
+        <span class="card-tag tag-feature">Contacts</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🛠️</div>
+        <h3>Agent Access setup instructions cleaned up</h3>
+        <p>The Agent Access setup screen had some confusing instructional text and awkward styling on the handover step. Both are fixed — setup should be noticeably easier to follow now.</p>
+        <span class="card-tag tag-fix">Admin Tools</span>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">📦 Orders + Proposals</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">🧾</div>
+        <h3>Order emails and proposals correctly say “free trade sample”</h3>
+        <p>Sample units on emails and proposal previews now show the correct “free trade sample” label throughout — no more generic sample text that left buyers unsure what they were receiving.</p>
+        <span class="card-tag tag-fix">Emails</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📧</div>
+        <h3>Order confirmation emails now look right in Outlook</h3>
+        <p>The order confirmation button wasn’t rendering correctly in Outlook clients. That’s fixed, and an outdated “how it works” link that no longer pointed anywhere useful was removed at the same time.</p>
+        <span class="card-tag tag-fix">Emails</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📐</div>
+        <h3>Inventory view is cleaner — tighter text, product shelf totals, standard pills</h3>
+        <p>The VMI Inventory screen got a cleanup pass: the default filler text is gone, product totals now show at the shelf level, and attention indicators use a consistent pill style across the whole view.</p>
+        <span class="card-tag tag-design">Inventory</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">↩️</div>
+        <h3>“Last order” on a store now always shows the previous order, not the active one</h3>
+        <p>A subtle bug caused the “last order” summary to surface the rep’s current in-progress order. It now correctly shows the previous completed order, so the reference point is actually useful.</p>
+        <span class="card-tag tag-fix">Orders</span>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">🎨 Design + Dashboard</div>
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-icon">🔘</div>
+        <h3>New tab and chip components now live across the CRM</h3>
+        <p>A compact underline tab component and a quieter segmented chip style landed this week. These are now the standard for panel switches and segmented choices across the CRM — first migration pass is in, more will follow.</p>
+        <span class="card-tag tag-design">Design System</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">💰</div>
+        <h3>Commission on the dashboard now reflects held deals correctly</h3>
+        <p>The commission figure shown on the rep dashboard now follows the held-deal base calculation, matching what reps see when they open a deal form — no more subtle discrepancy between the two views.</p>
+        <span class="card-tag tag-fix">Dashboard</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">💬</div>
+        <h3>Every tooltip now has a timed hint, and Last order sorts newest first</h3>
+        <p>Tooltips across the CRM now show a subtle timing hint so reps know there’s more to read. The “Last order” dropdown was also corrected to sort with the most recent order at the top.</p>
+        <span class="card-tag tag-design">Polish</span>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="bts">
+    <div class="bts-title">⚙️ Behind the scenes</div>
+    <ul>
+      <li>Two CRM versions shipped this week — v102.68 on Nov 4 and v102.69 on Nov 7 — covering the launch monitoring, store detail redesign, and architecture work.</li>
+      <li>CRM architecture transition started: Activity Log is the first surface to move onto the shared activity history API, with more surfaces to follow.</li>
+      <li>POSaBIT calendar-coverage definitions corrected and exposed correctly to the analytics layer.</li>
+      <li>POSaBIT metrics unified so numeric totals agree across every surface — previously some counts diverged depending on where you looked.</li>
+      <li>Ops metric mirror confirmed in sync after a paired metrics PR; the byte-identical snapshot is recorded.</li>
+      <li>Dependabot wave on CRM: firebase, vitest, resend, Sentry, and google-auth-library all updated.</li>
+      <li>Website: Dependabot bumped two npm packages; full test suite stays green against the Latte Lover launch.</li>
+      <li>Latte Lover launch monitoring watch list cleared in the locator feed monitor — no longer expects launch-era evidence since it’s now a core flavor.</li>
+    </ul>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-prod">
+      Production: <a href="https://app.gimmemwah.com">app.gimmemwah.com</a> &middot;
+      Buyer portal: <a href="https://buy.gimmemwah.com">buy.gimmemwah.com</a> &middot;
+      Public site: <a href="https://gimmemwah.com">gimmemwah.com</a><br>
+      Questions? Drop them in <strong>#all-mwah</strong> on Slack.
+    </div>
+    <div class="footer-right">
+      <div class="footer-version">v102.69<span>latest deployed version</span></div>
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>

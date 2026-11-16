@@ -1,14 +1,24 @@
 <!doctype html>
 <!--
+<<<<<<<< HEAD:ops/week-of-2026-11-09.html
   Ops weekly recap — "What shipped on Ops"
   Week of November 2–8, 2026
   Never publish money figures, sensitive vendor specifics or individual names.
+========
+  Ops weekly recap — week of November 9–16, 2026.
+  Self-contained, hosted via raw.githack from mwah-reports/ops/.
+  Public-safe: no money figures, no names, no sensitive vendor details.
+>>>>>>>> 40d9e09 (Ops weekly recap — week of 2026-11-16):ops/week-of-2026-11-16.html
 -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<<< HEAD:ops/week-of-2026-11-09.html
     <title>Ops — Week of November 2–8, 2026</title>
+========
+    <title>Ops — Week of November 9–16, 2026</title>
+>>>>>>>> 40d9e09 (Ops weekly recap — week of 2026-11-16):ops/week-of-2026-11-16.html
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -63,7 +73,6 @@
         font-variant-numeric: tabular-nums;
       }
 
-      /* ── HERO ──────────────────────────────────────────────── */
       .hero {
         background: var(--secondary);
         color: #fff;
@@ -119,7 +128,6 @@
         margin-top: 7px;
       }
 
-      /* ── LAYOUT ─────────────────────────────────────────────── */
       .content {
         max-width: 1040px;
         margin: 0 auto;
@@ -150,7 +158,6 @@
         margin-bottom: 22px;
       }
 
-      /* ── CARDS ──────────────────────────────────────────────── */
       .card-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -196,12 +203,16 @@
         padding: 3px 9px;
         border-radius: 999px;
       }
+
       .card.lead {
         border-color: var(--primary-border);
         background: var(--primary-tint);
       }
 
+<<<<<<<< HEAD:ops/week-of-2026-11-09.html
       /* ── BEHIND THE SCENES ───────────────────────────────────── */
+========
+>>>>>>>> 40d9e09 (Ops weekly recap — week of 2026-11-16):ops/week-of-2026-11-16.html
       .bts {
         background: var(--surface);
         border: 1px solid var(--hairline);
@@ -225,7 +236,6 @@
         margin-bottom: 6px;
       }
 
-      /* ── FOOTER ─────────────────────────────────────────────── */
       .footer {
         max-width: 1040px;
         margin: 0 auto;
@@ -276,6 +286,7 @@
     </style>
   </head>
   <body>
+<<<<<<<< HEAD:ops/week-of-2026-11-09.html
     <!-- ── HERO ────────────────────────────────────────────────── -->
     <header class="hero">
       <div class="hero-eyebrow">Chronicle · Ops Platform</div>
@@ -292,19 +303,46 @@
         </div>
         <div class="hero-stat">
           <div class="hero-stat-num">Experience</div>
+========
+    <header class="hero">
+      <div class="hero-eyebrow">Chronicle · Ops Platform</div>
+      <h1>Vendors got a full makeover — and POs now go straight to vendors</h1>
+      <p class="hero-sub">Week of November 9–16, 2026 — what landed in production</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num tnum">9</div>
+          <div class="hero-stat-label">improvements shipped</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num tnum">3</div>
+          <div class="hero-stat-label">areas touched</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">Vendors</div>
+>>>>>>>> 40d9e09 (Ops weekly recap — week of 2026-11-16):ops/week-of-2026-11-16.html
           <div class="hero-stat-label">biggest area</div>
         </div>
       </div>
     </header>
 
     <main class="content">
+<<<<<<<< HEAD:ops/week-of-2026-11-09.html
       <!-- ══ HIGHLIGHTS ════════════════════════════════════════════ -->
       <section class="section">
         <div class="section-title">⭐ The app feels faster and more stable</div>
         <div class="section-note">The two changes that make the biggest everyday difference.</div>
+========
+
+      <!-- HIGHLIGHTS -->
+      <section class="section">
+        <div class="section-title">⭐ The biggest things that landed this week</div>
+        <div class="section-note">The two changes most of the team will notice right away.</div>
+>>>>>>>> 40d9e09 (Ops weekly recap — week of 2026-11-16):ops/week-of-2026-11-16.html
         <div class="section-rule"></div>
         <div class="card-grid">
+
           <article class="card lead">
+<<<<<<<< HEAD:ops/week-of-2026-11-09.html
             <div class="card-icon">📋</div>
             <h3>The Order Center board fills the screen the right way</h3>
             <p>The purchasing board now takes up the full viewport below the header, with each month column scrolling on its own — no more blank space below a tall column you can't even see. And instead of a spinner while the board loads, you now see the board's shape right away.</p>
@@ -315,10 +353,80 @@
             <h3>Pages across the platform show their layout while loading</h3>
             <p>Rather than going blank and then appearing all at once, workspaces across the app now show a skeleton of their own structure while data is on the way. Navigation clicks feel instant from the start.</p>
             <span class="card-tag">Experience</span>
+========
+            <div class="card-icon">🏪</div>
+            <h3>Vendors page is completely rebuilt</h3>
+            <p>Every vendor now has a clean table layout with status badges, a details panel that opens right on the page, and inline forms for adding records. A new Shipping tab surfaces all the relevant links in one place, and a dedicated preview tab lets you browse vendor documents without leaving the page. Receiving locations on shipment tracking forms are now clearly labeled as MWAH&#39;s own receiving places.</p>
+            <span class="card-tag">Vendors</span>
           </article>
+
+          <article class="card lead">
+            <div class="card-icon">📧</div>
+            <h3>Purchase orders can now be emailed to vendors directly</h3>
+            <p>Once a purchase order is ready, Chronicle can send it to the vendor by email straight from the platform. No more copy-paste or switching to a separate app. The order goes out through the same integrated channel the team already uses for procurement.</p>
+            <span class="card-tag">Procurement</span>
+          </article>
+
         </div>
       </section>
 
+      <!-- INTEGRATIONS & SYNC -->
+      <section class="section">
+        <div class="section-title">🔌 Integrations got smarter this week</div>
+        <div class="section-note">Procurement and invoice intake are more automated.</div>
+        <div class="section-rule"></div>
+        <div class="card-grid">
+
+          <article class="card">
+            <div class="card-icon">🧹</div>
+            <h3>Invoice intake ignores irrelevant vendor replies</h3>
+            <p>When a vendor replies to a purchase order thread with a message that has no attached document, the system now skips it cleanly instead of treating it as a potential invoice. Keeps the intake queue focused on real documents.</p>
+            <span class="card-tag">Intake</span>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- NAVIGATION & EXPERIENCE -->
+      <section class="section">
+        <div class="section-title">🧭 Order Center is cleaner and faster to use</div>
+        <div class="section-note">Less clutter in the Order Center workflow.</div>
+        <div class="section-rule"></div>
+        <div class="card-grid">
+
+          <article class="card">
+            <div class="card-icon">📋</div>
+            <h3>One order per line, one page to scroll</h3>
+            <p>Orders in the Order Center now display one line each in a single continuous list. The whole page scrolls together instead of each section having its own scroll, which makes it easier to scan and navigate a large set of orders.</p>
+            <span class="card-tag">Order Center</span>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">➕</div>
+            <h3>One New Order button, wherever you are</h3>
+            <p>Previously there was a separate New Order button for each month group. Now there is a single button at the top. Easier to find, less visual noise.</p>
+            <span class="card-tag">Order Center</span>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- FIXES & POLISH -->
+      <section class="section">
+        <div class="section-title">🐞 Fixes and polish landed too</div>
+        <div class="section-note">A handful of issues resolved and rough edges smoothed.</div>
+        <div class="section-rule"></div>
+        <div class="card-grid">
+
+          <article class="card">
+            <div class="card-icon">🔧</div>
+            <h3>Vendor portal shows the right orders now</h3>
+            <p>The vendor-facing portal was incorrectly showing empty lanes when orders existed, and hiding some orders that belong to merged vendor accounts. Both are fixed — vendors now see the accurate picture of their open and completed orders.</p>
+            <span class="card-tag">Vendor Portal</span>
+>>>>>>>> 40d9e09 (Ops weekly recap — week of 2026-11-16):ops/week-of-2026-11-16.html
+          </article>
+
+<<<<<<<< HEAD:ops/week-of-2026-11-09.html
       <!-- ══ FIXES & POLISH ═════════════════════════════════════════ -->
       <section class="section">
         <div class="section-title">🐞 Fixes &amp; polish</div>
@@ -329,30 +437,57 @@
             <div class="card-icon">🔧</div>
             <h3>Inventory figures from integrations are now reliably accurate</h3>
             <p>Source-level stock metrics — including counts that were previously showing as unknown — are now preserved correctly when syncing from connected inventory systems, so the numbers in reports reflect what the integrations actually reported.</p>
+========
+          <article class="card">
+            <div class="card-icon">🩹</div>
+            <h3>Three error fixes across the platform</h3>
+            <p>Resolved issues with product depletion source tracking, portal data refreshing correctly after a change, and document source file previews loading as expected.</p>
+>>>>>>>> 40d9e09 (Ops weekly recap — week of 2026-11-16):ops/week-of-2026-11-16.html
             <span class="card-tag">Fix</span>
           </article>
+
+          <article class="card">
+            <div class="card-icon">✏️</div>
+            <h3>Number inputs and copy polish</h3>
+            <p>Number fields now accept comma-formatted values without errors. &#34;Down payment&#34; is now spelled correctly everywhere it appears in the app.</p>
+            <span class="card-tag">Polish</span>
+          </article>
+
         </div>
       </section>
 
+<<<<<<<< HEAD:ops/week-of-2026-11-09.html
       <!-- ══ BEHIND THE SCENES ══════════════════════════════════════ -->
+========
+      <!-- BEHIND THE SCENES -->
+>>>>>>>> 40d9e09 (Ops weekly recap — week of 2026-11-16):ops/week-of-2026-11-16.html
       <section class="section">
         <div class="bts">
           <div class="bts-title">⚙️ Behind the scenes</div>
           <ul>
+<<<<<<<< HEAD:ops/week-of-2026-11-09.html
             <li>Several dependency libraries were updated to stay current with security patches and upstream fixes.</li>
             <li>End-to-end test infrastructure was aligned to the installed browser environment for more reliable automated checks.</li>
+========
+            <li>Planning and materials views load faster by skipping archived and long-closed records</li>
+            <li>The backend stays warmer between requests, reducing slowdowns after quiet periods</li>
+            <li>Dependency updates across the platform</li>
+>>>>>>>> 40d9e09 (Ops weekly recap — week of 2026-11-16):ops/week-of-2026-11-16.html
           </ul>
         </div>
       </section>
     </main>
 
-    <!-- ── FOOTER ──────────────────────────────────────────────── -->
     <footer class="footer">
       <div>
         Ops Platform (Chronicle) — what landed this week.<br />Questions? Drop them in
         <strong>#all-mwah</strong> on Slack.
       </div>
+<<<<<<<< HEAD:ops/week-of-2026-11-09.html
       <div class="tnum">Week of November 2–8, 2026</div>
+========
+      <div class="tnum">Week of November 9–16, 2026</div>
+>>>>>>>> 40d9e09 (Ops weekly recap — week of 2026-11-16):ops/week-of-2026-11-16.html
     </footer>
   </body>
 </html>
